@@ -34,6 +34,9 @@
     width: 100%;
     height: 100%;
     animation: scaleIn 0.14s ease-out;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
     &::after {
       box-sizing: border-box;
       display: block;

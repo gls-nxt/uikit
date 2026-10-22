@@ -8,6 +8,12 @@
     border-radius: var(--gls-border-radius-md);
     box-shadow: var(--gls-shadow-xs);
     animation: menuIn 0.12s ease-out;
+
+    /* menuIn wipes the menu open with clip-path; menuOut is a plain fade. */
+    @media (prefers-reduced-motion: reduce) {
+      animation-name: menuOut;
+      animation-direction: reverse;
+    }
   }
 
   .menuContent[data-state="closed"] {
