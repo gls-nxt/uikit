@@ -109,6 +109,57 @@ describe('Dialog Component', () => {
     expect(container.querySelector('dialog')).toHaveAttribute('closedby', 'closerequest');
   });
 
+  describe('closedby="any" fallback', () => {
+    const getDialog = (container: HTMLElement) => {
+      const dialog = container.querySelector('dialog') as HTMLDialogElement;
+      dialog.getBoundingClientRect = () => new DOMRect(100, 100, 200, 200);
+      return dialog;
+    };
+
+    it('requests close on a backdrop click', () => {
+      const handleClick = vi.fn();
+      const { container } = renderDialog({ closedby: 'any', onClick: handleClick });
+
+      fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+
+      expect(handleClick).toHaveBeenCalled();
+      expect(closeDialog).toHaveBeenCalledWith(dialogId, 'request-close');
+    });
+
+    it('ignores clicks inside the dialog box and on its content', () => {
+      const { container } = renderDialog({ closedby: 'any' });
+
+      fireEvent.click(getDialog(container), { clientX: 150, clientY: 150 });
+      fireEvent.click(screen.getByText('Dialog Content'), { clientX: 10, clientY: 10 });
+
+      expect(closeDialog).not.toHaveBeenCalled();
+    });
+
+    it('does nothing without closedby="any"', () => {
+      const { container } = renderDialog({ closedby: 'closerequest' });
+
+      fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+
+      expect(closeDialog).not.toHaveBeenCalled();
+    });
+
+    it('leaves light dismiss to the browser when closedby is supported', () => {
+      Object.defineProperty(HTMLDialogElement.prototype, 'closedBy', {
+        configurable: true,
+        value: 'auto',
+      });
+      try {
+        const { container } = renderDialog({ closedby: 'any' });
+
+        fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+
+        expect(closeDialog).not.toHaveBeenCalled();
+      } finally {
+        delete (HTMLDialogElement.prototype as { closedBy?: string }).closedBy;
+      }
+    });
+  });
+
   it('calls onOpenChange when the native dialog toggles', () => {
     const handleOpenChange = vi.fn();
     const { container } = renderDialog({}, { onOpenChange: handleOpenChange });
