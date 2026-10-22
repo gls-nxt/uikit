@@ -10,6 +10,16 @@ const meta = {
     onFocus: action('onFocus'),
   },
   argTypes: {
+    autoResize: {
+      control: 'boolean',
+      description:
+        'Grows the textarea with its content, up to 10 lines. Browsers without `field-sizing` support keep a fixed height.',
+      table: {
+        category: 'Appearance',
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     className: {
       control: 'text',
       description:
@@ -196,6 +206,17 @@ export const ResizeBoth: Story = {
     'data-testid': 'custom-test-id',
     label: 'Freely Resizable Textarea',
     resize: 'both',
+  },
+  parameters: {
+    layout: 'padded',
+  },
+};
+
+export const AutoResize: Story = {
+  args: {
+    autoResize: true,
+    'data-testid': 'custom-test-id',
+    label: 'Auto-resizing Textarea',
   },
   parameters: {
     layout: 'padded',

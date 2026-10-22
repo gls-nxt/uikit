@@ -33,9 +33,14 @@ export const textareaRootVariants = cva(styles.textareaRoot, {
 
 export const textareaVariants = cva(styles.textarea, {
   defaultVariants: {
+    autoResize: false,
     resize: 'vertical',
   },
   variants: {
+    autoResize: {
+      false: null,
+      true: styles['textarea--autoResize'],
+    },
     resize: {
       both: styles['textarea--resizeBoth'],
       none: styles['textarea--resizeNone'],

@@ -60,6 +60,13 @@
     resize: both;
   }
 
+  /* Grow with the content, up to 10 lines. Browsers without field-sizing keep the
+     fixed height and scroll, as before. */
+  .textarea--autoResize {
+    field-sizing: content;
+    max-block-size: 10lh;
+  }
+
   /* Padding adjustment when labelled to make room for the floating label */
   .textareaWrapper--labeled .textarea {
     padding-top: calc(var(--gls-spacing-6) + 2px);
