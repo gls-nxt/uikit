@@ -18,7 +18,23 @@
     border: 1px solid var(--gls-color-border-default);
     border-radius: var(--gls-border-radius-xl) var(--gls-border-radius-xl) 0 0;
     box-shadow: var(--gls-shadow-md);
+    /* Closed state that the exit transition runs to. Entry uses the keyframes on [open]. */
+    opacity: 0;
     transform: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0 100%;
+    }
+
+    /* Only animate the exit where the dialog can stay in the top layer while it plays
+       (overlay). Elsewhere it closes instantly, as before, instead of animating behind
+       the page. */
+    @supports (overlay: auto) {
+      transition-property: opacity, translate, display, overlay;
+      transition-duration: 0.2s;
+      transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition-behavior: allow-discrete;
+    }
   }
 
   .dialog[open] {
@@ -27,12 +43,26 @@
        Without this, flex children (dialogContent/dialogBody) collapse to 0 height.
        max-height still caps the dialog for long content. */
     height: fit-content;
+    opacity: 1;
+    /* none rather than 0: keep the open dialog free of transforms (see the WebKit note below) */
+    translate: none;
     animation: mobileContentShow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .dialog::backdrop {
     background-color: var(--gls-color-background-overlay);
+    opacity: 0;
     animation: overlayShow 0.2s;
+
+    @supports (overlay: auto) {
+      transition-property: opacity, display, overlay;
+      transition-duration: 0.2s;
+      transition-behavior: allow-discrete;
+    }
+  }
+
+  .dialog[open]::backdrop {
+    opacity: 1;
   }
 
   @media (--medium) {
@@ -51,6 +81,10 @@
       max-height: 85vh;
       margin: auto;
       border-radius: var(--gls-border-radius-xl);
+
+      @media (prefers-reduced-motion: no-preference) {
+        translate: 0 -20%;
+      }
     }
 
     .dialog[open] {
