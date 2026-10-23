@@ -35,6 +35,16 @@ describe('Textarea Component', () => {
     expect(await axe(container)).toHaveNoViolations();
   });
 
+  it('applies the auto-resize class only when autoResize is set', () => {
+    const { rerender } = renderTextarea({ label: 'Notes' });
+    const textarea = screen.getByLabelText('Notes');
+    expect(textarea).not.toHaveClass(styles['textarea--autoResize']);
+
+    rerender(<Textarea autoResize label="Notes" />);
+    expect(textarea).toHaveClass(styles['textarea--autoResize']);
+    expect(textarea).not.toHaveAttribute('autoResize');
+  });
+
   it('renders helper text correctly', () => {
     const helperText = 'Test Helper Text';
     renderTextarea({ helperText });
