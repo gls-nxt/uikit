@@ -27,6 +27,19 @@ jobs:
           registry-url: 'https://npm.pkg.github.com/'
           cache: 'pnpm'
 
+      - name: Check if version is already published
+        id: version
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if npm view "@gls-nxt/uikit@${VERSION}" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::@gls-nxt/uikit@${VERSION} is already published, skipping publish"
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -36,6 +49,7 @@ jobs:
           pnpm test
 
       - name: Publish to GitHub Packages
+        if: steps.version.outputs.published == 'false'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm publish
