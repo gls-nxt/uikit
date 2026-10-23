@@ -1,0 +1,39 @@
+@layer uikit {
+  .menuContent {
+    min-width: 10rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--gls-color-surface-card);
+    border: 1px solid var(--gls-color-border-default);
+    border-radius: var(--gls-border-radius-md);
+    box-shadow: var(--gls-shadow-xs);
+    animation: menuIn 0.12s ease-out;
+  }
+
+  .menuContent[data-state="closed"] {
+    animation: menuOut 0.1s ease-out;
+  }
+
+  @keyframes menuIn {
+    0% {
+      opacity: 0;
+      clip-path: inset(0 0 40% 0);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes menuOut {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+}

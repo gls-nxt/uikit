@@ -1,0 +1,19 @@
+:root {
+  /**
+   * @tokens Text Colors
+   * @presenter Color
+   */
+  --gls-color-text-foreground: var(--gls-color-shades-black);
+  --gls-color-text-inverted: var(--gls-color-shades-white);
+  --gls-color-text-muted: var(--gls-color-neutrals-400);
+  --gls-color-text-light: var(--gls-color-neutrals-500);
+  --gls-color-text-label: var(--gls-color-neutrals-500);
+  --gls-color-text-primary: var(--gls-color-blue-500);
+  --gls-color-text-primary-hover: var(--gls-color-blue-600);
+  --gls-color-text-primary-muted: var(--gls-color-blue-300);
+  --gls-color-text-success: var(--gls-color-green-900);
+  --gls-color-text-success-light: var(--gls-color-green-500);
+  --gls-color-text-error: var(--gls-color-red-700);
+  --gls-color-text-error-muted: var(--gls-color-red-300);
+  --gls-color-text-warning: var(--gls-color-yellow-700);
+}

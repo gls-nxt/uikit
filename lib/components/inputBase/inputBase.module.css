@@ -1,0 +1,64 @@
+@layer uikit {
+  .input {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 100%;
+    padding: 0 var(--gls-spacing-3);
+    overflow: hidden;
+    font: inherit;
+    color: var(--gls-color-text-primary);
+    outline: 0;
+    background-color: var(--gls-color-surface-input);
+    border: none;
+    border-radius: var(--gls-border-radius-lg);
+    box-shadow: var(--gls-ring-default);
+    isolation: isolate;
+    transition:
+      border-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+  }
+
+  .input--lg {
+    height: 3.375rem;
+    font-size: var(--gls-font-size-4);
+    line-height: var(--gls-line-height-4);
+    letter-spacing: var(--gls-letter-spacing-4);
+  }
+
+  .input--md {
+    height: 3rem;
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-3);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+
+  .input--sm {
+    height: 2.375rem;
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-3);
+    letter-spacing: var(--gls-letter-spacing-3);
+    border-radius: var(--gls-border-radius-md);
+  }
+
+  .input::placeholder {
+    color: var(--gls-color-text-muted);
+    opacity: 1;
+  }
+
+  .input:focus {
+    box-shadow: var(--gls-ring-focus);
+  }
+
+  [aria-invalid="true"],
+  [aria-invalid="true"]:focus {
+    box-shadow: var(--gls-ring-default), var(--gls-ring-error);
+  }
+
+  .input:disabled {
+    color: var(--gls-color-text-muted);
+    cursor: not-allowed;
+    background-color: var(--gls-color-surface-muted);
+    border-color: var(--gls-color-border-default);
+  }
+}

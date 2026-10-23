@@ -1,0 +1,118 @@
+.wrapper {
+  display: grid;
+  gap: 12px 18px;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+  font-size: 16px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.strip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0.625rem;
+  color: contrast-color(var(--swatch-bg));
+  background-color: var(--swatch-bg);
+}
+
+.empty {
+  height: 100%;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.0625rem;
+  min-width: 0;
+}
+
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: currentcolor;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+.hex {
+  font-family: monospace;
+  font-size: 14px;
+  color: currentcolor;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+.pairs {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  font-size: 12px;
+}
+
+.pair {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+.ratio {
+  opacity: 0.7;
+}
+
+/* Semantic variant */
+.semanticWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.semanticSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.semanticGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.semanticCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e4e7ec;
+  border-radius: 8px;
+}
+
+.semanticSwatch {
+  width: 100%;
+  height: 48px;
+}
+
+.semanticInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding: 0.375rem 0.5rem;
+}
+
+.semanticName {
+  color: #344054;
+  word-break: break-all;
+}
+
+.semanticHex {
+  font-family: monospace;
+  color: #667085;
+}

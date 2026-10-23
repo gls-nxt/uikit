@@ -1,0 +1,176 @@
+@layer uikit {
+  .iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+    transition-property: color, background-color, outline;
+
+    &:focus-visible {
+      outline: 1.5px solid var(--gls-color-blue-200);
+      outline-offset: 1.5px;
+    }
+    &.iconButton--loading,
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .iconButton--round {
+    border-radius: var(--gls-border-radius-full);
+  }
+
+  .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconButton--lg {
+    width: 3.375rem;
+    height: 3.375rem;
+
+    &.iconButton--square {
+      border-radius: var(--gls-border-radius-lg);
+    }
+
+    .icon,
+    .icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .iconButton--md {
+    width: 3rem;
+    height: 3rem;
+
+    &.iconButton--square {
+      border-radius: var(--gls-border-radius-lg);
+    }
+
+    .icon,
+    .icon svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .iconButton--sm {
+    width: 2.375rem;
+    height: 2.375rem;
+
+    &.iconButton--square {
+      border-radius: var(--gls-border-radius-lg);
+    }
+
+    .icon,
+    .icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .iconButton--xs {
+    width: 1.875rem;
+    height: 1.875rem;
+
+    &.iconButton--square {
+      border-radius: var(--gls-border-radius-sm);
+    }
+
+    .icon,
+    .icon svg {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .iconButton--primary {
+    color: var(--gls-color-icon-inverted);
+    background-color: var(--gls-color-surface-primary);
+
+    &:hover {
+      background-color: var(--gls-color-surface-primary-hover);
+    }
+    &.iconButton--loading,
+    &:disabled {
+      color: var(--gls-color-icon-muted);
+      background-color: var(--gls-color-surface-muted);
+    }
+  }
+
+  .iconButton--secondary {
+    color: var(--gls-color-icon-foreground);
+    background-color: var(--gls-color-surface-secondary);
+
+    &:hover {
+      background-color: var(--gls-color-surface-secondary-hover);
+    }
+    &.iconButton--loading,
+    &:disabled {
+      color: var(--gls-color-icon-muted);
+      background-color: var(--gls-color-surface-secondary);
+    }
+  }
+
+  .iconButton--tertiary {
+    color: var(--gls-color-icon-foreground);
+    background-color: var(--gls-color-surface-default);
+
+    &:hover {
+      background-color: var(--gls-color-surface-default-hover);
+    }
+    &.iconButton--loading,
+    &:disabled {
+      color: var(--gls-color-icon-muted);
+      background-color: var(--gls-color-surface-muted);
+    }
+  }
+
+  .iconButton--destructive {
+    color: var(--gls-color-icon-error);
+    background-color: var(--gls-color-surface-error);
+
+    &:hover {
+      background-color: var(--gls-color-surface-error-hover);
+    }
+    &.iconButton--loading,
+    &:disabled {
+      color: var(--gls-color-icon-error-muted);
+      background-color: var(--gls-color-surface-error);
+    }
+  }
+
+  .iconButton--blurred {
+    color: var(--gls-color-icon-inverted);
+    background-color: var(--gls-color-surface-blurred);
+    backdrop-filter: blur(var(--gls-blur-md));
+
+    &:hover {
+      background-color: var(--gls-color-surface-blurred-hover);
+    }
+    &.iconButton--loading,
+    &:disabled {
+      color: var(--gls-color-shades-white-light);
+      background-color: var(--gls-color-surface-blurred);
+    }
+  }
+
+  .iconButton--ghost {
+    color: var(--gls-color-icon-light);
+    background-color: transparent;
+
+    &:hover:not(:disabled) {
+      background-color: var(--gls-color-surface-secondary);
+    }
+    &:disabled {
+      color: var(--gls-color-icon-muted);
+    }
+  }
+}

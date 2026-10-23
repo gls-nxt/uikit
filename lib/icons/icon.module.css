@@ -1,0 +1,74 @@
+@layer uikit {
+  /* Base icon styles */
+  .icon {
+    display: inline-flex;
+    width: var(--icon-size, 1em);
+    height: var(--icon-size, 1em);
+    color: currentColor;
+  }
+
+  /* Size variants */
+  .icon--xs {
+    --icon-size: 0.75em;
+  }
+
+  .icon--sm {
+    --icon-size: 1em;
+  }
+
+  .icon--md {
+    --icon-size: 1.25em;
+  }
+
+  .icon--lg {
+    --icon-size: 1.5em;
+  }
+
+  .icon--xl {
+    --icon-size: 2em;
+  }
+
+  /* Color variants */
+  .icon--foreground {
+    color: var(--gls-color-icon-foreground);
+  }
+  .icon--foreground-hover {
+    color: var(--gls-color-icon-foreground-hover);
+  }
+  .icon--inverted {
+    color: var(--gls-color-icon-inverted);
+  }
+  .icon--inverted-hover {
+    color: var(--gls-color-icon-inverted-hover);
+  }
+  .icon--light {
+    color: var(--gls-color-icon-light);
+  }
+  .icon--muted {
+    color: var(--gls-color-icon-muted);
+  }
+  .icon--primary {
+    color: var(--gls-color-icon-primary);
+  }
+  .icon--primary-hover {
+    color: var(--gls-color-icon-primary-hover);
+  }
+  .icon--primary-muted {
+    color: var(--gls-color-icon-primary-muted);
+  }
+  .icon--primary-pressed {
+    color: var(--gls-color-icon-primary-pressed);
+  }
+  .icon--success {
+    color: var(--gls-color-icon-success);
+  }
+  .icon--warning {
+    color: var(--gls-color-icon-warning);
+  }
+  .icon--error {
+    color: var(--gls-color-icon-error);
+  }
+  .icon--error-muted {
+    color: var(--gls-color-icon-error-muted);
+  }
+}

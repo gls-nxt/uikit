@@ -1,0 +1,44 @@
+:root {
+  /**
+   * @tokens Surface Colors
+   * @presenter Color
+   */
+
+  /* Background */
+  --gls-color-background-overlay: rgba(26, 26, 26, 0.5);
+  --gls-color-background-default: var(--gls-color-neutrals-100);
+
+  /* Surface */
+  --gls-color-surface-default: var(--gls-color-shades-white);
+  --gls-color-surface-default-hover: var(--gls-color-neutrals-100);
+  --gls-color-surface-card: var(--gls-color-neutrals-25);
+  --gls-color-surface-card-hover: var(--gls-color-neutrals-100);
+  --gls-color-surface-inverted: var(--gls-color-neutrals-1000);
+  --gls-color-surface-inverted-hover: var(--gls-color-neutrals-900);
+  --gls-color-surface-input: var(--gls-color-neutrals-25);
+  --gls-color-surface-input-hover: var(--gls-color-neutrals-200);
+  --gls-color-surface-primary: var(--gls-color-blue-500);
+  --gls-color-surface-primary-hover: var(--gls-color-blue-600);
+  --gls-color-surface-primary-muted: var(--gls-color-blue-200);
+  --gls-color-surface-primary-pressed: var(--gls-color-blue-700);
+  --gls-color-surface-primary-light: var(--gls-color-blue-100);
+  --gls-color-surface-secondary: var(--gls-color-neutrals-100);
+  --gls-color-surface-secondary-hover: var(--gls-color-neutrals-200);
+  --gls-color-surface-secondary-muted: var(--gls-color-neutrals-300);
+  --gls-color-surface-secondary-pressed: var(--gls-color-neutrals-500);
+  --gls-color-surface-muted: var(--gls-color-neutrals-50);
+  --gls-color-surface-muted-hover: var(--gls-color-neutrals-200);
+  --gls-color-surface-success: var(--gls-color-green-100);
+  --gls-color-surface-success-hover: var(--gls-color-green-200);
+  --gls-color-surface-warning: var(--gls-color-yellow-100);
+  --gls-color-surface-warning-hover: var(--gls-color-yellow-200);
+  --gls-color-surface-error: var(--gls-color-red-100);
+  --gls-color-surface-error-hover: var(--gls-color-red-200);
+  --gls-color-surface-error-muted: var(--gls-color-red-300);
+  --gls-color-surface-error-pressed: var(--gls-color-red-400);
+  --gls-color-surface-tooltip: var(--gls-color-shades-black);
+  --gls-color-surface-indicator: var(--gls-color-neutrals-200);
+  --gls-color-surface-skeleton: var(--gls-color-neutrals-200);
+  --gls-color-surface-blurred: rgba(255, 255, 255, 0.15);
+  --gls-color-surface-blurred-hover: rgba(255, 255, 255, 0.3);
+}

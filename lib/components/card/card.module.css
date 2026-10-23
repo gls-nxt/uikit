@@ -1,0 +1,28 @@
+@layer uikit {
+  .card {
+    padding: var(--gls-spacing-4); /* Default padding */
+    overflow: hidden;
+    background-color: var(--gls-color-surface-card);
+    border: 1px solid var(--gls-color-border-default);
+    transition: box-shadow 0.2s ease;
+  }
+
+  /* Raised variant (with shadow) */
+  .card--raised {
+    box-shadow: var(--gls-shadow-sm);
+  }
+
+  /* Size variants for border-radius */
+  .card--sm {
+    border-radius: var(--gls-border-radius-md);
+  }
+  .card--md {
+    border-radius: var(--gls-border-radius-lg);
+  }
+  .card--lg {
+    border-radius: var(--gls-border-radius-xl);
+  }
+  .card--xl {
+    border-radius: var(--gls-border-radius-3xl);
+  }
+}

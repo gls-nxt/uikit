@@ -1,0 +1,17 @@
+:root {
+  /**
+   * @tokens FontSize
+   * @presenter FontSize
+   */
+
+  --gls-font-size-1: 0.625rem; /* 10px */
+  --gls-font-size-2: 0.75rem; /* 12px */
+  --gls-font-size-3: 0.875rem; /* 14px */
+  --gls-font-size-4: 1rem; /* 16px */
+  --gls-font-size-5: 1.125rem; /* 18px */
+  --gls-font-size-6: 1.25rem; /* 20px */
+  --gls-font-size-7: 1.375rem; /* 22px */
+  --gls-font-size-8: 1.5rem; /* 24px */
+  --gls-font-size-9: 2.125rem; /* 34px */
+  --gls-font-size-10: 2.625rem; /* 42px */
+}

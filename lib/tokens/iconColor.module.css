@@ -1,0 +1,20 @@
+:root {
+  /**
+   * @tokens Icon Colors
+   * @presenter Color
+   */
+  --gls-color-icon-foreground: var(--gls-color-shades-black);
+  --gls-color-icon-foreground-hover: var(--gls-color-neutrals-500);
+  --gls-color-icon-inverted: var(--gls-color-shades-white);
+  --gls-color-icon-inverted-hover: var(--gls-color-neutrals-200);
+  --gls-color-icon-light: var(--gls-color-neutrals-500);
+  --gls-color-icon-muted: var(--gls-color-neutrals-400);
+  --gls-color-icon-primary: var(--gls-color-blue-500);
+  --gls-color-icon-primary-hover: var(--gls-color-blue-600);
+  --gls-color-icon-primary-muted: var(--gls-color-blue-300);
+  --gls-color-icon-primary-pressed: var(--gls-color-blue-700);
+  --gls-color-icon-success: var(--gls-color-green-600);
+  --gls-color-icon-warning: var(--gls-color-yellow-700);
+  --gls-color-icon-error: var(--gls-color-red-600);
+  --gls-color-icon-error-muted: var(--gls-color-red-300);
+}

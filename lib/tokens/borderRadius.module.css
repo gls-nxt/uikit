@@ -1,0 +1,15 @@
+/**
+ * @tokens BorderRadius
+ * @presenter BorderRadius
+ */
+
+:root {
+  --gls-border-radius-xs: 0.25rem; /* 4px */
+  --gls-border-radius-sm: 0.375rem; /* 6px */
+  --gls-border-radius-md: 0.5rem; /* 8px */
+  --gls-border-radius-lg: 0.625rem; /* 10px */
+  --gls-border-radius-xl: 1rem; /* 16px */
+  --gls-border-radius-2xl: 1.25rem; /* 20px */
+  --gls-border-radius-3xl: 1.5rem; /* 24px */
+  --gls-border-radius-full: 99999rem; /* 99999px */
+}

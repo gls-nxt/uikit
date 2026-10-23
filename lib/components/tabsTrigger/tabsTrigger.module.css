@@ -1,0 +1,53 @@
+@layer uikit {
+  /* Tabs Trigger */
+  .tabs-trigger {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    gap: var(--gls-spacing-1);
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: auto;
+    padding: var(--gls-spacing-3);
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--gls-color-text-label);
+    background-color: transparent;
+    border: none;
+    border-radius: var(--gls-border-radius-md);
+    transition:
+      background-color 0.115s ease-out,
+      box-shadow 0.2s ease-out;
+  }
+
+  .tabs-trigger:focus-visible {
+    outline: none;
+    box-shadow: var(--gls-ring-focus-transparent);
+  }
+  .tabs-trigger[data-state="active"]:focus-visible {
+    box-shadow: var(--gls-shadow-xs), var(--gls-ring-focus-transparent);
+  }
+
+  .tabs-trigger:hover {
+    cursor: pointer;
+  }
+  .tabs-list--large .tabs-trigger {
+    justify-content: start;
+  }
+
+  .tabs-trigger[data-state="inactive"]:not([data-disabled]):hover {
+    background-color: var(--gls-color-surface-secondary-hover);
+  }
+
+  .tabs-trigger[data-state="active"] {
+    color: var(--gls-color-text-foreground);
+    background-color: var(--gls-color-surface-default);
+    box-shadow: var(--gls-shadow-xs);
+  }
+
+  .tabs-trigger[data-disabled] {
+    color: var(--gls-color-text-muted);
+    cursor: not-allowed;
+  }
+}

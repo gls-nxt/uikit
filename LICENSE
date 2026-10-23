@@ -1,0 +1,28 @@
+Copyright (c) 2026 GLS IT Services GmbH. All rights reserved.
+
+This repository is made publicly visible for reference only. No license is
+granted to use, copy, modify, merge, publish, distribute, sublicense or sell
+any part of it, in source or built form, without prior written permission
+from GLS IT Services GmbH.
+
+Viewing and forking this repository on GitHub is permitted only to the extent
+required by the GitHub Terms of Service. That permission grants no other
+rights.
+
+Proprietary material
+
+The following are proprietary to GLS IT Services GmbH and its licensors and are
+not licensed for any use:
+
+- The Newson GLS font files and any font files derived from them, including
+  all files in lib/fonts/ and public/fonts/ and any copy under dist/.
+- The GLS name, logos and other brand assets, including lib/images/.
+
+Third-party material
+
+Icons derived from Lucide (ISC) and Feather (MIT) remain under their own
+licenses. See THIRD_PARTY_NOTICES.md. Nothing in this file restricts the
+rights those licenses grant. Third-party brand marks in assets/icons/ (for
+example Mastercard and PayPal) belong to their respective owners.
+
+For permission requests, contact the maintainers listed in .github/CODEOWNERS.

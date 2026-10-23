@@ -1,0 +1,78 @@
+@layer uikit {
+  .sortableList {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: initial;
+    margin: initial;
+    list-style: none;
+  }
+
+  .sortableList--divided .sortableListItem:not(:last-child) {
+    border-bottom: 1px solid var(--gls-color-border-default);
+  }
+
+  .sortableListItem {
+    box-sizing: border-box;
+    display: flex;
+    gap: var(--gls-spacing-3);
+    align-items: center;
+    padding: var(--gls-spacing-2) var(--gls-spacing-1);
+    /* Avoid touch scrolling hijacking the pointer drag on the handle. */
+    touch-action: manipulation;
+    background-color: var(--gls-color-surface-card);
+  }
+
+  .sortableListItem--dragging {
+    z-index: 1;
+    /* Hide the divider border while lifted. */
+    border-bottom-color: transparent;
+    border-radius: var(--gls-border-radius-lg);
+    box-shadow: var(--gls-shadow-md);
+  }
+
+  .sortableListContent {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .sortableListHandle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gls-spacing-1);
+    margin: initial;
+    color: var(--gls-color-icon-muted);
+    touch-action: none;
+    cursor: grab;
+    background: none;
+    border: none;
+    border-radius: var(--gls-border-radius-sm);
+    transition: color 0.15s ease;
+  }
+
+  .sortableListHandle:hover {
+    color: var(--gls-color-icon-foreground);
+  }
+
+  .sortableListHandle:focus-visible {
+    outline: none;
+    box-shadow: var(--gls-ring-focus);
+  }
+
+  .sortableListHandle:active {
+    cursor: grabbing;
+  }
+
+  .sortableListHandle:disabled {
+    color: var(--gls-color-icon-light);
+    cursor: not-allowed;
+  }
+
+  .sortableListHandleIcon {
+    width: var(--gls-icon-size-4);
+    height: var(--gls-icon-size-4);
+  }
+}

@@ -1,0 +1,205 @@
+@layer uikit {
+  .inputWrapper {
+    position: relative;
+    padding: initial;
+    margin: initial;
+    border: none;
+    isolation: isolate;
+  }
+
+  .inputRoot {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    overflow: hidden;
+    background-color: var(--gls-color-surface-input);
+    border-radius: var(--gls-border-radius-lg);
+    box-shadow: var(--gls-ring-default);
+    transition:
+      border-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+  }
+
+  .inputWrapper--fullWidth {
+    width: 100%;
+    & .inputRoot {
+      width: 100%;
+    }
+  }
+
+  .input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: var(--gls-spacing-3) var(--gls-spacing-3);
+    font: inherit;
+    color: var(--gls-color-text-foreground);
+    outline: 0;
+    background: none;
+    border: 0;
+  }
+
+  .inputMain {
+    width: 100%;
+  }
+
+  .inputWrapper--lg .input {
+    height: 3.375rem;
+    font-size: var(--gls-font-size-4);
+    line-height: var(--gls-line-height-4);
+    letter-spacing: var(--gls-letter-spacing-4);
+  }
+  .inputWrapper--sm .input {
+    height: 3rem;
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-3);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+
+  .inputWrapper--labeled.inputWrapper--lg .input {
+    padding: calc(var(--gls-spacing-6) + 2px) var(--gls-spacing-3) var(--gls-spacing-2)
+      var(--gls-spacing-3);
+  }
+  .inputWrapper--labeled.inputWrapper--sm .input {
+    padding: var(--gls-spacing-6) var(--gls-spacing-3) var(--gls-spacing-2) var(--gls-spacing-3);
+    margin-top: 1px;
+  }
+
+  .input::placeholder {
+    color: var(--gls-color-text-muted);
+    opacity: 1;
+  }
+
+  .inputWrapper--labeled .input::placeholder {
+    color: transparent;
+    opacity: 0;
+  }
+
+  .inputWrapper--labeled .input:focus::placeholder {
+    color: var(--gls-color-text-muted);
+  }
+
+  .inputRoot > div {
+    position: relative;
+  }
+
+  .inputRoot:has(.input:focus) {
+    box-shadow: var(--gls-ring-focus);
+  }
+
+  .inputRoot--error,
+  .inputRoot--error:has(.input:focus) {
+    box-shadow: var(--gls-ring-default), var(--gls-ring-error);
+  }
+
+  .inputRoot:has(.input:disabled) {
+    cursor: not-allowed;
+    background-color: var(--gls-color-surface-muted);
+    border-color: var(--gls-color-border-default);
+  }
+
+  .input:disabled {
+    color: var(--gls-color-text-muted);
+    cursor: not-allowed;
+  }
+
+  .inputAdornment {
+    display: inline-flex;
+    align-items: center;
+    cursor: text;
+  }
+
+  .inputAdornmentPrefix {
+    padding-left: var(--gls-spacing-3);
+  }
+  .inputAdornmentSuffix {
+    padding-right: var(--gls-spacing-3);
+  }
+
+  .inputAdornment button {
+    /* accessibility requires interactive elements to be min 24px x 24px */
+    justify-content: center;
+    min-width: var(--gls-spacing-6);
+    /* accessibility requires interactive elements to be min 24px x 24px */
+    min-height: var(--gls-spacing-6);
+  }
+
+  .inputLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: var(--gls-color-text-label);
+    text-align: left;
+    pointer-events: none;
+    background: inherit;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: font-size, transform, line-height;
+  }
+
+  .inputWrapper--lg .inputLabel {
+    transform: translate(0.75rem, calc((3.375rem - 1.25rem) / 2));
+  }
+  .inputWrapper--sm .inputLabel {
+    transform: translate(0.75rem, calc((3rem - 1.25rem) / 2));
+  }
+
+  .inputWrapper--labeled.inputWrapper--sm .inputLabel {
+    top: -1px;
+  }
+
+  .inputRoot:has(.input:focus) .inputLabel,
+  .input:not(:placeholder-shown) + .inputLabel {
+    transform: translate(0.75rem, 0.5rem);
+  }
+  .inputRoot:has(.input:focus) .inputLabel,
+  .input:not(:placeholder-shown) + .inputLabel {
+    font-size: var(--gls-font-size-2);
+    line-height: 1rem;
+  }
+
+  .inputWrapper:has(.input:disabled) .inputLabel {
+    color: var(--gls-color-text-muted);
+  }
+
+  /* Helper text */
+  .inputHelperText {
+    margin: var(--gls-spacing-1) 0 0 0;
+    color: var(--gls-color-text-label);
+  }
+
+  .inputWrapper--lg .inputHelperText {
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-5);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+  .inputWrapper--sm .inputHelperText {
+    font-size: var(--gls-font-size-2);
+    line-height: var(--gls-line-height-4);
+    letter-spacing: var(--gls-letter-spacing-2);
+  }
+
+  .errorMessage {
+    color: var(--gls-color-text-error);
+  }
+
+  /* only add top padding if there is no helper text */
+  .inputRoot + .errorMessage {
+    margin: var(--gls-spacing-1) 0 0 0;
+  }
+
+  .errorMessage:empty {
+    margin: 0;
+  }
+
+  .inputWrapper--lg .errorMessage {
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-5);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+  .inputWrapper--sm .errorMessage {
+    font-size: var(--gls-font-size-2);
+    line-height: var(--gls-line-height-4);
+    letter-spacing: var(--gls-letter-spacing-2);
+  }
+}

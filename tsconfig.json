@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Enforce syntax that any bundler can erase 1:1 (no enum / namespace / parameter properties) */
+    "erasableSyntaxOnly": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+
+    /* Module system — bundler (Vite) owns resolution & emit */
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "bundler",
+
+    /* Emit — vite-plugin-dts emits .d.ts; tsc is typecheck-only */
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    /* TODO: enable — currently ~20 unchecked-index sites in tests & vite.config */
+    // "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* Aliases (kept in sync with Vite's tsconfigPaths resolver) */
+    "paths": {
+      "@components/*": ["./lib/components/*"],
+      "@icons": ["./lib/icons"],
+      "@icons/*": ["./lib/icons/*"],
+      "@utils/*": ["./lib/utils/*"]
+    },
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+
+    /* Strictness */
+    "strict": true,
+    /* Language & environment (Node 24 + modern evergreen browsers) */
+    "target": "ES2024",
+    "tsBuildInfoFile": ".tsbuildinfo",
+
+    /* Ambient types for the test runtime */
+    "types": ["vitest/globals", "@testing-library/jest-dom"]
+  },
+  "exclude": ["node_modules", "dist", "storybook-static", "coverage", ".rollup.cache"],
+  "include": ["**/*.ts", "**/*.tsx", "svg.d.ts"]
+}

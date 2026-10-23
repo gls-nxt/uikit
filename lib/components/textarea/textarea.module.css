@@ -1,0 +1,165 @@
+@layer uikit {
+  .textareaWrapper {
+    position: relative;
+    padding: initial;
+    margin: initial;
+    border: none;
+    isolation: isolate;
+  }
+
+  .textareaRoot {
+    position: relative;
+    box-sizing: border-box;
+    display: inline-flex;
+    max-width: 100%;
+    /* overflow: clip instead of hidden so the native resize handle is never clipped
+       by the border-radius; clip performs the same visual crop without creating a
+       scroll container that could interfere with the drag target */
+    overflow: clip;
+    background-color: var(--gls-color-surface-input);
+    border-radius: var(--gls-border-radius-lg);
+    box-shadow: var(--gls-ring-default);
+    transition:
+      border-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+  }
+
+  .textareaWrapper--fullWidth {
+    width: 100%;
+    & .textareaRoot {
+      width: 100%;
+    }
+  }
+
+  .textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-height: 86px;
+    padding: var(--gls-spacing-3);
+    font: inherit;
+    font-size: var(--gls-font-size-4);
+    line-height: var(--gls-line-height-4);
+    color: var(--gls-color-text-foreground);
+    letter-spacing: var(--gls-letter-spacing-4);
+    outline: 0;
+    background: none;
+    border: 0;
+  }
+
+  /* Resize variants */
+  .textarea--resizeNone {
+    resize: none;
+  }
+
+  .textarea--resizeVertical {
+    resize: vertical;
+  }
+
+  .textarea--resizeBoth {
+    resize: both;
+  }
+
+  /* Padding adjustment when labelled to make room for the floating label */
+  .textareaWrapper--labeled .textarea {
+    padding-top: calc(var(--gls-spacing-6) + 2px);
+    padding-bottom: var(--gls-spacing-2);
+  }
+
+  .textarea::placeholder {
+    color: var(--gls-color-text-muted);
+    opacity: 1;
+  }
+
+  .textareaWrapper--labeled .textarea::placeholder {
+    color: transparent;
+    opacity: 0;
+  }
+
+  .textareaWrapper--labeled .textarea:focus::placeholder {
+    color: var(--gls-color-text-muted);
+  }
+
+  /* Focus ring */
+  .textareaRoot:has(.textarea:focus) {
+    box-shadow: var(--gls-ring-focus);
+  }
+
+  /* Error state — resting: default ring + error ring */
+  .textareaRoot--error {
+    box-shadow: var(--gls-ring-default), var(--gls-ring-error);
+  }
+
+  /* Error state — focused: swap default ring for focus ring so the focus indicator
+     is never suppressed (WCAG 2.4.7 Focus Visible / 2.4.11 Focus Appearance) */
+  .textareaRoot--error:has(.textarea:focus) {
+    box-shadow: var(--gls-ring-focus), var(--gls-ring-error);
+  }
+
+  /* Disabled state */
+  .textareaRoot:has(.textarea:disabled) {
+    cursor: not-allowed;
+    background-color: var(--gls-color-surface-muted);
+    border-color: var(--gls-color-border-default);
+  }
+
+  .textarea:disabled {
+    color: var(--gls-color-text-muted);
+    cursor: not-allowed;
+    resize: none;
+  }
+
+  /* Floating label */
+  .textareaLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: var(--gls-color-text-label);
+    text-align: left;
+    pointer-events: none;
+    background: inherit;
+    /* Start at the top-left corner of the textarea (not vertically centered) */
+    transform: translate(0.75rem, 0.75rem);
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.2s;
+    transition-property: font-size, transform, line-height;
+  }
+
+  /* Label floats up and shrinks on focus or when the textarea has content */
+  .textareaRoot:has(.textarea:focus) .textareaLabel,
+  .textarea:not(:placeholder-shown) + .textareaLabel {
+    font-size: var(--gls-font-size-2);
+    line-height: 1rem;
+    transform: translate(0.75rem, 0.5rem);
+  }
+
+  .textareaWrapper:has(.textarea:disabled) .textareaLabel {
+    color: var(--gls-color-text-muted);
+  }
+
+  /* Helper text */
+  .textareaHelperText {
+    margin: var(--gls-spacing-1) 0 0 0;
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-5);
+    color: var(--gls-color-text-label);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+
+  /* Error message */
+  .errorMessage {
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-5);
+    color: var(--gls-color-text-error);
+    letter-spacing: var(--gls-letter-spacing-3);
+  }
+
+  .textareaRoot + .errorMessage {
+    margin: var(--gls-spacing-1) 0 0 0;
+  }
+
+  .errorMessage:empty {
+    margin: 0;
+  }
+}

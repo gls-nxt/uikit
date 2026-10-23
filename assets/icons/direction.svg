@@ -1,0 +1,35 @@
+<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    height="16.9706"
+    rx="3"
+    stroke="currentColor"
+    stroke-width="2"
+    transform="rotate(-44.9985 0 11.9995)"
+    width="16.9706"
+    y="11.9995"
+  />
+  <path
+    d="M9.30407 15.6486C9.30407 15.6486 8.95849 12.8759 9.7901 11.8038C11.0796 10.1414 14.8134 9.81105 14.8134 9.81105"
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-width="2"
+  />
+  <line
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-width="2"
+    x1="15.432"
+    x2="13.075"
+    y1="9.99072"
+    y2="7.6337"
+  />
+  <line
+    stroke="currentColor"
+    stroke-linecap="round"
+    stroke-width="2"
+    x1="15.9033"
+    x2="13.5463"
+    y1="10.463"
+    y2="12.8201"
+  />
+</svg>

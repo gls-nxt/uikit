@@ -1,0 +1,165 @@
+@layer uikit {
+  .button {
+    display: inline-flex;
+    gap: var(--gls-spacing-2);
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition-timing-function: ease-out;
+    transition-duration: 0.2s;
+    transition-property: color, background-color, outline;
+  }
+  .button:focus-visible {
+    outline: 1.5px solid var(--gls-color-blue-200);
+    outline-offset: 1.5px;
+  }
+  .button--loading,
+  .button:disabled {
+    cursor: not-allowed;
+  }
+
+  .button--primary {
+    color: var(--gls-color-text-inverted);
+    background-color: var(--gls-color-surface-primary);
+  }
+  .button--primary:hover {
+    background-color: var(--gls-color-surface-primary-hover);
+  }
+  .button--primary.button--loading,
+  .button--primary:disabled {
+    color: var(--gls-color-text-muted);
+    background-color: var(--gls-color-surface-muted);
+  }
+
+  .button--secondary {
+    color: var(--gls-color-text-foreground);
+    background-color: var(--gls-color-surface-secondary);
+  }
+  .button--secondary:hover {
+    background-color: var(--gls-color-surface-secondary-hover);
+  }
+  .button--secondary.button--loading,
+  .button--secondary:disabled {
+    color: var(--gls-color-text-muted);
+    background-color: var(--gls-color-surface-secondary);
+  }
+
+  .button--tertiary {
+    color: var(--gls-color-text-foreground);
+    background-color: var(--gls-color-surface-default);
+    border: 1px solid var(--gls-color-border-default);
+  }
+  .button--tertiary:hover {
+    background-color: var(--gls-color-surface-default-hover);
+  }
+  .button--tertiary.button--loading,
+  .button--tertiary:disabled {
+    color: var(--gls-color-text-muted);
+    background-color: var(--gls-color-surface-muted);
+  }
+
+  .button--destructive {
+    color: var(--gls-color-text-error);
+    background-color: var(--gls-color-surface-error);
+  }
+  .button--destructive:hover {
+    background-color: var(--gls-color-surface-error-hover);
+  }
+  .button--destructive.button--loading,
+  .button--destructive:disabled {
+    color: var(--gls-color-text-error-muted);
+    background-color: var(--gls-color-surface-error);
+  }
+
+  .button--blurred {
+    color: var(--gls-color-text-inverted);
+    background-color: var(--gls-color-surface-blurred);
+    backdrop-filter: blur(var(--gls-blur-md));
+  }
+  .button--blurred:hover:not(:disabled) {
+    background-color: var(--gls-color-surface-blurred-hover);
+  }
+  .button--blurred.button--loading,
+  .button--blurred:disabled {
+    color: var(--gls-color-shades-white-light);
+  }
+
+  .button--lg {
+    max-height: 3.375rem;
+    padding: calc((var(--gls-spacing-4) * 3 + var(--gls-spacing-5)) / 4) var(--gls-spacing-8);
+    font-size: var(--gls-font-size-5);
+    line-height: 1.25rem;
+    letter-spacing: var(--gls-letter-spacing-5);
+    border-radius: var(--gls-border-radius-lg);
+  }
+  .button--md {
+    max-height: 3rem;
+    padding: calc(var(--gls-spacing-7) / 2) var(--gls-spacing-8);
+    font-size: var(--gls-font-size-4);
+    line-height: 1.25rem;
+    letter-spacing: var(--gls-letter-spacing-4);
+    border-radius: var(--gls-border-radius-lg);
+  }
+  .button--sm {
+    gap: calc(var(--gls-spacing-1) * 1.5);
+    max-height: 2.375rem;
+    padding: calc(var(--gls-spacing-11) / 4) var(--gls-spacing-5);
+    font-size: var(--gls-font-size-3);
+    line-height: 1rem;
+    letter-spacing: var(--gls-letter-spacing-3);
+    border-radius: var(--gls-border-radius-md);
+  }
+  .button--xs {
+    max-height: 1.875rem;
+    padding: var(--gls-spacing-2) var(--gls-spacing-4);
+    font-size: var(--gls-font-size-2);
+    line-height: 0.875rem;
+    letter-spacing: var(--gls-letter-spacing-2);
+    border-radius: var(--gls-border-radius-sm);
+  }
+
+  .button--fullWidth {
+    width: 100%;
+  }
+
+  .buttonIcon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:empty {
+      display: none;
+    }
+  }
+  .buttonIcon--lg {
+    &,
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .buttonIcon--md {
+    &,
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  .buttonIcon--sm {
+    &,
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .buttonIcon--xs {
+    &,
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

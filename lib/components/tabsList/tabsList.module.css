@@ -1,0 +1,27 @@
+@layer uikit {
+  /* Tabs List */
+  .tabs-list {
+    display: flex;
+    gap: var(--gls-spacing-1);
+    justify-content: center;
+    width: fit-content;
+    max-height: 68px;
+    padding: var(--gls-spacing-1);
+
+    background-color: var(--gls-color-surface-secondary);
+    border-radius: var(--gls-border-radius-lg);
+  }
+
+  /* Tabs List – Size Variants */
+  .tabs-list--small {
+    border-radius: var(--gls-border-radius-md);
+  }
+
+  .tabs-list--large {
+    border-radius: var(--gls-border-radius-lg);
+  }
+
+  .tabs-list--full-width {
+    width: 100%;
+  }
+}

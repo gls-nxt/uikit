@@ -1,0 +1,19 @@
+:root {
+  /**
+   * @tokens LetterSpacing
+   * @presenter LetterSpacing
+   */
+
+  --gls-letter-spacing-1: -0.00625rem; /* -0.1px */
+  --gls-letter-spacing-2: -0.0075rem; /* -0.12px */
+  --gls-letter-spacing-3: -0.00875rem; /* -0.14px */
+  --gls-letter-spacing-4: -0.01rem; /* -0.16px */
+  --gls-letter-spacing-5: -0.01125rem; /* -0.18px */
+  --gls-letter-spacing-6: -0.0125rem; /* -0.2px */
+  --gls-letter-spacing-7: -0.0175rem; /* -0.28px */
+  --gls-letter-spacing-8: -0.01875rem; /* -0.3px */
+  --gls-letter-spacing-9: -0.02125rem; /* -0.34px */
+  --gls-letter-spacing-10: -0.03rem; /* -0.48px */
+  --gls-letter-spacing-11: -0.0425rem; /* -0.68px */
+  --gls-letter-spacing-12: -0.05375rem; /* -0.86px */
+}

@@ -1,0 +1,59 @@
+@layer uikit {
+  .panel {
+    box-sizing: border-box;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: min(20rem, calc(100vw - var(--gls-spacing-8)));
+    max-height: min(28rem, calc(100vh - var(--gls-spacing-8)));
+    padding: var(--gls-spacing-3);
+    overflow: hidden;
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-3);
+    color: var(--gls-color-text-foreground);
+    letter-spacing: var(--gls-letter-spacing-3);
+    user-select: auto;
+    background-color: var(--gls-color-surface-card);
+    border: 1px solid var(--gls-color-border-default);
+    border-radius: var(--gls-border-radius-lg);
+    box-shadow: var(--gls-shadow-md);
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .heading {
+    padding: var(--gls-spacing-2) var(--gls-spacing-1) var(--gls-spacing-3);
+    font-size: var(--gls-font-size-4);
+    font-weight: var(--gls-font-weight-medium);
+    line-height: var(--gls-line-height-4);
+  }
+
+  .body {
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .item {
+    gap: var(--gls-spacing-1);
+    padding: var(--gls-spacing-1) 0;
+  }
+
+  .footer {
+    padding-top: var(--gls-spacing-2);
+    margin-top: var(--gls-spacing-2);
+    border-top: 1px solid var(--gls-color-divider-default);
+  }
+
+  .resetButton {
+    justify-content: flex-start;
+    padding: var(--gls-spacing-2) var(--gls-spacing-1);
+    text-align: left;
+    background-color: transparent;
+    border: none;
+  }
+
+  .resetButton:hover {
+    background-color: var(--gls-color-surface-card-hover);
+  }
+}

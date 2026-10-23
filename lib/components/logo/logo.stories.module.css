@@ -1,0 +1,12 @@
+.story-container {
+  display: block;
+  width: 182px;
+  height: 60px;
+  background: var(--gls-color-surface-default);
+}
+
+@media (prefers-color-scheme: dark) {
+  .allow-dark-mode {
+    background: var(--gls-color-brand-blue);
+  }
+}

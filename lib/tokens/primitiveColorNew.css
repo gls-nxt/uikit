@@ -1,0 +1,181 @@
+:root {
+  /**
+   * @tokens Primitive Colors
+   * @presenter Color
+   */
+  /* base */
+  --gls-new-color-base-black: #191919;
+  --gls-new-color-base-white: #ffffff;
+
+  /* GLS brand colors */
+  --gls-new-color-brand-gls-blue: #061ab1;
+  --gls-new-color-brand-gls-yellow: #ffd100;
+
+  /* blue shades */
+  --gls-new-color-blue-100: #f7f9ff;
+  --gls-new-color-blue-200: #edf2ff;
+  --gls-new-color-blue-300: #dee6ff;
+  --gls-new-color-blue-400: #c4d1ff;
+  --gls-new-color-blue-500: #8692db;
+  --gls-new-color-blue-600: #3242c0;
+  --gls-new-color-blue-700: #061ab1;
+  --gls-new-color-blue-800: #05168f;
+  --gls-new-color-blue-900: #04106e;
+  --gls-new-color-blue-1000: #030c54;
+  --gls-new-color-blue-1100: #02083f;
+  --gls-new-color-blue-1200: #02052e;
+
+  /* yellow shades */
+  --gls-new-color-yellow-100: #fffdf0;
+  --gls-new-color-yellow-200: #fff9d6;
+  --gls-new-color-yellow-300: #fff2a4;
+  --gls-new-color-yellow-400: #ffe96e;
+  --gls-new-color-yellow-500: #ffdd35;
+  --gls-new-color-yellow-600: #ffd100;
+  --gls-new-color-yellow-700: #e3c200;
+  --gls-new-color-yellow-800: #bfa000;
+  --gls-new-color-yellow-900: #9c8100;
+  --gls-new-color-yellow-1000: #786200;
+  --gls-new-color-yellow-1100: #554600;
+  --gls-new-color-yellow-1200: #3e3300;
+
+  /* gray shades */
+  --gls-new-color-gray-100: #fcfcfd;
+  --gls-new-color-gray-200: #f2f4f7;
+  --gls-new-color-gray-300: #e4e7ec;
+  --gls-new-color-gray-400: #d0d5dd;
+  --gls-new-color-gray-500: #98a2b3;
+  --gls-new-color-gray-600: #667085;
+  --gls-new-color-gray-700: #475467;
+  --gls-new-color-gray-800: #344054;
+  --gls-new-color-gray-900: #1d2939;
+  --gls-new-color-gray-1000: #101828;
+  --gls-new-color-gray-1100: #0c111d;
+  --gls-new-color-gray-1200: #09101c;
+
+  /* red shades */
+  --gls-new-color-red-100: #fff5f5;
+  --gls-new-color-red-200: #ffe1e1;
+  --gls-new-color-red-300: #ffc7c7;
+  --gls-new-color-red-400: #ffaaaa;
+  --gls-new-color-red-500: #ff8a8a;
+  --gls-new-color-red-600: #ff6161;
+  --gls-new-color-red-700: #f23b3b;
+  --gls-new-color-red-800: #d72d2d;
+  --gls-new-color-red-900: #b82525;
+  --gls-new-color-red-1000: #8c1c1c;
+  --gls-new-color-red-1100: #661414;
+  --gls-new-color-red-1200: #4a0e0e;
+
+  /* orange shades */
+  --gls-new-color-orange-100: #fff5eb;
+  --gls-new-color-orange-200: #ffe3c2;
+  --gls-new-color-orange-300: #ffcd99;
+  --gls-new-color-orange-400: #ffb770;
+  --gls-new-color-orange-500: #ff9e47;
+  --gls-new-color-orange-600: #f5821f;
+  --gls-new-color-orange-700: #e66d00;
+  --gls-new-color-orange-800: #c85a00;
+  --gls-new-color-orange-900: #a44800;
+  --gls-new-color-orange-1000: #813600;
+  --gls-new-color-orange-1100: #5a2400;
+  --gls-new-color-orange-1200: #421900;
+
+  /* green shades */
+  --gls-new-color-green-100: #f3fbf5;
+  --gls-new-color-green-200: #dcf4e5;
+  --gls-new-color-green-300: #c4ecd7;
+  --gls-new-color-green-400: #a7e2c5;
+  --gls-new-color-green-500: #86d6af;
+  --gls-new-color-green-600: #61c896;
+  --gls-new-color-green-700: #39b87e;
+  --gls-new-color-green-800: #239e69;
+  --gls-new-color-green-900: #1e8057;
+  --gls-new-color-green-1000: #156142;
+  --gls-new-color-green-1100: #0d422c;
+  --gls-new-color-green-1200: #082e1f;
+
+  /* blue dark shades */
+  --gls-new-color-blue-dark-100: #06071a;
+  --gls-new-color-blue-dark-200: #080a2a;
+  --gls-new-color-blue-dark-300: #0b114c;
+  --gls-new-color-blue-dark-400: #0d1a73;
+  --gls-new-color-blue-dark-500: #0f28a3;
+  --gls-new-color-blue-dark-600: #061ab1;
+  --gls-new-color-blue-dark-700: #1238d2;
+  --gls-new-color-blue-dark-800: #4f6cff;
+  --gls-new-color-blue-dark-900: #89a0ff;
+  --gls-new-color-blue-dark-1000: #b8c6ff;
+  --gls-new-color-blue-dark-1100: #dde6ff;
+  --gls-new-color-blue-dark-1200: #f2f5ff;
+
+  /* yellow dark shades */
+  --gls-new-color-yellow-dark-100: #171400;
+  --gls-new-color-yellow-dark-200: #1f1a00;
+  --gls-new-color-yellow-dark-300: #2b2400;
+  --gls-new-color-yellow-dark-400: #3a3000;
+  --gls-new-color-yellow-dark-500: #4b3f00;
+  --gls-new-color-yellow-dark-600: #5d4f00;
+  --gls-new-color-yellow-dark-700: #ffd100;
+  --gls-new-color-yellow-dark-800: #e3c000;
+  --gls-new-color-yellow-dark-900: #f5e7a6;
+  --gls-new-color-yellow-dark-1000: #faf1c8;
+  --gls-new-color-yellow-dark-1100: #fdf8e5;
+  --gls-new-color-yellow-dark-1200: #fffdf2;
+
+  /* gray dark shades */
+  --gls-new-color-gray-dark-100: #111113;
+  --gls-new-color-gray-dark-200: #18191b;
+  --gls-new-color-gray-dark-300: #212225;
+  --gls-new-color-gray-dark-400: #272a2d;
+  --gls-new-color-gray-dark-500: #2e3135;
+  --gls-new-color-gray-dark-600: #363a3f;
+  --gls-new-color-gray-dark-700: #43484e;
+  --gls-new-color-gray-dark-800: #5a6169;
+  --gls-new-color-gray-dark-900: #696e77;
+  --gls-new-color-gray-dark-1000: #777b84;
+  --gls-new-color-gray-dark-1100: #afb3ba;
+  --gls-new-color-gray-dark-1200: #edeef0;
+
+  /* red dark shades */
+  --gls-new-color-red-dark-100: #1c0d0d;
+  --gls-new-color-red-dark-200: #330f11;
+  --gls-new-color-red-dark-300: #4a1316;
+  --gls-new-color-red-dark-400: #63181c;
+  --gls-new-color-red-dark-500: #7c1e23;
+  --gls-new-color-red-dark-600: #96252a;
+  --gls-new-color-red-dark-700: #b52c31;
+  --gls-new-color-red-dark-800: #d83a40;
+  --gls-new-color-red-dark-900: #f3a3a8;
+  --gls-new-color-red-dark-1000: #f6c8cb;
+  --gls-new-color-red-dark-1100: #f9dee0;
+  --gls-new-color-red-dark-1200: #fdf5e9;
+
+  /* orange dark shades */
+  --gls-new-color-orange-dark-100: #1a1300;
+  --gls-new-color-orange-dark-200: #241b00;
+  --gls-new-color-orange-dark-300: #352700;
+  --gls-new-color-orange-dark-400: #473300;
+  --gls-new-color-orange-dark-500: #5c3f00;
+  --gls-new-color-orange-dark-600: #714c00;
+  --gls-new-color-orange-dark-700: #f76b15;
+  --gls-new-color-orange-dark-800: #ff801f;
+  --gls-new-color-orange-dark-900: #ffd9b3;
+  --gls-new-color-orange-dark-1000: #ffe7c9;
+  --gls-new-color-orange-dark-1100: #fff1e2;
+  --gls-new-color-orange-dark-1200: #fff8f2;
+
+  /* green dark shades */
+  --gls-new-color-green-dark-100: #0c140e;
+  --gls-new-color-green-dark-200: #112018;
+  --gls-new-color-green-dark-300: #163023;
+  --gls-new-color-green-dark-400: #1c3f2c;
+  --gls-new-color-green-dark-500: #235138;
+  --gls-new-color-green-dark-600: #2b6546;
+  --gls-new-color-green-dark-700: #30a46c;
+  --gls-new-color-green-dark-800: #33b074;
+  --gls-new-color-green-dark-900: #b5eacf;
+  --gls-new-color-green-dark-1000: #cdefe0;
+  --gls-new-color-green-dark-1100: #e3f7ef;
+  --gls-new-color-green-dark-1200: #f4fef8;
+}

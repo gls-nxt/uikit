@@ -1,0 +1,211 @@
+@layer uikit {
+  .tooltip-content {
+    z-index: 50;
+
+    display: none;
+    flex-direction: column;
+    gap: var(--gls-spacing-1);
+    align-items: center;
+    justify-content: center;
+    padding: var(--gls-spacing-2) var(--gls-spacing-3);
+    font-size: var(--gls-font-size-2);
+    line-height: var(--gls-line-height-2); /* 133.333% */
+    color: var(--gls-color-text-inverted);
+    text-align: center;
+    letter-spacing: var(--gls-letter-spacing-2);
+    user-select: none;
+    background-color: var(--gls-color-shades-black);
+    border-radius: var(--gls-border-radius-md);
+
+    transform-origin: var(--radix-tooltip-content-transform-origin);
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+  }
+
+  /* only show tooltips on devices that have inputs that can hover */
+  @media not all and (hover: none) {
+    .tooltip-content {
+      display: flex;
+    }
+  }
+
+  .tooltip-content--sm {
+    max-width: 100px;
+  }
+
+  .tooltip-content--md {
+    max-width: 150px;
+  }
+
+  .tooltip-content--lg {
+    max-width: 250px;
+  }
+
+  .tooltip-heading {
+    width: 100%;
+    font-size: var(--gls-font-size-2);
+    font-weight: 500;
+    line-height: var(--gls-line-height-2);
+    text-align: left;
+    letter-spacing: var(--gls-letter-spacing-2);
+  }
+
+  .tooltip-content[data-side="top"] {
+    animation-name: slideUp;
+  }
+  .tooltip-content[data-side="bottom"] {
+    animation-name: slideDown;
+  }
+
+  .tooltip-content[data-side="left"] {
+    animation-name: slideLeft;
+  }
+
+  .tooltip-content[data-side="right"] {
+    animation-name: slideRight;
+  }
+
+  .tooltip-content[data-state="closed"][data-side="top"] {
+    animation-name: close;
+    animation-duration: 0.2s;
+  }
+
+  .tooltip-content[data-state="closed"][data-side="bottom"] {
+    animation-name: close;
+    animation-duration: 0.2s;
+  }
+
+  .tooltip-content[data-state="closed"][data-side="left"] {
+    animation-name: close;
+    animation-duration: 0.2s;
+  }
+
+  .tooltip-content[data-state="closed"][data-side="right"] {
+    animation-name: close;
+    animation-duration: 0.2s;
+  }
+
+  .tooltip-arrow {
+    --arrow-padding: 8px;
+    --arrow-offset: -10px;
+    position: absolute;
+    color: var(--gls-color-surface-inverted);
+  }
+
+  .tooltip-content[data-side="top"] .tooltip-arrow {
+    bottom: var(--arrow-offset);
+  }
+
+  .tooltip-content[data-side="top"][data-align="start"] .tooltip-arrow {
+    left: var(--arrow-padding);
+  }
+
+  .tooltip-content[data-side="top"][data-align="end"] .tooltip-arrow {
+    right: var(--arrow-padding);
+  }
+
+  /* Side Left */
+  .tooltip-content[data-side="left"] .tooltip-arrow {
+    right: var(--arrow-offset);
+    rotate: -90deg;
+  }
+
+  .tooltip-content[data-side="left"][data-align="start"] .tooltip-arrow {
+    top: var(--arrow-padding);
+  }
+
+  .tooltip-content[data-side="left"][data-align="end"] .tooltip-arrow {
+    bottom: var(--arrow-padding);
+  }
+
+  /* Side Right */
+  .tooltip-content[data-side="right"] .tooltip-arrow {
+    left: var(--arrow-offset);
+    rotate: 90deg;
+  }
+
+  .tooltip-content[data-side="right"][data-align="start"] .tooltip-arrow {
+    top: var(--arrow-padding);
+  }
+
+  .tooltip-content[data-side="right"][data-align="end"] .tooltip-arrow {
+    bottom: var(--arrow-padding);
+  }
+
+  /* Bottom  */
+  .tooltip-content[data-side="bottom"] .tooltip-arrow {
+    top: var(--arrow-offset);
+    rotate: 180deg;
+  }
+
+  .tooltip-content[data-side="bottom"][data-align="start"] .tooltip-arrow {
+    left: var(--arrow-padding);
+  }
+
+  .tooltip-content[data-side="bottom"][data-align="end"] .tooltip-arrow {
+    right: var(--arrow-padding);
+  }
+
+  @keyframes close {
+    from {
+      opacity: 1;
+      scale: 1;
+    }
+    to {
+      opacity: 0;
+      scale: 0.95;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+      scale: 0.9;
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      scale: 0.9;
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      scale: 0.9;
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}

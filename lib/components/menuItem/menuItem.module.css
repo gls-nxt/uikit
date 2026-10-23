@@ -1,0 +1,45 @@
+@layer uikit {
+  .menuItem {
+    display: flex;
+    gap: var(--gls-spacing-2);
+    align-items: center;
+    height: 1.625rem;
+    font-weight: 400;
+    color: var(--gls-color-text-foreground);
+    letter-spacing: var(--gls-letter-spacing-3);
+    cursor: pointer;
+    outline: none;
+    background-color: var(--gls-color-surface-default);
+    transition: background-color 0.2s ease;
+  }
+  .menuItem--sm {
+    padding: calc(1.5 * var(--gls-spacing-1)) var(--gls-spacing-3);
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-3);
+  }
+  .menuItem--lg {
+    padding: var(--gls-spacing-2) var(--gls-spacing-4);
+    font-size: var(--gls-font-size-4);
+    line-height: var(--gls-line-height-4);
+  }
+  .menuItem:hover {
+    background-color: var(--gls-color-surface-default-hover);
+  }
+  .menuItem:not(:hover):focus-visible {
+    outline: 2px solid var(--gls-color-ring-focus);
+    outline-offset: -2px;
+  }
+  .menuItem[data-disabled] {
+    color: var(--gls-color-text-muted);
+    cursor: not-allowed;
+    background-color: var(--gls-color-surface-default);
+  }
+  .menuItemAdornment {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .menuItemAdornment--right {
+    margin-left: auto;
+  }
+}

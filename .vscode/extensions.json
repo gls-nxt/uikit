@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "vunguyentuan.vscode-postcss",
+    "csstools.postcss",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

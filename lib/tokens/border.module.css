@@ -1,0 +1,15 @@
+:root {
+  --gls-color-border-default: var(--gls-color-neutrals-200);
+  --gls-color-border-light: var(--gls-color-neutrals-100);
+  --gls-color-border-inverted: var(--gls-color-shades-white);
+  --gls-color-border-muted: var(--gls-color-neutrals-400);
+  --gls-color-border-primary: var(--gls-color-blue-500);
+  --gls-color-border-active: var(--gls-color-shades-black);
+  --gls-color-border-success: var(--gls-color-green-500);
+  --gls-color-border-warning: var(--gls-color-yellow-600);
+  --gls-color-border-error: var(--gls-color-red-500);
+  --gls-color-ring-focus: var(--gls-color-blue-200);
+
+  /* Divider Color */
+  --gls-color-divider-default: var(--gls-color-neutrals-200);
+}

@@ -1,0 +1,23 @@
+@layer uikit {
+  .menuHeading {
+    box-sizing: border-box;
+    font-weight: 400;
+    color: var(--gls-color-text-light);
+    letter-spacing: var(--gls-letter-spacing-3);
+    cursor: default;
+    background-color: var(--gls-color-surface-default);
+    border-color: var(--gls-color-border-default);
+    border-style: solid;
+    border-width: 1px 0;
+  }
+  .menuHeading--sm {
+    padding: calc(var(--gls-spacing-5) / 2) var(--gls-spacing-3);
+    font-size: var(--gls-font-size-3);
+    line-height: var(--gls-line-height-2);
+  }
+  .menuHeading--lg {
+    padding: calc(var(--gls-spacing-5) / 2) var(--gls-spacing-4);
+    font-size: var(--gls-font-size-4);
+    line-height: var(--gls-line-height-4);
+  }
+}

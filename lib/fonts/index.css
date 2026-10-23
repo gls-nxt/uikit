@@ -1,0 +1,42 @@
+/* ascent-override is needed to fix cross-browser rendering inaccuracies of WEB font */
+/* Fonts are located in the same directory as this CSS file */
+
+@font-face {
+  font-family: "Newson";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./NewsonGLS-WEB-Regular.woff2") format("woff2");
+  font-display: swap;
+  ascent-override: 100%;
+}
+
+@font-face {
+  font-family: "Newson";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url("./NewsonGLS-WEB-Medium.woff2") format("woff2"),
+    url("./NewsonGLS-DTP-Medium.woff2") format("woff2");
+  font-display: swap;
+  ascent-override: 100%;
+}
+
+@font-face {
+  font-family: "Newson";
+  font-style: normal;
+  font-weight: 600;
+  src:
+    url("./NewsonGLS-WEB-Semibold.woff2") format("woff2"),
+    url("./NewsonGLS-DTP-Semibold.woff2") format("woff2");
+  font-display: swap;
+  ascent-override: 100%;
+}
+
+@font-face {
+  font-family: "Newson";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./NewsonGLS-WEB-Bold.woff2") format("woff2");
+  font-display: swap;
+  ascent-override: 100%;
+}

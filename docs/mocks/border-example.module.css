@@ -1,0 +1,19 @@
+:root {
+  /**
+   * @tokens Border
+   * @presenter Border
+   */
+  --gls-color-border-default: 1px solid var(--gls-color-neutrals-200);
+  --gls-color-border-light: 1px solid var(--gls-color-neutrals-100);
+  --gls-color-border-inverted: 1px solid var(--gls-color-shades-white);
+  --gls-color-border-muted: 1px solid var(--gls-color-neutrals-400);
+  --gls-color-border-primary: 1px solid var(--gls-color-blue-500);
+  --gls-color-border-active: 1px solid var(--gls-color-shades-black);
+  --gls-color-border-success: 1px solid var(--gls-color-green-500);
+  --gls-color-border-warning: 1px solid var(--gls-color-yellow-600);
+  --gls-color-border-error: 1px solid var(--gls-color-red-500);
+
+  /* Divider Color */
+  --gls-color-divider-default: 1px solid var(--gls-color-neutrals-200);
+  --gls-color-ring-focus: 1px solid var(--gls-color-blue-200);
+}

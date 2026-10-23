@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { DesignTokenDocBlock } from 'storybook-design-token';
+
+<Meta title="Design System/FontFamily" />
+
+## FontFamily
+
+The Newson font ships with the package. You do not need to host the font files separately in consuming projects.
+
+### Using the CSS font-faces
+
+You can import the font as a CSS file in your project, similar to the design tokens:
+
+```js
+// e.g. app/layout.tsx
+import '@gls-nxt/uikit/fonts';
+```
+
+Import it once near your application root. That makes the packaged `@font-face` rules available globally.
+
+```css
+body {
+  font-family: 'Newson', sans-serif;
+}
+```
+
+This works in apps such as Next.js, Vite, and Storybook as long as the package CSS is included once.
+
+### Optimizing performance using link preload
+
+To start loading the font files earlier, add `<PreloadFonts />` to your document head.
+
+```jsx
+// e.g. app/layout.tsx
+import { PreloadFonts } from '@gls-nxt/uikit';
+
+export default function Layout() {
+  return (
+    <html>
+      <head>
+        <PreloadFonts />
+      </head>
+      <body>{/* Your app content */}</body>
+    </html>
+  );
+}
+```
+
+Use both pieces together:
+
+```tsx
+import { PreloadFonts } from '@gls-nxt/uikit';
+import '@gls-nxt/uikit/fonts';
+```

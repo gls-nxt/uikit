@@ -1,0 +1,183 @@
+@layer uikit {
+  .dialog {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: calc(100dvh - var(--gls-spacing-8));
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    background-color: var(--gls-color-surface-default);
+    border: 1px solid var(--gls-color-border-default);
+    border-radius: var(--gls-border-radius-xl) var(--gls-border-radius-xl) 0 0;
+    box-shadow: var(--gls-shadow-md);
+    transform: none;
+  }
+
+  .dialog[open] {
+    display: flex;
+    /* iOS Safari requires an explicit height for flex: 1 children to compute correctly.
+       Without this, flex children (dialogContent/dialogBody) collapse to 0 height.
+       max-height still caps the dialog for long content. */
+    height: fit-content;
+    animation: mobileContentShow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dialog::backdrop {
+    background-color: var(--gls-color-background-overlay);
+    animation: overlayShow 0.2s;
+  }
+
+  @media (--medium) {
+    .dialog {
+      /*
+       * Centering via margin:auto instead of transform:translate(-50%,-50%).
+       * Playwright's bundled WebKit has a bug where document.elementFromPoint() does not
+       * correctly account for CSS transforms on top-layer (showModal) elements, causing
+       * synthetic click events to target the dialog itself rather than inner elements.
+       * margin:auto on a position:fixed element with inset:0 achieves identical visual
+       * centering with no geometric transform, which fixes the WebKit hit-test issue.
+       */
+      inset: 0;
+      width: 90vw;
+      height: fit-content;
+      max-height: 85vh;
+      margin: auto;
+      border-radius: var(--gls-border-radius-xl);
+    }
+
+    .dialog[open] {
+      animation: contentShow 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .dialog--sm {
+      max-width: 18rem;
+    }
+
+    .dialog--md {
+      max-width: 38rem;
+    }
+
+    .dialog--lg {
+      max-width: 56rem;
+    }
+
+    .dialog--xl {
+      max-width: 75rem;
+    }
+  }
+
+  .dialogClose {
+    position: absolute;
+    top: var(--gls-spacing-5);
+    right: var(--gls-spacing-5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    color: var(--gls-color-text-foreground);
+    cursor: pointer;
+    background: var(--gls-color-surface-secondary);
+    border: none;
+    border-radius: var(--gls-border-radius-full);
+  }
+
+  .dialogClose:hover {
+    background: var(--gls-color-surface-secondary-hover);
+  }
+
+  .dialogHeader {
+    padding: var(--gls-spacing-6);
+    padding-bottom: 0;
+  }
+
+  .dialogTitle {
+    margin: 0;
+    font-size: var(--gls-font-size-8);
+    font-weight: 600;
+    line-height: calc(4 / 3);
+    letter-spacing: 0;
+  }
+
+  .dialogDescription {
+    margin: var(--gls-spacing-2) 0 0;
+  }
+
+  .dialogContent {
+    /* flex: 1 = flex: 1 1 0% — on iOS Safari, 0% of an indefinite parent height resolves
+       to 0px, collapsing the element. flex: 1 1 auto uses the intrinsic content height as
+       the basis so Safari has a concrete size to work from. */
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  .dialogBody {
+    flex: 1 1 auto;
+    min-height: 0;
+    padding: var(--gls-spacing-6);
+    overflow-y: auto;
+  }
+
+  .dialogFooter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gls-spacing-3);
+    justify-content: flex-end;
+    padding: 0 var(--gls-spacing-6) var(--gls-spacing-6);
+  }
+
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes contentShow {
+    0% {
+      opacity: 0;
+      transform: translateY(-20%);
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mobileContentShow {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

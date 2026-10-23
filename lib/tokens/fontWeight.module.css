@@ -1,0 +1,11 @@
+:root {
+  /**
+   * @tokens FontWeight
+   * @presenter FontWeight
+   */
+
+  --gls-font-weight-regular: 400;
+  --gls-font-weight-medium: 500;
+  --gls-font-weight-semibold: 600;
+  --gls-font-weight-bold: 700;
+}

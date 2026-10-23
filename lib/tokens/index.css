@@ -1,0 +1,39 @@
+/**
+ * CSS Layer Order Declaration
+ *
+ * IMPORTANT: This layer order declaration must appear BEFORE any actual @layer definitions
+ * in the bundled CSS, otherwise the layer ordering will not work correctly.
+ *
+ * Why it's defined here in the component library (not in consuming apps):
+ * - Component CSS modules are imported directly with their respective components in .variants.ts files
+ * - When apps build, these styles get bundled and Next.js/bundlers use dynamic ordering for <link> tags in <head>
+ * - We cannot guarantee that a layer order declaration in the consuming app will appear before our component styles
+ * - By declaring the order here, we ensure it's bundled with our component styles in the correct position
+ *
+ * Layer hierarchy (from lowest to highest specificity):
+ * - reset: Browser resets and normalize styles
+ * - uikit: Component library styles (this library's components)
+ * - web: Application-specific styles from consuming apps
+ * - highest: Utility classes and overrides with highest priority
+ *
+ * ⚠️  WARNING: Do not change this order without coordinating with all teams using this component library.
+ * Changing the order can break existing style overrides in consuming applications.
+ */
+@layer reset, uikit, web, highest;
+
+@import "./blur.module.css";
+@import "./border.module.css";
+@import "./borderRadius.module.css";
+@import "./fontFamily.module.css";
+@import "./fontSize.module.css";
+@import "./fontWeight.module.css";
+@import "./letterSpacing.module.css";
+@import "./lineHeight.module.css";
+@import "./iconColor.module.css";
+@import "./iconSize.module.css";
+@import "./primitiveColor.module.css";
+@import "./shadow.module.css";
+@import "./sizes.module.css";
+@import "./spacing.module.css";
+@import "./surfaceColor.module.css";
+@import "./textColor.module.css";

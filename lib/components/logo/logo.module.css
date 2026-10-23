@@ -1,0 +1,28 @@
+@layer uikit {
+  .logo {
+    display: block;
+  }
+
+  .logo .dot {
+    fill: var(--gls-color-brand-yellow);
+  }
+
+  /* Color variants */
+  .logo--theme-light .letters {
+    fill: var(--gls-color-text-inverted);
+  }
+
+  .logo--theme-dark .letters {
+    fill: var(--gls-color-brand-blue);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .logo--allow-dark-mode.logo--theme-light .letters {
+      fill: var(--gls-color-brand-blue);
+    }
+
+    .logo--allow-dark-mode.logo--theme-dark .letters {
+      fill: var(--gls-color-text-inverted);
+    }
+  }
+}

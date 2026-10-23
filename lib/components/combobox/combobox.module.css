@@ -1,0 +1,33 @@
+@layer uikit {
+  .list {
+    width: var(--radix-popover-trigger-width);
+    max-height: 232px;
+  }
+
+  .listAutoWidth {
+    width: auto;
+    min-width: var(--radix-popover-trigger-width);
+  }
+
+  .item {
+    display: flex;
+    gap: var(--gls-spacing-3);
+    align-items: center;
+    width: 100%;
+  }
+
+  .suffix {
+    margin-left: auto;
+  }
+
+  .popoverContent {
+    z-index: 1100;
+  }
+
+  .contentWithFooter {
+    & > div {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}

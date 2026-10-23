@@ -1,0 +1,199 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorPalette } from './components/ColorPalette';
+
+<Meta title="Design System/Colors" />
+
+# Color Palette
+
+Our Color Palette is the base of our design system. It is used to create a consistent look and feel across our products. For more in-depth documentation, you can check out the [Unity Design System](https://www.figma.com/design/rUvwRrvXRta7egY4ju7JQm/Unity-Design-System?m=auto&node-id=708-14768&t=MAVfvE0QDak2RIh8-1).
+
+## Brand Colors
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--gls-color-brand-blue',
+    '--gls-color-brand-blue-light',
+    '--gls-color-brand-green',
+    '--gls-color-brand-green-light',
+    '--gls-color-brand-yellow',
+  ],
+]} />
+
+## Color Palette
+
+Each color swatch shows which colors from its group pass [WCAG 2.1 AA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) contrast requirements (≥ 4.5:1 for normal text). The number next to each name is the contrast ratio.
+
+In this palette we use a numeric value to represent the shade. For more in-depth documentation, you can check out the Primitive Color section in [Figma](https://www.figma.com/design/rUvwRrvXRta7egY4ju7JQm/Unity-Design-System?m=auto&node-id=708-14776&t=MAVfvE0QDak2RIh8-1).
+
+
+<ColorPalette groups={[
+  [
+    '--gls-color-neutrals-25',
+    '--gls-color-neutrals-50',
+    '--gls-color-neutrals-100',
+    '--gls-color-neutrals-200',
+    '--gls-color-neutrals-300',
+    '--gls-color-neutrals-400',
+    '--gls-color-neutrals-500',
+    '--gls-color-neutrals-600',
+    '--gls-color-neutrals-700',
+    '--gls-color-neutrals-800',
+    '--gls-color-neutrals-900',
+    '--gls-color-neutrals-1000',
+  ],
+  [
+    '--gls-color-red-100',
+    '--gls-color-red-200',
+    '--gls-color-red-300',
+    '--gls-color-red-400',
+    '--gls-color-red-500',
+    '--gls-color-red-600',
+    '--gls-color-red-700',
+    '--gls-color-red-800',
+    '--gls-color-red-900',
+  ],
+  [
+    '--gls-color-yellow-100',
+    '--gls-color-yellow-200',
+    '--gls-color-yellow-300',
+    '--gls-color-yellow-400',
+    '--gls-color-yellow-500',
+    '--gls-color-yellow-600',
+    '--gls-color-yellow-700',
+    '--gls-color-yellow-800',
+    '--gls-color-yellow-900',
+  ],
+  [
+    '--gls-color-green-100',
+    '--gls-color-green-200',
+    '--gls-color-green-300',
+    '--gls-color-green-400',
+    '--gls-color-green-500',
+    '--gls-color-green-600',
+    '--gls-color-green-700',
+    '--gls-color-green-800',
+    '--gls-color-green-900',
+  ],
+  [
+    '--gls-color-cyan-100',
+    '--gls-color-cyan-200',
+    '--gls-color-cyan-300',
+    '--gls-color-cyan-400',
+    '--gls-color-cyan-500',
+    '--gls-color-cyan-600',
+    '--gls-color-cyan-700',
+    '--gls-color-cyan-800',
+    '--gls-color-cyan-900',
+  ],
+  [
+    '--gls-color-blue-100',
+    '--gls-color-blue-200',
+    '--gls-color-blue-300',
+    '--gls-color-blue-400',
+    '--gls-color-blue-500',
+    '--gls-color-blue-600',
+    '--gls-color-blue-700',
+    '--gls-color-blue-800',
+    '--gls-color-blue-900',
+  ],
+]} />
+
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--gls-color-shades-black',
+    '--gls-color-shades-white',
+  ],
+]} />
+
+To use the colors in specific contexts, we have created different tokens, which consume the primitive colors.
+
+## Text Colors
+
+Text colors are used to display text in different contexts.
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--gls-color-text-foreground',
+    '--gls-color-text-inverted',
+    '--gls-color-text-muted',
+    '--gls-color-text-light',
+    '--gls-color-text-label',
+    '--gls-color-text-primary',
+    '--gls-color-text-primary-hover',
+    '--gls-color-text-primary-muted',
+    '--gls-color-text-success',
+    '--gls-color-text-success-light',
+    '--gls-color-text-error',
+    '--gls-color-text-error-muted',
+    '--gls-color-text-warning',
+  ],
+]} />
+
+## Surface Colors
+
+Surface Colors are used to display surfaces and backgrounds in different context e.g Cards, Backgrounds, Dialogs etc. We also use them to provide feedback to the user if an element is interactive, disabled or in error state.
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--gls-color-background-overlay',
+    '--gls-color-background-default',
+  ],
+  [
+    '--gls-color-surface-default',
+    '--gls-color-surface-default-hover',
+    '--gls-color-surface-card',
+    '--gls-color-surface-card-hover',
+    '--gls-color-surface-inverted',
+    '--gls-color-surface-inverted-hover',
+    '--gls-color-surface-input',
+    '--gls-color-surface-input-hover',
+    '--gls-color-surface-primary',
+    '--gls-color-surface-primary-hover',
+    '--gls-color-surface-primary-muted',
+    '--gls-color-surface-primary-pressed',
+    '--gls-color-surface-primary-light',
+    '--gls-color-surface-secondary',
+    '--gls-color-surface-secondary-hover',
+    '--gls-color-surface-secondary-muted',
+    '--gls-color-surface-secondary-pressed',
+    '--gls-color-surface-muted',
+    '--gls-color-surface-muted-hover',
+    '--gls-color-surface-success',
+    '--gls-color-surface-success-hover',
+    '--gls-color-surface-warning',
+    '--gls-color-surface-warning-hover',
+    '--gls-color-surface-error',
+    '--gls-color-surface-error-hover',
+    '--gls-color-surface-error-muted',
+    '--gls-color-surface-error-pressed',
+    '--gls-color-surface-tooltip',
+    '--gls-color-surface-indicator',
+    '--gls-color-surface-skeleton',
+    '--gls-color-surface-blurred',
+    '--gls-color-surface-blurred-hover',
+  ],
+]} />
+
+## Icon Colors
+
+Icon Colors are used to display icons in different contexts.
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--gls-color-icon-foreground',
+    '--gls-color-icon-foreground-hover',
+    '--gls-color-icon-inverted',
+    '--gls-color-icon-inverted-hover',
+    '--gls-color-icon-light',
+    '--gls-color-icon-muted',
+    '--gls-color-icon-primary',
+    '--gls-color-icon-primary-hover',
+    '--gls-color-icon-primary-muted',
+    '--gls-color-icon-primary-pressed',
+    '--gls-color-icon-success',
+    '--gls-color-icon-warning',
+    '--gls-color-icon-error',
+    '--gls-color-icon-error-muted',
+  ],
+]} />

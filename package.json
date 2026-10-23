@@ -1,0 +1,127 @@
+{
+  "name": "@gls-nxt/uikit",
+  "version": "6.0.0",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gls-nxt/uikit.git"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/main.js",
+      "types": "./dist/main.d.ts"
+    },
+    "./components/*": {
+      "import": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    },
+    "./fonts": {
+      "types": "./dist/fonts/index.d.ts",
+      "import": "./dist/fonts/index.css"
+    },
+    "./icons/*": "./dist/icons/*",
+    "./images/*": "./dist/images/*",
+    "./tokens": {
+      "types": "./dist/tokens/index.d.ts",
+      "import": "./dist/tokens/index.css"
+    }
+  },
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm generate:icons && vite build",
+    "postbuild": "cpy 'lib/images/**/*' dist/images && cpy 'assets/icons/*.svg' dist/icons && cpy 'THIRD_PARTY_NOTICES.md' dist/icons && cpy 'lib/fonts/index.d.ts' dist/fonts --flat && cpy 'lib/tokens/index.d.ts' dist/tokens --flat && pnpm optimize:icons",
+    "build-storybook": "pnpm generate:icons && storybook build",
+    "clean": "rm -rf dist",
+    "format": "biome format --write . && pnpm format:docs",
+    "format:docs": "prettier --write \"docs/**/*.md\" \"docs/**/*.mdx\"",
+    "generate:icons": "pnpm exec tsx lib/icons/generate-index.ts && biome format --write --no-errors-on-unmatched lib/icons/index.tsx lib/icons/generated",
+    "lint": "biome check --write . --unsafe",
+    "optimize:icons": "node scripts/optimize-icons.mjs",
+    "storybook": "storybook dev -p 6006",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:treeshake": "node scripts/test-treeshake.mjs",
+    "test:treeshake:quick": "node scripts/test-treeshake.mjs --skip-build",
+    "test:ui": "vitest --ui",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@radix-ui/react-checkbox": "^1.4.1",
+    "@radix-ui/react-dropdown-menu": "^2.2.1",
+    "@radix-ui/react-popover": "^1.3.1",
+    "@radix-ui/react-portal": "^1.2.0",
+    "@radix-ui/react-radio-group": "^1.5.1",
+    "@radix-ui/react-slot": "^1.5.0",
+    "@radix-ui/react-switch": "^1.4.1",
+    "@radix-ui/react-tabs": "^1.2.1",
+    "@radix-ui/react-toast": "^1.3.1",
+    "@radix-ui/react-tooltip": "^1.4.1",
+    "@radix-ui/react-visually-hidden": "^1.2.13",
+    "class-variance-authority": "^0.7.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@chromatic-com/storybook": "^5.5.1",
+    "@csstools/postcss-global-data": "^4.0.0",
+    "@storybook/addon-a11y": "10.6.2",
+    "@storybook/addon-designs": "^11.1.4",
+    "@storybook/addon-docs": "10.6.2",
+    "@storybook/react": "10.6.2",
+    "@storybook/react-vite": "10.6.2",
+    "@svgr/babel-plugin-transform-svg-component": "^8.0.0",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.8",
+    "@types/jest-axe": "^3.5.9",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/react-test-renderer": "^19.3.0",
+    "@typescript/typescript6": "^6.0.2",
+    "@vitejs/plugin-react": "^6.1.2",
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/ui": "^4.1.11",
+    "cpy-cli": "^7.0.0",
+    "get-contrast-ratio": "^1.0.0",
+    "glob": "^13.0.6",
+    "jest-axe": "^11.0.0",
+    "jsdom": "^30.1.3",
+    "lefthook": "^2.2.2",
+    "postcss-custom-media": "^12.0.3",
+    "postcss-preset-env": "^11.6.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "storybook": "10.6.2",
+    "storybook-design-token": "^5.0.0",
+    "svgo": "^4.1.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vite-plugin-dts": "^5.1.2",
+    "vite-plugin-lib-inject-css": "^2.2.2",
+    "vite-plugin-static-copy": "^4.1.1",
+    "vite-plugin-svgr": "^5.2.0",
+    "vitest": "^4.1.11"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "packageManager": "pnpm@11.0.9",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

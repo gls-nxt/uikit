@@ -1,0 +1,14 @@
+packages:
+  - '.'
+overrides:
+  # Force patched versions of transitive (dev/build) deps flagged by Dependabot.
+  # These are nested deps Dependabot can't auto-PR for under pnpm; see GHSA advisories.
+  # js-yaml is scoped to v4 only — the v3 instance (jest istanbul) has no compatible patch.
+  esbuild: ^0.28.1
+  form-data: ^4.0.6
+  undici: ^7.28.0
+  js-yaml@4: ^4.2.0
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  unrs-resolver: true

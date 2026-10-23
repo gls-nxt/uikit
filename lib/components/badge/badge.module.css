@@ -1,0 +1,84 @@
+@layer uikit {
+  .badge {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 30px;
+    padding: 0 var(--gls-spacing-4);
+    margin: 0;
+    border-radius: var(--gls-border-radius-full);
+    transition: box-shadow 100ms ease;
+  }
+
+  .badge:focus-visible {
+    outline: none;
+    box-shadow: var(--gls-ring-focus);
+  }
+
+  .badge--blue {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--gls-color-text-inverted);
+    background-color: var(--gls-color-surface-primary);
+  }
+
+  .badge--light-blue {
+    color: var(--gls-color-text-primary);
+    background-color: var(--gls-color-surface-primary-light);
+  }
+
+  .badge--grey {
+    color: var(--gls-color-text-foreground);
+    background-color: var(--gls-color-surface-secondary);
+  }
+
+  .badge--white {
+    color: var(--gls-color-text-foreground);
+    background-color: var(--gls-color-surface-default);
+    box-shadow: inset 0 0 0 1px var(--gls-color-border-default);
+  }
+
+  .badge--orange {
+    color: var(--gls-color-text-warning);
+    background-color: var(--gls-color-surface-warning);
+  }
+
+  .badge--green {
+    color: var(--gls-color-text-success);
+    background-color: var(--gls-color-surface-success);
+  }
+
+  .badge--red {
+    color: var(--gls-color-text-error);
+    background-color: var(--gls-color-surface-error);
+  }
+
+  .badge--lg {
+    height: 34px;
+  }
+
+  .badge--md {
+    height: 30px;
+  }
+
+  .badge--sm {
+    height: 24px;
+  }
+
+  .badge--xs {
+    height: 22px;
+  }
+
+  .badgeContent {
+    display: flex;
+    gap: var(--gls-spacing-1);
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* colour should not be overridden by Typography component */
+.badgeContent {
+  color: inherit;
+}

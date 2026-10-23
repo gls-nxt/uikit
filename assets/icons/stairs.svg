@@ -1,0 +1,80 @@
+<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path
+    clip-rule="evenodd"
+    d="M2 15C2 14.4477 2.44772 14 3 14H9C9.55228 14 10 14.4477 10 15C10 15.5523 9.55228 16 9 16H3C2.44772 16 2 15.5523 2 15Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M2 21C2 20.4477 2.44772 20 3 20H9C9.55228 20 10 20.4477 10 21C10 21.5523 9.55228 22 9 22H3C2.44772 22 2 21.5523 2 21Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M8 21C8 20.4477 8.44772 20 9 20H15C15.5523 20 16 20.4477 16 21C16 21.5523 15.5523 22 15 22H9C8.44772 22 8 21.5523 8 21Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M14 21C14 20.4477 14.4477 20 15 20H21C21.5523 20 22 20.4477 22 21C22 21.5523 21.5523 22 21 22H15C14.4477 22 14 21.5523 14 21Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M14 21C14 20.4477 14.4477 20 15 20H21C21.5523 20 22 20.4477 22 21C22 21.5523 21.5523 22 21 22H15C14.4477 22 14 21.5523 14 21Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M8 9C8 8.44772 8.44772 8 9 8H15C15.5523 8 16 8.44772 16 9C16 9.55228 15.5523 10 15 10H9C8.44772 10 8 9.55228 8 9Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M14 3C14 2.44772 14.4477 2 15 2H21C21.5523 2 22 2.44772 22 3C22 3.55228 21.5523 4 21 4H15C14.4477 4 14 3.55228 14 3Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M9 16C8.44772 16 8 15.5523 8 15V9C8 8.44772 8.44772 8 9 8C9.55228 8 10 8.44772 10 9L10 15C10 15.5523 9.55228 16 9 16Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M21 16C20.4477 16 20 15.5523 20 15V9C20 8.44772 20.4477 8 21 8C21.5523 8 22 8.44772 22 9V15C22 15.5523 21.5523 16 21 16Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M21 22C20.4477 22 20 21.5523 20 21V15C20 14.4477 20.4477 14 21 14C21.5523 14 22 14.4477 22 15V21C22 21.5523 21.5523 22 21 22Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M21 10C20.4477 10 20 9.55228 20 9V3C20 2.44772 20.4477 2 21 2C21.5523 2 22 2.44772 22 3V9C22 9.55228 21.5523 10 21 10Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M3 22C2.44772 22 2 21.5523 2 21V15C2 14.4477 2.44772 14 3 14C3.55228 14 4 14.4477 4 15L4 21C4 21.5523 3.55228 22 3 22Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+  <path
+    clip-rule="evenodd"
+    d="M15 10C14.4477 10 14 9.55228 14 9V3C14 2.44772 14.4477 2 15 2C15.5523 2 16 2.44772 16 3V9C16 9.55228 15.5523 10 15 10Z"
+    fill="currentColor"
+    fill-rule="evenodd"
+  />
+</svg>

@@ -1,0 +1,86 @@
+:root {
+  /**
+   * @tokens Primitive Colors
+   * @presenter Color
+   */
+  /* GLS brand colors */
+  --gls-color-brand-blue: #061ab1;
+  --gls-color-brand-blue-light: #eef0fc;
+  --gls-color-brand-green: #2c6c0e;
+  --gls-color-brand-green-light: #b8dea3;
+  --gls-color-brand-yellow: #ffd100;
+
+  /* neutral shades */
+  --gls-color-neutrals-25: #fcfcfd;
+  --gls-color-neutrals-50: #f9fafb;
+  --gls-color-neutrals-100: #f2f4f7;
+  --gls-color-neutrals-200: #e4e7ecff;
+  --gls-color-neutrals-300: #d0d5dd;
+  --gls-color-neutrals-400: #98a2b3;
+  --gls-color-neutrals-500: #667085;
+  --gls-color-neutrals-600: #475467;
+  --gls-color-neutrals-700: #344054;
+  --gls-color-neutrals-800: #1d2939;
+  --gls-color-neutrals-900: #101828;
+  --gls-color-neutrals-1000: #09101c;
+
+  /* shades */
+  --gls-color-shades-black: #191919;
+  --gls-color-shades-white: #fff;
+  --gls-color-shades-white-light: rgba(255, 255, 255, 0.7);
+
+  /* green shades */
+  --gls-color-green-100: #d1fadf;
+  --gls-color-green-200: #a6f4c5;
+  --gls-color-green-300: #6ce9a6;
+  --gls-color-green-400: #32d583;
+  --gls-color-green-500: #12b76a;
+  --gls-color-green-600: #039855;
+  --gls-color-green-700: #027a48;
+  --gls-color-green-800: #05603a;
+  --gls-color-green-900: #054f31;
+
+  /* red shades */
+  --gls-color-red-100: #fee4e2;
+  --gls-color-red-200: #fecdca;
+  --gls-color-red-300: #fda29b;
+  --gls-color-red-400: #f97066;
+  --gls-color-red-500: #f04438;
+  --gls-color-red-600: #d92d20;
+  --gls-color-red-700: #b42318;
+  --gls-color-red-800: #912018;
+  --gls-color-red-900: #7a271a;
+
+  /* yellow shades */
+  --gls-color-yellow-100: #fef0c7;
+  --gls-color-yellow-200: #fedf89;
+  --gls-color-yellow-300: #fec84b;
+  --gls-color-yellow-400: #fdb022;
+  --gls-color-yellow-500: #f79009;
+  --gls-color-yellow-600: #dc6803;
+  --gls-color-yellow-700: #b54708;
+  --gls-color-yellow-800: #93370d;
+  --gls-color-yellow-900: #7a2e0e;
+
+  /* blue shades */
+  --gls-color-blue-100: #eef0fc;
+  --gls-color-blue-200: #8993df;
+  --gls-color-blue-300: #5e6bd0;
+  --gls-color-blue-400: #3242c0;
+  --gls-color-blue-500: #061ab1;
+  --gls-color-blue-600: #051694;
+  --gls-color-blue-700: #04106a;
+  --gls-color-blue-800: #020a47;
+  --gls-color-blue-900: #020835;
+
+  /* cyan shades */
+  --gls-color-cyan-100: #e6f6fb;
+  --gls-color-cyan-200: #c8e7f2;
+  --gls-color-cyan-300: #93d2e9;
+  --gls-color-cyan-400: #5db9dc;
+  --gls-color-cyan-500: #26a0cf;
+  --gls-color-cyan-600: #0087b2;
+  --gls-color-cyan-700: #006e95;
+  --gls-color-cyan-800: #005478;
+  --gls-color-cyan-900: #003b5b;
+}

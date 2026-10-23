@@ -1,0 +1,14 @@
+@layer uikit {
+  .item {
+    display: flex;
+    gap: var(--gls-spacing-3);
+    align-items: center;
+    width: 100%;
+  }
+
+  .itemDisabled {
+    color: var(--gls-color-text-muted);
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
