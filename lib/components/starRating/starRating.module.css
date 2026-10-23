@@ -11,6 +11,10 @@
 
   .starRating--loading {
     animation: shimmer ease-in-out 0.4s infinite alternate;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation-duration: 1.6s;
+    }
   }
 
   .starRating:focus-within {
