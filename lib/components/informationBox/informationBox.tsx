@@ -62,9 +62,24 @@ export const InformationBox = ({
 
   const handleClose = useCallback(() => {
     setExitAnimation(true);
-    const timer = setTimeout(handleAnimationEnd, 200);
+  }, []);
+
+  // The exit animation's animationend normally finishes the close. This is a fail-safe for
+  // when no animation runs (e.g. a consumer sets animation: none), so the box still closes.
+  useEffect(() => {
+    if (!exitAnimation) {
+      return;
+    }
+    const timer = setTimeout(handleAnimationEnd, 1000);
     return () => clearTimeout(timer);
-  }, [handleAnimationEnd]);
+  }, [exitAnimation, handleAnimationEnd]);
+
+  const handleSectionAnimationEnd = (event: React.AnimationEvent<HTMLDivElement>) => {
+    props.onAnimationEnd?.(event);
+    if (exitAnimation && event.target === event.currentTarget) {
+      handleAnimationEnd();
+    }
+  };
 
   useEffect(() => {
     setIsVisible(visible);
@@ -86,6 +101,7 @@ export const InformationBox = ({
         } as React.CSSProperties
       }
       {...props}
+      onAnimationEnd={handleSectionAnimationEnd}
     >
       {prefix ? (
         <div aria-hidden={true} className={styles.informationBoxPrefix}>
