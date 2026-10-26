@@ -1,6 +1,6 @@
 {
   "name": "@gls-nxt/uikit",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
@@ -76,7 +76,7 @@
     "@chromatic-com/storybook": "^5.6.0",
     "@csstools/postcss-global-data": "^4.0.0",
     "@storybook/addon-a11y": "10.6.3",
-    "@storybook/addon-designs": "^11.1.4",
+    "@storybook/addon-designs": "^12.0.0",
     "@storybook/addon-docs": "10.6.3",
     "@storybook/react": "10.6.3",
     "@storybook/react-vite": "10.6.3",
@@ -120,7 +120,7 @@
     "react": "^19",
     "react-dom": "^19"
   },
-  "packageManager": "pnpm@11.0.9",
+  "packageManager": "pnpm@12.15.0+sha512.b3951d6d6ff4a9f13dc7cf56cd28d2b8eb37dbcc9c68e52e1e1191873ea9f82a017287ab50baadc5ccc494f036c67c0e47eb13608c2fa36f47711b61ea128e61",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
