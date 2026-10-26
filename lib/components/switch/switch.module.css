@@ -18,15 +18,25 @@
     aspect-ratio: 45 / 28; /* original width / height ratio */
     container-type: size;
     cursor: pointer;
+    /* Forced colors mode drops the track and thumb backgrounds. Transparent outlines
+       stay invisible normally but are drawn there, keeping both shapes visible. */
+    outline: 1px solid transparent;
+    outline-offset: -1px;
     background-color: var(--gls-color-surface-secondary);
     border-radius: var(--gls-border-radius-full);
 
     &:focus-visible {
+      outline-width: 2px;
+      outline-offset: 2px;
       box-shadow: var(--gls-ring-focus);
     }
 
     &[data-state="checked"] {
       background-color: var(--gls-color-surface-primary);
+
+      @media (forced-colors: active) {
+        background-color: Highlight;
+      }
     }
   }
 
@@ -36,6 +46,8 @@
     inset-block: calc(100cqh / 14);
     aspect-ratio: 1;
     margin-inline: calc(100cqh / 14);
+    outline: 1px solid transparent;
+    outline-offset: -1px;
     background-color: var(--gls-color-surface-default);
     border-radius: var(--gls-border-radius-full);
     /* TODO: clarify if this shadow can be replaced by token */

@@ -8,7 +8,10 @@
     overflow: hidden;
     font: inherit;
     color: var(--gls-color-text-primary);
-    outline: 0;
+    /* The visible border is a box-shadow, which forced colors mode removes.
+       A transparent outline stays invisible normally but is drawn in forced colors. */
+    outline: 1px solid transparent;
+    outline-offset: -1px;
     background-color: var(--gls-color-surface-input);
     border: none;
     border-radius: var(--gls-border-radius-lg);
@@ -47,6 +50,7 @@
   }
 
   .input:focus {
+    outline-width: 2px;
     box-shadow: var(--gls-ring-focus);
   }
 
