@@ -119,6 +119,9 @@
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
+    /* Stop scrolling from chaining to the page once the end is reached. The dialog itself
+       stays overflow: visible, so these inner scrollers are where containment applies. */
+    overscroll-behavior: contain;
   }
 
   .dialogBody {
@@ -126,6 +129,7 @@
     min-height: 0;
     padding: var(--gls-spacing-6);
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .dialogFooter {
