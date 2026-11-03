@@ -13,6 +13,10 @@ const renderInformationBox = (props?: Partial<InformationBoxProps>) => {
 
 const closeButtonLabel = 'Close information box';
 
+// jsdom has no AnimationEvent, so React listens for the prefixed event name instead.
+const fireAnimationEnd = (element: Element) =>
+  fireEvent(element, new Event('webkitAnimationEnd', { bubbles: true }));
+
 describe('InformationBox Component', () => {
   it('renders the information box with default props correctly', () => {
     renderInformationBox();
@@ -36,16 +40,41 @@ describe('InformationBox Component', () => {
     expect(screen.getByText('Custom Children')).toBeInTheDocument();
   });
 
-  it('renders close button and closes the information box correctly', () => {
+  it('renders close button and closes the information box when the exit animation ends', () => {
     renderInformationBox({
       closeButton: true,
     });
-    vi.useFakeTimers({ shouldAdvanceTime: true });
     expect(screen.getByRole('button', { name: closeButtonLabel })).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: closeButtonLabel }));
-    // since we are using setTimeout for the exit animation, we need to advance the timer
+
+    const box = screen.getByTestId('information-box');
+    expect(box).toHaveClass(styles['informationBox--exiting']);
+    fireAnimationEnd(box);
+
+    expect(screen.queryByTestId('information-box')).not.toBeInTheDocument();
+  });
+
+  it('ignores animations ending on its children', () => {
+    renderInformationBox({ children: <span data-testid="child" />, closeButton: true });
+    fireEvent.click(screen.getByRole('button', { name: closeButtonLabel }));
+
+    fireAnimationEnd(screen.getByTestId('child'));
+
+    expect(screen.getByTestId('information-box')).toBeInTheDocument();
+  });
+
+  it('still closes when no exit animation runs', () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    renderInformationBox({ closeButton: true });
+    fireEvent.click(screen.getByRole('button', { name: closeButtonLabel }));
+
     act(() => {
-      vi.advanceTimersByTime(200);
+      vi.advanceTimersByTime(999);
+    });
+    expect(screen.getByTestId('information-box')).toBeInTheDocument();
+
+    act(() => {
+      vi.advanceTimersByTime(1);
     });
     expect(screen.queryByTestId('information-box')).not.toBeInTheDocument();
     vi.useRealTimers();
@@ -69,15 +98,18 @@ describe('InformationBox Component', () => {
     expect(screen.queryByTestId('information-box')).not.toBeInTheDocument();
   });
 
-  it('runs onClose when close button is clicked', () => {
+  it('runs onClose once when close button is clicked', () => {
+    const onAnimationEnd = vi.fn();
     const onClose = vi.fn();
     vi.useFakeTimers({ shouldAdvanceTime: true });
-    renderInformationBox({ closeButton: true, onClose });
+    renderInformationBox({ closeButton: true, onAnimationEnd, onClose });
     fireEvent.click(screen.getByRole('button', { name: closeButtonLabel }));
+    fireAnimationEnd(screen.getByTestId('information-box'));
     act(() => {
-      vi.advanceTimersByTime(200);
+      vi.advanceTimersByTime(1000);
     });
-    expect(onClose).toHaveBeenCalled();
+    expect(onAnimationEnd).toHaveBeenCalledTimes(1);
+    expect(onClose).toHaveBeenCalledTimes(1);
     vi.useRealTimers();
   });
 
