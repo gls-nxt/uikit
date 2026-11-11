@@ -14,13 +14,7 @@
   }
 
   .list--hideScroll {
-    -ms-overflow-style: none;
     scrollbar-width: none;
-
-    ::-webkit-scrollbar {
-      width: 0px;
-      background: transparent;
-    }
   }
 
   .item {
