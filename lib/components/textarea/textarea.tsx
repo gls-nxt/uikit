@@ -39,6 +39,7 @@ export const Textarea = ({
   fullWidth = false,
   helperText,
   className,
+  autoResize,
   resize,
   labelClassName: customLabelClassName,
   ...props
@@ -53,7 +54,7 @@ export const Textarea = ({
   const textareaRootClassName = textareaRootVariants({
     state: error ? 'error' : 'default',
   });
-  const textareaClassName = textareaVariants({ resize });
+  const textareaClassName = textareaVariants({ autoResize, resize });
   const labelClassName = labelVariants();
   const helperTextClassName = helperTextVariants();
 
