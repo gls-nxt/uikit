@@ -48,7 +48,7 @@
       inset: 0;
       width: 90vw;
       height: fit-content;
-      max-height: 85vh;
+      max-height: 85dvh;
       margin: auto;
       border-radius: var(--gls-border-radius-xl);
     }

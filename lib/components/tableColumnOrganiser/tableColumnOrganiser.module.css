@@ -4,7 +4,7 @@
     align-items: stretch;
     justify-content: flex-start;
     width: min(20rem, calc(100vw - var(--gls-spacing-8)));
-    max-height: min(28rem, calc(100vh - var(--gls-spacing-8)));
+    max-height: min(28rem, calc(100dvh - var(--gls-spacing-8)));
     padding: var(--gls-spacing-3);
     overflow: hidden;
     font-size: var(--gls-font-size-3);
