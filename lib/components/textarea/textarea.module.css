@@ -61,16 +61,27 @@
   }
 
   /* Grow with the content, up to 10 lines. Browsers without field-sizing keep the
-     fixed height and scroll, as before. */
+     fixed height and scroll, as before. field-sizing also drops the native 20-column
+     width, so keep that width fixed. The textarea is border-box, so the cap adds the
+     vertical padding. */
   .textarea--autoResize {
     field-sizing: content;
-    max-block-size: 10lh;
+    inline-size: calc(20ch + 2 * var(--gls-spacing-3));
+    max-block-size: calc(10lh + 2 * var(--gls-spacing-3));
+  }
+
+  .textareaWrapper--fullWidth .textarea--autoResize {
+    inline-size: 100%;
   }
 
   /* Padding adjustment when labelled to make room for the floating label */
   .textareaWrapper--labeled .textarea {
     padding-top: calc(var(--gls-spacing-6) + 2px);
     padding-bottom: var(--gls-spacing-2);
+  }
+
+  .textareaWrapper--labeled .textarea--autoResize {
+    max-block-size: calc(10lh + var(--gls-spacing-6) + 2px + var(--gls-spacing-2));
   }
 
   .textarea::placeholder {
