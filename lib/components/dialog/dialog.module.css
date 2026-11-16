@@ -52,7 +52,6 @@
   .dialog::backdrop {
     background-color: var(--gls-color-background-overlay);
     opacity: 0;
-    animation: overlayShow 0.2s;
 
     @supports (overlay: auto) {
       transition-property: opacity, display, overlay;
@@ -61,8 +60,11 @@
     }
   }
 
+  /* Entry animation on [open] only, so closing mid-entry cancels it and the exit
+     transition fades from the current opacity. */
   .dialog[open]::backdrop {
     opacity: 1;
+    animation: overlayShow 0.2s;
   }
 
   @media (--medium) {
