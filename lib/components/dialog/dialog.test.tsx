@@ -116,11 +116,19 @@ describe('Dialog Component', () => {
       return dialog;
     };
 
+    const outside = { clientX: 10, clientY: 10 };
+    const inside = { clientX: 150, clientY: 150 };
+
+    const press = (target: Element, down: object, up: object) => {
+      fireEvent.pointerDown(target, down);
+      fireEvent.click(target, up);
+    };
+
     it('requests close on a backdrop click', () => {
       const handleClick = vi.fn();
       const { container } = renderDialog({ closedby: 'any', onClick: handleClick });
 
-      fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+      press(getDialog(container), outside, outside);
 
       expect(handleClick).toHaveBeenCalled();
       expect(closeDialog).toHaveBeenCalledWith(dialogId, 'request-close');
@@ -129,8 +137,16 @@ describe('Dialog Component', () => {
     it('ignores clicks inside the dialog box and on its content', () => {
       const { container } = renderDialog({ closedby: 'any' });
 
-      fireEvent.click(getDialog(container), { clientX: 150, clientY: 150 });
-      fireEvent.click(screen.getByText('Dialog Content'), { clientX: 10, clientY: 10 });
+      press(getDialog(container), inside, inside);
+      press(screen.getByText('Dialog Content'), outside, outside);
+
+      expect(closeDialog).not.toHaveBeenCalled();
+    });
+
+    it('ignores a press inside that is released on the backdrop', () => {
+      const { container } = renderDialog({ closedby: 'any' });
+
+      press(getDialog(container), inside, outside);
 
       expect(closeDialog).not.toHaveBeenCalled();
     });
@@ -138,7 +154,7 @@ describe('Dialog Component', () => {
     it('does nothing without closedby="any"', () => {
       const { container } = renderDialog({ closedby: 'closerequest' });
 
-      fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+      press(getDialog(container), outside, outside);
 
       expect(closeDialog).not.toHaveBeenCalled();
     });
@@ -151,7 +167,7 @@ describe('Dialog Component', () => {
       try {
         const { container } = renderDialog({ closedby: 'any' });
 
-        fireEvent.click(getDialog(container), { clientX: 10, clientY: 10 });
+        press(getDialog(container), outside, outside);
 
         expect(closeDialog).not.toHaveBeenCalled();
       } finally {
