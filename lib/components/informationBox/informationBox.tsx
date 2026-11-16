@@ -3,7 +3,7 @@ import { XIcon } from '@icons';
 import type { Prettify } from '@utils/types';
 import { cx } from 'class-variance-authority';
 import type React from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './informationBox.module.css';
 import { type InformationBoxVariants, informationBoxVariants } from './informationBox.variants';
 
@@ -54,17 +54,36 @@ export const InformationBox = ({
     className,
   );
 
+  // Read onClose through a ref so a new identity on rerender doesn't restart the fail-safe timer.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
   const handleAnimationEnd = useCallback(() => {
     setIsVisible(false);
     setExitAnimation(false);
-    onClose?.();
-  }, [onClose]);
+    onCloseRef.current?.();
+  }, []);
 
   const handleClose = useCallback(() => {
     setExitAnimation(true);
-    const timer = setTimeout(handleAnimationEnd, 200);
+  }, []);
+
+  // The exit animation's animationend normally finishes the close. This is a fail-safe for
+  // when no animation runs (e.g. a consumer sets animation: none), so the box still closes.
+  useEffect(() => {
+    if (!exitAnimation) {
+      return;
+    }
+    const timer = setTimeout(handleAnimationEnd, 1000);
     return () => clearTimeout(timer);
-  }, [handleAnimationEnd]);
+  }, [exitAnimation, handleAnimationEnd]);
+
+  const handleSectionAnimationEnd = (event: React.AnimationEvent<HTMLDivElement>) => {
+    props.onAnimationEnd?.(event);
+    if (exitAnimation && event.target === event.currentTarget) {
+      handleAnimationEnd();
+    }
+  };
 
   useEffect(() => {
     setIsVisible(visible);
@@ -86,6 +105,7 @@ export const InformationBox = ({
         } as React.CSSProperties
       }
       {...props}
+      onAnimationEnd={handleSectionAnimationEnd}
     >
       {prefix ? (
         <div aria-hidden={true} className={styles.informationBoxPrefix}>
