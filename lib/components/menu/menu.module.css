@@ -9,10 +9,10 @@
     box-shadow: var(--gls-shadow-xs);
     animation: menuIn 0.12s ease-out;
 
-    /* menuIn wipes the menu open with clip-path; menuOut is a plain fade. */
+    /* menuIn wipes the menu open with clip-path; fade instead. A name distinct from
+       menuOut lets Radix Presence detect the exit animation and wait for it. */
     @media (prefers-reduced-motion: reduce) {
-      animation-name: menuOut;
-      animation-direction: reverse;
+      animation-name: menuFadeIn;
     }
   }
 
@@ -30,6 +30,16 @@
     }
     100% {
       clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes menuFadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
     }
   }
 

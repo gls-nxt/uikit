@@ -225,7 +225,9 @@
     transform-origin: center;
     animation: fadeIn 300ms ease forwards;
 
+    /* fadeIn ends at full size; opacityIn leaves transform alone, so drop the scale. */
     @media (prefers-reduced-motion: reduce) {
+      transform: none;
       animation-name: opacityIn;
     }
   }
