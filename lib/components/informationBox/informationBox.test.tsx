@@ -80,6 +80,25 @@ describe('InformationBox Component', () => {
     vi.useRealTimers();
   });
 
+  it('still closes on time when onClose changes during the fallback period', () => {
+    vi.useFakeTimers({ shouldAdvanceTime: true });
+    const { rerender } = renderInformationBox({ closeButton: true, onClose: () => {} });
+    fireEvent.click(screen.getByRole('button', { name: closeButtonLabel }));
+
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
+    const onClose = vi.fn();
+    rerender(<InformationBox closeButton data-testid="information-box" onClose={onClose} />);
+    act(() => {
+      vi.advanceTimersByTime(500);
+    });
+
+    expect(screen.queryByTestId('information-box')).not.toBeInTheDocument();
+    expect(onClose).toHaveBeenCalledTimes(1);
+    vi.useRealTimers();
+  });
+
   it('renders with custom className', () => {
     const customClassName = 'custom-infobox';
     renderInformationBox({ className: customClassName });

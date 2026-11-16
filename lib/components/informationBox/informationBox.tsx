@@ -3,7 +3,7 @@ import { XIcon } from '@icons';
 import type { Prettify } from '@utils/types';
 import { cx } from 'class-variance-authority';
 import type React from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './informationBox.module.css';
 import { type InformationBoxVariants, informationBoxVariants } from './informationBox.variants';
 
@@ -54,11 +54,15 @@ export const InformationBox = ({
     className,
   );
 
+  // Read onClose through a ref so a new identity on rerender doesn't restart the fail-safe timer.
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
   const handleAnimationEnd = useCallback(() => {
     setIsVisible(false);
     setExitAnimation(false);
-    onClose?.();
-  }, [onClose]);
+    onCloseRef.current?.();
+  }, []);
 
   const handleClose = useCallback(() => {
     setExitAnimation(true);
