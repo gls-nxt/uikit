@@ -116,47 +116,47 @@
     font: var(--gls-font-label-6);
     letter-spacing: var(--gls-letter-spacing-1);
   }
-}
 
-/* Color variants */
-.typography--color-foreground {
-  color: var(--gls-color-text-foreground);
-}
-.typography--color-inverted {
-  color: var(--gls-color-text-inverted);
-}
-.typography--color-light {
-  color: var(--gls-color-text-light);
-}
-.typography--color-muted {
-  color: var(--gls-color-text-muted);
-}
-.typography--color-label {
-  color: var(--gls-color-text-label);
-}
-.typography--color-primary {
-  color: var(--gls-color-text-primary);
-}
-.typography--color-primary-hover {
-  color: var(--gls-color-text-primary-hover);
-}
-.typography--color-primary-muted {
-  color: var(--gls-color-text-primary-muted);
-}
-.typography--color-success {
-  color: var(--gls-color-text-success);
-}
-.typography--color-success-light {
-  color: var(--gls-color-text-success-light);
-}
-.typography--color-error {
-  color: var(--gls-color-text-error);
-}
-.typography--color-error-muted {
-  color: var(--gls-color-text-error-muted);
-}
-.typography--color-warning {
-  color: var(--gls-color-text-warning);
+  /* Color variants */
+  .typography--color-foreground {
+    color: var(--gls-color-text-foreground);
+  }
+  .typography--color-inverted {
+    color: var(--gls-color-text-inverted);
+  }
+  .typography--color-light {
+    color: var(--gls-color-text-light);
+  }
+  .typography--color-muted {
+    color: var(--gls-color-text-muted);
+  }
+  .typography--color-label {
+    color: var(--gls-color-text-label);
+  }
+  .typography--color-primary {
+    color: var(--gls-color-text-primary);
+  }
+  .typography--color-primary-hover {
+    color: var(--gls-color-text-primary-hover);
+  }
+  .typography--color-primary-muted {
+    color: var(--gls-color-text-primary-muted);
+  }
+  .typography--color-success {
+    color: var(--gls-color-text-success);
+  }
+  .typography--color-success-light {
+    color: var(--gls-color-text-success-light);
+  }
+  .typography--color-error {
+    color: var(--gls-color-text-error);
+  }
+  .typography--color-error-muted {
+    color: var(--gls-color-text-error-muted);
+  }
+  .typography--color-warning {
+    color: var(--gls-color-text-warning);
+  }
 }
 
 .typography--heading.typography--weight-regular,

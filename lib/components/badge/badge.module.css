@@ -12,7 +12,7 @@
   }
 
   .badge:focus-visible {
-    outline: none;
+    outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
     box-shadow: var(--gls-ring-focus);
   }
 
