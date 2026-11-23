@@ -55,6 +55,8 @@
   }
 
   .checkboxWrapper:has(input:focus-visible) .checkboxInput {
+    outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
+    outline-offset: 2px;
     box-shadow: var(--gls-ring-focus);
   }
 
