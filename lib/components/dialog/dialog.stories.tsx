@@ -81,7 +81,8 @@ const meta = {
     },
     closedby: {
       control: 'select',
-      description: 'Native `closedby` attribute controlling how the dialog can be dismissed.',
+      description:
+        'Native `closedby` attribute controlling how the dialog can be dismissed. `"any"` (close on backdrop click) is emulated in browsers without native support.',
       options: [undefined, 'any', 'closerequest', 'none'],
       table: {
         type: { summary: '"any" | "closerequest" | "none"' },
