@@ -1,8 +1,18 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/Shadow" />
 
-## Shadow
+# Shadow
 
-<DesignTokenDocBlock categoryName="Shadow" maxHeight={600} viewType="card" />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+The shadow tokens are colours, from elevation level 1 (lowest) to 5 (highest). Components combine them with their own offsets and blur.
+
+<TokenTable preview="shadow" tokens={[
+  '--unity-color-effects-shadow-1',
+  '--unity-color-effects-shadow-2',
+  '--unity-color-effects-shadow-3',
+  '--unity-color-effects-shadow-4',
+  '--unity-color-effects-shadow-5',
+]} />

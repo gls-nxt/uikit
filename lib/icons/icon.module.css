@@ -30,45 +30,45 @@
 
   /* Color variants */
   .icon--foreground {
-    color: var(--gls-color-icon-foreground);
+    color: var(--unity-color-icon-default);
   }
   .icon--foreground-hover {
-    color: var(--gls-color-icon-foreground-hover);
+    color: var(--unity-color-icon-subtle);
   }
   .icon--inverted {
-    color: var(--gls-color-icon-inverted);
+    color: var(--unity-color-icon-inverse);
   }
   .icon--inverted-hover {
-    color: var(--gls-color-icon-inverted-hover);
+    color: var(--unity-color-icon-inverse);
   }
   .icon--light {
-    color: var(--gls-color-icon-light);
+    color: var(--unity-color-icon-subtle);
   }
   .icon--muted {
-    color: var(--gls-color-icon-muted);
+    color: var(--unity-color-icon-disabled);
   }
   .icon--primary {
-    color: var(--gls-color-icon-primary);
+    color: var(--unity-color-icon-action);
   }
   .icon--primary-hover {
-    color: var(--gls-color-icon-primary-hover);
+    color: var(--unity-color-text-link-hover);
   }
   .icon--primary-muted {
-    color: var(--gls-color-icon-primary-muted);
+    color: var(--unity-color-text-link-disabled);
   }
   .icon--primary-pressed {
-    color: var(--gls-color-icon-primary-pressed);
+    color: var(--unity-color-text-link-pressed);
   }
   .icon--success {
-    color: var(--gls-color-icon-success);
+    color: var(--unity-color-icon-success);
   }
   .icon--warning {
-    color: var(--gls-color-icon-warning);
+    color: var(--unity-color-icon-warning);
   }
   .icon--error {
-    color: var(--gls-color-icon-error);
+    color: var(--unity-color-icon-error);
   }
   .icon--error-muted {
-    color: var(--gls-color-icon-error-muted);
+    color: var(--unity-color-icon-error);
   }
 }

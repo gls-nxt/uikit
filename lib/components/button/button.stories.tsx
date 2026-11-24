@@ -228,7 +228,10 @@ export const Colors: Story = {
           return color === 'blurred' ? (
             <div
               key={color}
-              style={{ backgroundColor: 'var(--gls-color-surface-primary)', padding: '10px' }}
+              style={{
+                backgroundColor: 'var(--unity-color-surface-brand-strong)',
+                padding: '10px',
+              }}
             >
               {button}
             </div>

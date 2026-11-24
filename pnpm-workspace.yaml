@@ -12,3 +12,5 @@ allowBuilds:
   esbuild: true
   lefthook: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@gls-nxt/design-tokens@0.1.0'

@@ -10,26 +10,29 @@
   }
 
   .sortableList--divided .sortableListItem:not(:last-child) {
-    border-bottom: 1px solid var(--gls-color-border-default);
+    border-bottom: 1px solid var(--unity-color-border-subtle);
   }
 
   .sortableListItem {
     box-sizing: border-box;
     display: flex;
-    gap: var(--gls-spacing-3);
+    gap: var(--unity-spacing-3);
     align-items: center;
-    padding: var(--gls-spacing-2) var(--gls-spacing-1);
+    padding: var(--unity-spacing-2) var(--unity-spacing-1);
     /* Avoid touch scrolling hijacking the pointer drag on the handle. */
     touch-action: manipulation;
-    background-color: var(--gls-color-surface-card);
+    background-color: var(--unity-color-surface-base-2);
   }
 
   .sortableListItem--dragging {
     z-index: 1;
     /* Hide the divider border while lifted. */
     border-bottom-color: transparent;
-    border-radius: var(--gls-border-radius-lg);
-    box-shadow: var(--gls-shadow-md);
+    border-radius: var(--unity-radius-lg);
+    box-shadow:
+      0 4px 9px var(--unity-color-effects-shadow-4),
+      0 16px 16px var(--unity-color-effects-shadow-2),
+      0 35px 21px var(--unity-color-effects-shadow-2);
   }
 
   .sortableListContent {
@@ -42,24 +45,26 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
-    padding: var(--gls-spacing-1);
+    padding: var(--unity-spacing-1);
     margin: initial;
-    color: var(--gls-color-icon-muted);
+    color: var(--unity-color-icon-subtle);
     touch-action: none;
     cursor: grab;
     background: none;
     border: none;
-    border-radius: var(--gls-border-radius-sm);
+    border-radius: var(--unity-radius-sm);
     transition: color 0.15s ease;
   }
 
   .sortableListHandle:hover {
-    color: var(--gls-color-icon-foreground);
+    color: var(--unity-color-icon-default);
   }
 
   .sortableListHandle:focus-visible {
     outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   .sortableListHandle:active {
@@ -67,12 +72,12 @@
   }
 
   .sortableListHandle:disabled {
-    color: var(--gls-color-icon-light);
+    color: var(--unity-color-icon-disabled);
     cursor: not-allowed;
   }
 
   .sortableListHandleIcon {
-    width: var(--gls-icon-size-4);
-    height: var(--gls-icon-size-4);
+    width: var(--unity-icon-size-16);
+    height: var(--unity-icon-size-16);
   }
 }

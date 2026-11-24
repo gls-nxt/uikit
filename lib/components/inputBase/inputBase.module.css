@@ -4,18 +4,18 @@
     box-sizing: border-box;
     display: inline-flex;
     width: 100%;
-    padding: 0 var(--gls-spacing-3);
+    padding: 0 var(--unity-spacing-3);
     overflow: hidden;
     font: inherit;
-    color: var(--gls-color-text-primary);
+    color: var(--unity-color-text-link);
     /* The visible border is a box-shadow, which forced colors mode removes.
        A transparent outline stays invisible normally but is drawn in forced colors. */
     outline: 1px solid transparent;
     outline-offset: -1px;
-    background-color: var(--gls-color-surface-input);
+    background-color: var(--unity-color-surface-tertiary);
     border: none;
-    border-radius: var(--gls-border-radius-lg);
-    box-shadow: var(--gls-ring-default);
+    border-radius: var(--unity-radius-lg);
+    box-shadow: 0 0 0 1px var(--unity-color-border-default);
     isolation: isolate;
     transition:
       border-color 0.2s ease-in-out,
@@ -24,45 +24,50 @@
 
   .input--lg {
     height: 3.375rem;
-    font-size: var(--gls-font-size-4);
-    line-height: var(--gls-line-height-4);
-    letter-spacing: var(--gls-letter-spacing-4);
+    font-size: var(--unity-label-3-font-size);
+    line-height: var(--unity-label-3-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-4);
   }
 
   .input--md {
     height: 3rem;
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-3);
-    letter-spacing: var(--gls-letter-spacing-3);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-3);
   }
 
   .input--sm {
     height: 2.375rem;
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-3);
-    letter-spacing: var(--gls-letter-spacing-3);
-    border-radius: var(--gls-border-radius-md);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-3);
+    border-radius: var(--unity-radius-md);
   }
 
   .input::placeholder {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-subtle);
     opacity: 1;
   }
 
   .input:focus {
     outline-width: 2px;
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   [aria-invalid="true"],
   [aria-invalid="true"]:focus {
-    box-shadow: var(--gls-ring-default), var(--gls-ring-error);
+    box-shadow:
+      0 0 0 1px var(--unity-color-border-default),
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-error);
   }
 
   .input:disabled {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
     cursor: not-allowed;
-    background-color: var(--gls-color-surface-muted);
-    border-color: var(--gls-color-border-default);
+    background-color: var(--unity-color-surface-tertiary-disabled);
+    border-color: var(--unity-color-border-disabled);
   }
 }

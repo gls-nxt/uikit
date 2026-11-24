@@ -1,13 +1,13 @@
 @layer uikit {
   .item {
     display: flex;
-    gap: var(--gls-spacing-3);
+    gap: var(--unity-spacing-3);
     align-items: center;
     width: 100%;
   }
 
   .itemDisabled {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
     pointer-events: none;
     cursor: not-allowed;
   }

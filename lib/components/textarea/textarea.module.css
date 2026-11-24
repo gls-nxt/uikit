@@ -20,9 +20,9 @@
        A transparent outline stays invisible normally but is drawn in forced colors. */
     outline: 1px solid transparent;
     outline-offset: -1px;
-    background-color: var(--gls-color-surface-input);
-    border-radius: var(--gls-border-radius-lg);
-    box-shadow: var(--gls-ring-default);
+    background-color: var(--unity-color-surface-tertiary);
+    border-radius: var(--unity-radius-lg);
+    box-shadow: 0 0 0 1px var(--unity-color-border-default);
     transition:
       border-color 0.2s ease-in-out,
       box-shadow 0.2s ease-in-out;
@@ -40,12 +40,12 @@
     width: 100%;
     max-width: 100%;
     min-height: 86px;
-    padding: var(--gls-spacing-3);
+    padding: var(--unity-spacing-3);
     font: inherit;
-    font-size: var(--gls-font-size-4);
-    line-height: var(--gls-line-height-4);
-    color: var(--gls-color-text-foreground);
-    letter-spacing: var(--gls-letter-spacing-4);
+    font-size: var(--unity-label-3-font-size);
+    line-height: var(--unity-label-3-line-height);
+    color: var(--unity-color-text-default);
+    letter-spacing: var(--unity-font-letter-spacing-4);
     outline: 0;
     background: none;
     border: 0;
@@ -70,8 +70,8 @@
      vertical padding. */
   .textarea--autoResize {
     field-sizing: content;
-    inline-size: calc(20ch + 2 * var(--gls-spacing-3));
-    max-block-size: calc(10lh + 2 * var(--gls-spacing-3));
+    inline-size: calc(20ch + 2 * var(--unity-spacing-3));
+    max-block-size: calc(10lh + 2 * var(--unity-spacing-3));
   }
 
   .textareaWrapper--fullWidth .textarea--autoResize {
@@ -80,16 +80,16 @@
 
   /* Padding adjustment when labelled to make room for the floating label */
   .textareaWrapper--labeled .textarea {
-    padding-top: calc(var(--gls-spacing-6) + 2px);
-    padding-bottom: var(--gls-spacing-2);
+    padding-top: calc(var(--unity-spacing-6) + 2px);
+    padding-bottom: var(--unity-spacing-2);
   }
 
   .textareaWrapper--labeled .textarea--autoResize {
-    max-block-size: calc(10lh + var(--gls-spacing-6) + 2px + var(--gls-spacing-2));
+    max-block-size: calc(10lh + var(--unity-spacing-6) + 2px + var(--unity-spacing-2));
   }
 
   .textarea::placeholder {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-subtle);
     opacity: 1;
   }
 
@@ -99,35 +99,44 @@
   }
 
   .textareaWrapper--labeled .textarea:focus::placeholder {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-subtle);
   }
 
   /* Focus ring */
   .textareaRoot:has(.textarea:focus) {
     outline-width: 2px;
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   /* Error state — resting: default ring + error ring */
   .textareaRoot--error {
-    box-shadow: var(--gls-ring-default), var(--gls-ring-error);
+    box-shadow:
+      0 0 0 1px var(--unity-color-border-default),
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-error);
   }
 
   /* Error state — focused: swap default ring for focus ring so the focus indicator
      is never suppressed (WCAG 2.4.7 Focus Visible / 2.4.11 Focus Appearance) */
   .textareaRoot--error:has(.textarea:focus) {
-    box-shadow: var(--gls-ring-focus), var(--gls-ring-error);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus),
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-error);
   }
 
   /* Disabled state */
   .textareaRoot:has(.textarea:disabled) {
     cursor: not-allowed;
-    background-color: var(--gls-color-surface-muted);
-    border-color: var(--gls-color-border-default);
+    background-color: var(--unity-color-surface-tertiary-disabled);
+    border-color: var(--unity-color-border-disabled);
   }
 
   .textarea:disabled {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
     cursor: not-allowed;
     resize: none;
   }
@@ -138,7 +147,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    color: var(--gls-color-text-label);
+    color: var(--unity-color-text-subtle);
     text-align: left;
     pointer-events: none;
     background: inherit;
@@ -152,34 +161,34 @@
   /* Label floats up and shrinks on focus or when the textarea has content */
   .textareaRoot:has(.textarea:focus) .textareaLabel,
   .textarea:not(:placeholder-shown) + .textareaLabel {
-    font-size: var(--gls-font-size-2);
+    font-size: var(--unity-font-size-12);
     line-height: 1rem;
     transform: translate(0.75rem, 0.5rem);
   }
 
   .textareaWrapper:has(.textarea:disabled) .textareaLabel {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
   }
 
   /* Helper text */
   .textareaHelperText {
-    margin: var(--gls-spacing-1) 0 0 0;
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-5);
-    color: var(--gls-color-text-label);
-    letter-spacing: var(--gls-letter-spacing-3);
+    margin: var(--unity-spacing-1) 0 0 0;
+    font-size: var(--unity-body-4-font-size);
+    line-height: var(--unity-body-4-line-height);
+    color: var(--unity-color-text-subtle);
+    letter-spacing: var(--unity-body-4-letter-spacing);
   }
 
   /* Error message */
   .errorMessage {
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-5);
-    color: var(--gls-color-text-error);
-    letter-spacing: var(--gls-letter-spacing-3);
+    font-size: var(--unity-body-4-font-size);
+    line-height: var(--unity-body-4-line-height);
+    color: var(--unity-color-text-error);
+    letter-spacing: var(--unity-body-4-letter-spacing);
   }
 
   .textareaRoot + .errorMessage {
-    margin: var(--gls-spacing-1) 0 0 0;
+    margin: var(--unity-spacing-1) 0 0 0;
   }
 
   .errorMessage:empty {

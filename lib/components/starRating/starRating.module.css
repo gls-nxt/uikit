@@ -2,11 +2,11 @@
   .starRating {
     display: flex;
     flex-direction: column;
-    gap: var(--gls-spacing-3);
+    gap: var(--unity-spacing-3);
     align-items: center;
     justify-content: center;
     border: none;
-    border-radius: var(--gls-border-radius-lg);
+    border-radius: var(--unity-radius-lg);
   }
 
   .starRating--loading {
@@ -18,12 +18,12 @@
   }
 
   .starRating:focus-within {
-    outline: 2px solid var(--gls-color-ring-focus);
+    outline: 2px solid var(--unity-color-border-focus);
     outline-offset: 2px;
   }
 
   .starRating .title {
-    margin-bottom: var(--gls-spacing-6);
+    margin-bottom: var(--unity-spacing-6);
     text-align: center;
   }
 
@@ -43,10 +43,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--gls-icon-size-10);
-    height: var(--gls-icon-size-10);
-    padding: 0 var(--gls-spacing-1);
-    color: var(--gls-color-neutrals-500);
+    width: var(--unity-icon-size-38);
+    height: var(--unity-icon-size-38);
+    padding: 0 var(--unity-spacing-1);
+    color: var(--unity-color-icon-subtle);
     cursor: pointer;
   }
 
@@ -54,21 +54,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--gls-border-radius-sm);
+    border-radius: var(--unity-radius-sm);
   }
 
   .star:focus-within .iconWrapper {
-    outline: 2px solid var(--gls-color-ring-focus);
+    outline: 2px solid var(--unity-color-border-focus);
     outline-offset: 2px;
   }
 
   .star--highlighted {
-    color: var(--gls-color-surface-primary);
+    color: var(--unity-color-icon-action);
   }
 
   .star:not(.star--highlighted) path {
     color: transparent;
-    stroke: var(--gls-color-neutrals-500);
+    stroke: var(--unity-color-icon-subtle);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;

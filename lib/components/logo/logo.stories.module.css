@@ -2,11 +2,11 @@
   display: block;
   width: 182px;
   height: 60px;
-  background: var(--gls-color-surface-default);
+  background: var(--unity-color-surface-base-2);
 }
 
 @media (prefers-color-scheme: dark) {
   .allow-dark-mode {
-    background: var(--gls-color-brand-blue);
+    background: var(--unity-color-gls-blue);
   }
 }

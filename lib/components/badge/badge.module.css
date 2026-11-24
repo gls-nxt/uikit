@@ -5,53 +5,55 @@
     align-items: center;
     width: fit-content;
     height: 30px;
-    padding: 0 var(--gls-spacing-4);
+    padding: 0 var(--unity-spacing-4);
     margin: 0;
-    border-radius: var(--gls-border-radius-full);
+    border-radius: var(--unity-radius-full);
     transition: box-shadow 100ms ease;
   }
 
   .badge:focus-visible {
     outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   .badge--blue {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--gls-color-text-inverted);
-    background-color: var(--gls-color-surface-primary);
+    color: var(--unity-color-text-inverse);
+    background-color: var(--unity-color-surface-brand-strong);
   }
 
   .badge--light-blue {
-    color: var(--gls-color-text-primary);
-    background-color: var(--gls-color-surface-primary-light);
+    color: var(--unity-color-text-info);
+    background-color: var(--unity-color-surface-brand-subtle);
   }
 
   .badge--grey {
-    color: var(--gls-color-text-foreground);
-    background-color: var(--gls-color-surface-secondary);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-secondary);
   }
 
   .badge--white {
-    color: var(--gls-color-text-foreground);
-    background-color: var(--gls-color-surface-default);
-    box-shadow: inset 0 0 0 1px var(--gls-color-border-default);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-base-2);
+    box-shadow: inset 0 0 0 1px var(--unity-color-border-subtle);
   }
 
   .badge--orange {
-    color: var(--gls-color-text-warning);
-    background-color: var(--gls-color-surface-warning);
+    color: var(--unity-color-text-warning);
+    background-color: var(--unity-color-surface-warning-subtle);
   }
 
   .badge--green {
-    color: var(--gls-color-text-success);
-    background-color: var(--gls-color-surface-success);
+    color: var(--unity-color-text-success);
+    background-color: var(--unity-color-surface-success-subtle);
   }
 
   .badge--red {
-    color: var(--gls-color-text-error);
-    background-color: var(--gls-color-surface-error);
+    color: var(--unity-color-text-error);
+    background-color: var(--unity-color-surface-error-subtle);
   }
 
   .badge--lg {
@@ -72,7 +74,7 @@
 
   .badgeContent {
     display: flex;
-    gap: var(--gls-spacing-1);
+    gap: var(--unity-spacing-1);
     align-items: center;
     width: 100%;
   }

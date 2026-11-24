@@ -4,18 +4,18 @@
     position: relative;
     display: flex;
     flex-grow: 1;
-    gap: var(--gls-spacing-1);
+    gap: var(--unity-spacing-1);
     align-items: center;
     justify-content: center;
     width: fit-content;
     height: auto;
-    padding: var(--gls-spacing-3);
+    padding: var(--unity-spacing-3);
     font-family: inherit;
     font-size: inherit;
-    color: var(--gls-color-text-label);
+    color: var(--unity-color-text-subtle);
     background-color: transparent;
     border: none;
-    border-radius: var(--gls-border-radius-md);
+    border-radius: var(--unity-radius-md);
     transition:
       background-color 0.115s ease-out,
       box-shadow 0.2s ease-out;
@@ -23,10 +23,17 @@
 
   .tabs-trigger:focus-visible {
     outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
-    box-shadow: var(--gls-ring-focus-transparent);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-surface-track-selected),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
   .tabs-trigger[data-state="active"]:focus-visible {
-    box-shadow: var(--gls-shadow-xs), var(--gls-ring-focus-transparent);
+    box-shadow:
+      0 1px 2px var(--unity-color-effects-shadow-2),
+      0 4px 4px var(--unity-color-effects-shadow-2),
+      0 10px 6px var(--unity-color-effects-shadow-1),
+      0 0 0 1.5px var(--unity-color-surface-track-selected),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   .tabs-trigger:hover {
@@ -37,17 +44,20 @@
   }
 
   .tabs-trigger[data-state="inactive"]:not([data-disabled]):hover {
-    background-color: var(--gls-color-surface-secondary-hover);
+    background-color: var(--unity-color-surface-track-hover);
   }
 
   .tabs-trigger[data-state="active"] {
-    color: var(--gls-color-text-foreground);
-    background-color: var(--gls-color-surface-default);
-    box-shadow: var(--gls-shadow-xs);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-track-selected);
+    box-shadow:
+      0 1px 2px var(--unity-color-effects-shadow-2),
+      0 4px 4px var(--unity-color-effects-shadow-2),
+      0 10px 6px var(--unity-color-effects-shadow-1);
   }
 
   .tabs-trigger[data-disabled] {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
     cursor: not-allowed;
   }
 }

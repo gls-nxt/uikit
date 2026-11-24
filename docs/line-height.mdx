@@ -1,8 +1,26 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/LineHeight" />
 
-## LineHeight
+# LineHeight
 
-<DesignTokenDocBlock categoryName="LineHeight" maxHeight={600} />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+<TokenTable preview="line-height" tokens={[
+  '--unity-font-line-height-14',
+  '--unity-font-line-height-16',
+  '--unity-font-line-height-18',
+  '--unity-font-line-height-20',
+  '--unity-font-line-height-22',
+  '--unity-font-line-height-24',
+  '--unity-font-line-height-26',
+  '--unity-font-line-height-28',
+  '--unity-font-line-height-30',
+  '--unity-font-line-height-32',
+  '--unity-font-line-height-34',
+  '--unity-font-line-height-36',
+  '--unity-font-line-height-40',
+  '--unity-font-line-height-52',
+  '--unity-font-line-height-56',
+]} />

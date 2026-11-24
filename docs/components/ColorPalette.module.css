@@ -90,9 +90,9 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid #e4e7ec;
-  border-radius: 8px;
+  background: var(--unity-color-surface-base-2);
+  border: var(--unity-border-width-sm) solid var(--unity-color-border-subtle);
+  border-radius: var(--unity-radius-md);
 }
 
 .semanticSwatch {
@@ -108,11 +108,11 @@
 }
 
 .semanticName {
-  color: #344054;
+  color: var(--unity-color-text-default);
   word-break: break-all;
 }
 
 .semanticHex {
   font-family: monospace;
-  color: #667085;
+  color: var(--unity-color-text-subtle);
 }
