@@ -83,12 +83,12 @@ export const Toast = ({
             ) : null}
             {isSuccess && !prefix ? (
               <span className={styles.icon}>
-                <CheckIcon height={18} width={18} />
+                <CheckIcon height={20} width={20} />
               </span>
             ) : null}
             {isError && !prefix ? (
               <span className={styles.icon}>
-                <AlertCircleIcon height={18} width={18} />
+                <AlertCircleIcon height={20} width={20} />
               </span>
             ) : null}
           </div>
@@ -111,7 +111,7 @@ export const Toast = ({
                 className={styles.action}
                 color="secondary"
                 onClick={action?.onClick}
-                size="xs"
+                size="sm"
               >
                 {action.label}
               </Button>

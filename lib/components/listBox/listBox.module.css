@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
     width: 100%;
+    min-height: 2.875rem; /* 46px */
     padding: var(--unity-spacing-3) var(--unity-spacing-3);
     font-size: var(--unity-label-3-font-size);
     line-height: var(--unity-label-3-line-height);

@@ -2,7 +2,7 @@
   .card {
     padding: var(--unity-spacing-4); /* Default padding */
     overflow: hidden;
-    background-color: var(--unity-color-surface-base-3);
+    background-color: var(--unity-color-surface-base-2);
     border: 1px solid var(--unity-color-border-subtle);
     transition: box-shadow 0.2s ease;
   }
@@ -13,6 +13,22 @@
       0 9px 9px var(--unity-color-effects-shadow-3),
       0 2px 5px var(--unity-color-effects-shadow-2),
       0 20px 12px var(--unity-color-effects-shadow-1);
+  }
+
+  /* The shadow grows with the card: xsmall and small use shadow/xs, large uses shadow/lg */
+  .card--raised.card--sm,
+  .card--raised.card--md {
+    box-shadow:
+      0 1px 2px var(--unity-color-effects-shadow-2),
+      0 4px 4px var(--unity-color-effects-shadow-2),
+      0 10px 6px var(--unity-color-effects-shadow-1);
+  }
+  .card--raised.card--xl {
+    box-shadow:
+      0 6px 13px var(--unity-color-effects-shadow-4),
+      0 20px 25px var(--unity-color-effects-shadow-4),
+      0 56px 34px var(--unity-color-effects-shadow-2),
+      0 80px 40px var(--unity-color-effects-shadow-1);
   }
 
   /* Size variants for border-radius */

@@ -14,7 +14,7 @@ export type MenuContentProps = Prettify<
 /** The surface the items sit on. */
 export const MenuContent = ({
   className,
-  sideOffset = 5,
+  sideOffset = 4,
   'data-testid': dataTestId,
   ...props
 }: MenuContentProps) => (

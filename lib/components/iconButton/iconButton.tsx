@@ -22,6 +22,9 @@ export type IconButtonProps = Prettify<
     }
 >;
 
+// The spinner matches the icon size: 24, 24, 20 and 16px
+const spinnerSize = { lg: 'lg', md: 'lg', sm: 'md', xs: 'sm' } as const;
+
 export const IconButton = ({
   color,
   size,
@@ -46,7 +49,7 @@ export const IconButton = ({
       <Slottable>{children}</Slottable>
 
       {loading ? (
-        <Spinner color="inherit" size={size === 'lg' ? 'md' : size} />
+        <Spinner color="inherit" size={spinnerSize[size ?? 'md']} />
       ) : (
         <div className={styles.icon}>{icon}</div>
       )}

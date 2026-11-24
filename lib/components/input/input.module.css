@@ -87,6 +87,10 @@
     position: relative;
   }
 
+  .inputRoot:hover:not(:has(.input:disabled)) {
+    background-color: var(--unity-color-surface-tertiary-hover);
+  }
+
   .inputRoot:has(.input:focus) {
     outline-width: 2px;
     box-shadow:
@@ -105,7 +109,7 @@
   .inputRoot:has(.input:disabled) {
     cursor: not-allowed;
     background-color: var(--unity-color-surface-tertiary-disabled);
-    border-color: var(--unity-color-border-disabled);
+    box-shadow: 0 0 0 1px var(--unity-color-border-subtle);
   }
 
   .input:disabled {
@@ -165,8 +169,8 @@
   }
   .inputRoot:has(.input:focus) .inputLabel,
   .input:not(:placeholder-shown) + .inputLabel {
-    font-size: var(--unity-font-size-12);
-    line-height: 1rem;
+    font-size: var(--unity-label-5-font-size);
+    line-height: var(--unity-label-5-line-height);
   }
 
   .inputWrapper:has(.input:disabled) .inputLabel {
@@ -180,9 +184,9 @@
   }
 
   .inputWrapper--lg .inputHelperText {
-    font-size: var(--unity-body-4-font-size);
-    line-height: var(--unity-body-4-line-height);
-    letter-spacing: var(--unity-body-4-letter-spacing);
+    font-size: var(--unity-body-5-font-size);
+    line-height: var(--unity-body-5-line-height);
+    letter-spacing: var(--unity-body-5-letter-spacing);
   }
   .inputWrapper--sm .inputHelperText {
     font-size: var(--unity-body-5-font-size);
@@ -204,9 +208,9 @@
   }
 
   .inputWrapper--lg .errorMessage {
-    font-size: var(--unity-body-4-font-size);
-    line-height: var(--unity-body-4-line-height);
-    letter-spacing: var(--unity-body-4-letter-spacing);
+    font-size: var(--unity-body-5-font-size);
+    line-height: var(--unity-body-5-line-height);
+    letter-spacing: var(--unity-body-5-letter-spacing);
   }
   .inputWrapper--sm .errorMessage {
     font-size: var(--unity-body-5-font-size);

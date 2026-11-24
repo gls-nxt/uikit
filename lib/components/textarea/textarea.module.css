@@ -40,12 +40,12 @@
     width: 100%;
     max-width: 100%;
     min-height: 86px;
-    padding: var(--unity-spacing-3);
+    padding: var(--unity-spacing-3) var(--unity-spacing-4);
     font: inherit;
-    font-size: var(--unity-label-3-font-size);
-    line-height: var(--unity-label-3-line-height);
+    font-size: var(--unity-body-3-font-size);
+    line-height: var(--unity-body-3-line-height);
     color: var(--unity-color-text-default);
-    letter-spacing: var(--unity-font-letter-spacing-4);
+    letter-spacing: var(--unity-body-3-letter-spacing);
     outline: 0;
     background: none;
     border: 0;
@@ -70,7 +70,7 @@
      vertical padding. */
   .textarea--autoResize {
     field-sizing: content;
-    inline-size: calc(20ch + 2 * var(--unity-spacing-3));
+    inline-size: calc(20ch + 2 * var(--unity-spacing-4));
     max-block-size: calc(10lh + 2 * var(--unity-spacing-3));
   }
 
@@ -100,6 +100,10 @@
 
   .textareaWrapper--labeled .textarea:focus::placeholder {
     color: var(--unity-color-text-subtle);
+  }
+
+  .textareaRoot:hover:not(:has(.textarea:disabled)) {
+    background-color: var(--unity-color-surface-tertiary-hover);
   }
 
   /* Focus ring */
@@ -132,7 +136,7 @@
   .textareaRoot:has(.textarea:disabled) {
     cursor: not-allowed;
     background-color: var(--unity-color-surface-tertiary-disabled);
-    border-color: var(--unity-color-border-disabled);
+    box-shadow: 0 0 0 1px var(--unity-color-border-subtle);
   }
 
   .textarea:disabled {
@@ -152,7 +156,7 @@
     pointer-events: none;
     background: inherit;
     /* Start at the top-left corner of the textarea (not vertically centered) */
-    transform: translate(0.75rem, 0.75rem);
+    transform: translate(var(--unity-spacing-4), var(--unity-spacing-3));
     transition-timing-function: ease-in-out;
     transition-duration: 0.2s;
     transition-property: font-size, transform, line-height;
@@ -161,9 +165,9 @@
   /* Label floats up and shrinks on focus or when the textarea has content */
   .textareaRoot:has(.textarea:focus) .textareaLabel,
   .textarea:not(:placeholder-shown) + .textareaLabel {
-    font-size: var(--unity-font-size-12);
-    line-height: 1rem;
-    transform: translate(0.75rem, 0.5rem);
+    font-size: var(--unity-label-5-font-size);
+    line-height: var(--unity-label-5-line-height);
+    transform: translate(var(--unity-spacing-4), var(--unity-spacing-2));
   }
 
   .textareaWrapper:has(.textarea:disabled) .textareaLabel {
@@ -173,18 +177,18 @@
   /* Helper text */
   .textareaHelperText {
     margin: var(--unity-spacing-1) 0 0 0;
-    font-size: var(--unity-body-4-font-size);
-    line-height: var(--unity-body-4-line-height);
+    font-size: var(--unity-body-5-font-size);
+    line-height: var(--unity-body-5-line-height);
     color: var(--unity-color-text-subtle);
-    letter-spacing: var(--unity-body-4-letter-spacing);
+    letter-spacing: var(--unity-body-5-letter-spacing);
   }
 
   /* Error message */
   .errorMessage {
-    font-size: var(--unity-body-4-font-size);
-    line-height: var(--unity-body-4-line-height);
+    font-size: var(--unity-body-5-font-size);
+    line-height: var(--unity-body-5-line-height);
     color: var(--unity-color-text-error);
-    letter-spacing: var(--unity-body-4-letter-spacing);
+    letter-spacing: var(--unity-body-5-letter-spacing);
   }
 
   .textareaRoot + .errorMessage {

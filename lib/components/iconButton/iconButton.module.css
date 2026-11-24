@@ -95,11 +95,14 @@
     color: var(--unity-color-icon-on-action);
     background-color: var(--unity-color-surface-brand-strong);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--unity-color-surface-brand-strong-hover);
     }
-    &.iconButton--loading,
-    &:disabled {
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-brand-strong-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
       color: var(--unity-color-icon-disabled);
       background-color: var(--unity-color-surface-brand-strong-disabled);
     }
@@ -109,11 +112,14 @@
     color: var(--unity-color-icon-default);
     background-color: var(--unity-color-surface-secondary);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--unity-color-surface-secondary-hover);
     }
-    &.iconButton--loading,
-    &:disabled {
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-secondary-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
       color: var(--unity-color-icon-disabled);
       background-color: var(--unity-color-surface-secondary-disabled);
     }
@@ -122,12 +128,16 @@
   .iconButton--tertiary {
     color: var(--unity-color-icon-default);
     background-color: var(--unity-color-surface-tertiary);
+    box-shadow: inset 0 0 0 1px var(--unity-color-border-default);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--unity-color-surface-tertiary-hover);
     }
-    &.iconButton--loading,
-    &:disabled {
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-tertiary-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
       color: var(--unity-color-icon-disabled);
       background-color: var(--unity-color-surface-tertiary-disabled);
     }
@@ -137,11 +147,14 @@
     color: var(--unity-color-icon-error);
     background-color: var(--unity-color-surface-error-subtle);
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: var(--unity-color-surface-error-subtle-hover);
     }
-    &.iconButton--loading,
-    &:disabled {
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-error-subtle-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
       color: var(--unity-color-icon-disabled);
       background-color: var(--unity-color-surface-error-subtle-disabled);
     }

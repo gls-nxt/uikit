@@ -39,7 +39,7 @@
     margin: calc(var(--unity-spacing-1) / 2);
     cursor: pointer;
     background-color: var(--unity-color-surface-tertiary);
-    border: 0.075rem solid var(--unity-color-border-default);
+    border: var(--unity-border-width-md) solid var(--unity-color-border-default);
     border-radius: var(--unity-radius-sm);
     transition-timing-function: ease-out;
     transition-duration: 0.1s;
@@ -91,11 +91,12 @@
   }
 
   .checkboxWrapper input:checked:disabled + .checkboxInput {
-    background-color: var(--unity-color-surface-selection-disabled);
+    background-color: var(--unity-color-surface-tertiary-disabled);
     border-color: var(--unity-color-border-disabled);
 
-    .checkboxIndicator {
-      color: var(--unity-color-icon-disabled);
+    .checkboxIndicator,
+    svg {
+      color: var(--unity-color-icon-subtle);
     }
   }
 

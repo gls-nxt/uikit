@@ -15,10 +15,10 @@ export const AlertIcon = ({ children, className, ...props }: AlertIconProps) => 
           <InfoIcon height={20} width={20} />
         </span>
         <span className={styles.alertIconWarning}>
-          <AlertCircleIcon height={20} width={20} />
+          <AlertTriangleIcon height={20} width={20} />
         </span>
         <span className={styles.alertIconError}>
-          <AlertTriangleIcon height={20} width={20} />
+          <AlertCircleIcon height={20} width={20} />
         </span>
       </>
     )}

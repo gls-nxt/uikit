@@ -21,6 +21,7 @@
     padding: var(--unity-spacing-2) var(--unity-spacing-4);
     font-size: var(--unity-label-3-font-size);
     line-height: var(--unity-label-3-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-4);
   }
   .menuItem:hover {
     background-color: var(--unity-color-surface-tertiary-hover);
@@ -30,9 +31,9 @@
     outline-offset: -2px;
   }
   .menuItem[data-disabled] {
-    color: var(--unity-color-text-disabled);
+    color: var(--unity-color-text-subtle);
     cursor: not-allowed;
-    background-color: var(--unity-color-surface-base-4);
+    background-color: var(--unity-color-surface-tertiary-disabled);
   }
   .menuItemAdornment {
     display: inline-flex;

@@ -1,5 +1,6 @@
 @layer uikit {
   .button {
+    box-sizing: border-box;
     display: inline-flex;
     gap: var(--unity-spacing-2);
     align-items: center;
@@ -25,11 +26,14 @@
     color: var(--unity-color-text-on-action);
     background-color: var(--unity-color-surface-brand-strong);
   }
-  .button--primary:hover {
+  .button--primary:hover:not(:disabled) {
     background-color: var(--unity-color-surface-brand-strong-hover);
   }
-  .button--primary.button--loading,
-  .button--primary:disabled {
+  .button--primary:active:not(:disabled) {
+    background-color: var(--unity-color-surface-brand-strong-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--primary:disabled:not(.button--loading) {
     color: var(--unity-color-text-disabled);
     background-color: var(--unity-color-surface-brand-strong-disabled);
   }
@@ -38,11 +42,14 @@
     color: var(--unity-color-text-default);
     background-color: var(--unity-color-surface-secondary);
   }
-  .button--secondary:hover {
+  .button--secondary:hover:not(:disabled) {
     background-color: var(--unity-color-surface-secondary-hover);
   }
-  .button--secondary.button--loading,
-  .button--secondary:disabled {
+  .button--secondary:active:not(:disabled) {
+    background-color: var(--unity-color-surface-secondary-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--secondary:disabled:not(.button--loading) {
     color: var(--unity-color-text-disabled);
     background-color: var(--unity-color-surface-secondary-disabled);
   }
@@ -52,24 +59,31 @@
     background-color: var(--unity-color-surface-tertiary);
     border: 1px solid var(--unity-color-border-default);
   }
-  .button--tertiary:hover {
+  .button--tertiary:hover:not(:disabled) {
     background-color: var(--unity-color-surface-tertiary-hover);
   }
-  .button--tertiary.button--loading,
-  .button--tertiary:disabled {
+  .button--tertiary:active:not(:disabled) {
+    background-color: var(--unity-color-surface-tertiary-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--tertiary:disabled:not(.button--loading) {
     color: var(--unity-color-text-disabled);
     background-color: var(--unity-color-surface-tertiary-disabled);
+    border-color: transparent;
   }
 
   .button--destructive {
     color: var(--unity-color-text-error);
     background-color: var(--unity-color-surface-error-subtle);
   }
-  .button--destructive:hover {
+  .button--destructive:hover:not(:disabled) {
     background-color: var(--unity-color-surface-error-subtle-hover);
   }
-  .button--destructive.button--loading,
-  .button--destructive:disabled {
+  .button--destructive:active:not(:disabled) {
+    background-color: var(--unity-color-surface-error-subtle-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--destructive:disabled:not(.button--loading) {
     color: var(--unity-color-text-disabled);
     background-color: var(--unity-color-surface-error-subtle-disabled);
   }
@@ -88,37 +102,38 @@
   }
 
   .button--lg {
-    max-height: 3.375rem;
-    padding: calc((var(--unity-spacing-4) * 3 + var(--unity-spacing-5)) / 4) var(--unity-spacing-8);
-    font-size: var(--unity-font-size-18);
-    line-height: 1.25rem;
+    height: 3.375rem; /* 54px */
+    padding: 0 var(--unity-spacing-8);
+    font-size: var(--unity-label-2-font-size);
+    line-height: var(--unity-label-2-line-height);
     letter-spacing: var(--unity-font-letter-spacing-5);
     border-radius: var(--unity-radius-lg);
   }
   .button--md {
-    max-height: 3rem;
-    padding: calc(var(--unity-spacing-7) / 2) var(--unity-spacing-8);
-    font-size: var(--unity-font-size-16);
-    line-height: 1.25rem;
+    height: var(--unity-component-height-md);
+    padding: 0 var(--unity-spacing-8);
+    font-size: var(--unity-label-3-font-size);
+    line-height: var(--unity-label-3-line-height);
     letter-spacing: var(--unity-font-letter-spacing-4);
     border-radius: var(--unity-radius-lg);
   }
   .button--sm {
-    gap: calc(var(--unity-spacing-1) * 1.5);
-    max-height: 2.375rem;
-    padding: calc(var(--unity-spacing-10) / 4) var(--unity-spacing-5);
-    font-size: var(--unity-font-size-14);
-    line-height: 1rem;
+    gap: var(--unity-spacing-1);
+    height: 2.375rem; /* 38px */
+    padding: 0 var(--unity-spacing-5);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
     letter-spacing: var(--unity-font-letter-spacing-3);
     border-radius: var(--unity-radius-md);
   }
   .button--xs {
-    max-height: 1.875rem;
-    padding: var(--unity-spacing-2) var(--unity-spacing-4);
-    font-size: var(--unity-font-size-12);
-    line-height: 0.875rem;
+    gap: var(--unity-spacing-1);
+    height: 1.875rem; /* 30px */
+    padding: 0 var(--unity-spacing-4);
+    font-size: var(--unity-label-5-font-size);
+    line-height: var(--unity-label-5-line-height);
     letter-spacing: var(--unity-font-letter-spacing-2);
-    border-radius: var(--unity-radius-sm);
+    border-radius: var(--unity-radius-md);
   }
 
   .button--fullWidth {
@@ -144,8 +159,8 @@
   .buttonIcon--md {
     &,
     svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
     }
   }
   .buttonIcon--sm {
