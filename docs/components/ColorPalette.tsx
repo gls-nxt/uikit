@@ -2,6 +2,7 @@ import getContrastRatio from 'get-contrast-ratio';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import styles from './ColorPalette.module.css';
+import { useTokenRefresh } from './useTokenRefresh';
 
 type ColorToken = {
   name: string;
@@ -117,7 +118,9 @@ function mapsEqual(a: ResolvedMap, b: ResolvedMap): boolean {
 
 function useResolvedColors(groups: ColorGroup[]): ResolvedMap {
   const [resolved, setResolved] = useState<ResolvedMap>(new Map());
+  const refresh = useTokenRefresh();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: refresh re-reads the CSS values after a theme or viewport change
   useEffect(() => {
     const map = new Map<string, string>();
     for (const group of groups) {
@@ -129,7 +132,7 @@ function useResolvedColors(groups: ColorGroup[]): ResolvedMap {
       }
     }
     setResolved((prev) => (mapsEqual(prev, map) ? prev : map));
-  }, [groups]);
+  }, [groups, refresh]);
 
   return resolved;
 }

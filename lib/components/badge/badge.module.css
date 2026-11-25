@@ -21,7 +21,7 @@
   .badge--blue {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: var(--unity-color-text-inverse);
+    color: var(--unity-color-text-on-action);
     background-color: var(--unity-color-surface-brand-strong);
   }
 

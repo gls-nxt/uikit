@@ -1,6 +1,7 @@
 import type React from 'react';
 import { useEffect, useState } from 'react';
 import styles from './TokenTable.module.css';
+import { useTokenRefresh } from './useTokenRefresh';
 
 type Preview =
   | 'border-width'
@@ -77,10 +78,12 @@ const TEXT_PREVIEWS = new Set<Preview>([
 
 export function TokenTable({ tokens, preview = 'none' }: TokenTableProps) {
   const [values, setValues] = useState<Record<string, string>>({});
+  const refresh = useTokenRefresh();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: refresh re-reads the CSS values after a theme or viewport change
   useEffect(() => {
     setValues(Object.fromEntries(tokens.map((t) => [t, resolve(t, preview)])));
-  }, [tokens, preview]);
+  }, [tokens, preview, refresh]);
 
   return (
     <table className={`${styles.table} sb-unstyled`}>

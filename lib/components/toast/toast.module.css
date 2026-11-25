@@ -83,6 +83,7 @@
     justify-content: center;
     margin-top: 1.5px;
     margin-right: var(--unity-spacing-2);
+    color: var(--unity-color-icon-inverse);
   }
 
   .content {

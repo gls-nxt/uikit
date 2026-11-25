@@ -14,6 +14,7 @@
     padding: 0;
     margin: 0;
     overflow: visible;
+    color: var(--unity-color-text-default);
     background-color: var(--unity-color-surface-base-2);
     border: 1px solid var(--unity-color-border-subtle);
     border-radius: var(--unity-radius-xl) var(--unity-radius-xl) 0 0;
