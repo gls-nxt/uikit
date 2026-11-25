@@ -1,3 +1,4 @@
+import { CheckIcon } from '@icons';
 import type { Prettify } from '@utils/types';
 import {
   type AriaAttributes,
@@ -279,6 +280,9 @@ export const ListBoxItem = <T extends Option = Option>({
       {...props}
     >
       {children?.(option) ?? option.value}
+      {isSelected ? (
+        <CheckIcon aria-hidden className={styles.check} height={20} width={20} />
+      ) : null}
     </div>
   );
 };

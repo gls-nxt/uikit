@@ -58,7 +58,16 @@ const meta = {
     color: {
       control: 'select',
       description: 'The color variant of the button.',
-      options: ['primary', 'secondary', 'tertiary', 'destructive', 'blurred', 'ghost'],
+      options: [
+        'primary',
+        'primary-light',
+        'secondary',
+        'tertiary',
+        'success',
+        'destructive',
+        'text',
+        'blurred',
+      ],
       table: {
         category: 'Appearance',
         defaultValue: { summary: 'primary' },
@@ -187,7 +196,16 @@ export const Sizes: Story = {
 
 export const Colors: Story = {
   render: function Render(args) {
-    const colors = ['primary', 'secondary', 'tertiary', 'destructive', 'blurred', 'ghost'] as const;
+    const colors = [
+      'primary',
+      'primary-light',
+      'secondary',
+      'tertiary',
+      'success',
+      'destructive',
+      'text',
+      'blurred',
+    ] as const;
 
     return (
       <div
@@ -195,7 +213,7 @@ export const Colors: Story = {
           alignItems: 'center',
           display: 'grid',
           gap: '16px',
-          gridTemplateColumns: 'repeat(6, max-content)',
+          gridTemplateColumns: `repeat(${colors.length}, max-content)`,
           justifyItems: 'center',
         }}
       >

@@ -30,6 +30,11 @@ describe('RadioGroup Component', () => {
     });
   });
 
+  it('marks the group invalid when error is set', () => {
+    render(<RadioGroup error options={['A']} />);
+    expect(screen.getByRole('radiogroup')).toHaveAttribute('aria-invalid', 'true');
+  });
+
   it('renders with disabled option', () => {
     const options = [
       { label: 'Option 1', value: '1' },

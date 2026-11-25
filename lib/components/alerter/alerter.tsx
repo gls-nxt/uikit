@@ -32,6 +32,7 @@ export const Alerter = ({
           <Alert
             key={alert.id}
             message={alert.message}
+            shadow={!container}
             title={alert.title}
             variant={alert.variant}
           />

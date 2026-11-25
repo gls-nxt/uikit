@@ -23,6 +23,8 @@ export type ToastProps = Prettify<
       dismiss?: boolean;
     };
     close?: boolean;
+    /** Accessible name of the close button. */
+    closeLabel?: string;
     preserve?: boolean;
     prefix?: ReactElement | string;
     allowSwiping?: boolean;
@@ -35,6 +37,7 @@ export const Toast = ({
   'data-testid': dataTestId,
   action,
   close = true,
+  closeLabel = 'Close',
   preserve = false,
   prefix,
   title,
@@ -121,7 +124,7 @@ export const Toast = ({
           {close ? (
             <ToastPrimitives.Close asChild>
               <Button
-                aria-label="toast-close-button"
+                aria-label={closeLabel}
                 className={styles.close}
                 color="tertiary"
                 data-toast-close

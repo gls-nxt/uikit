@@ -18,6 +18,8 @@ export type RadioOption =
 export type RadioGroupProps = Prettify<
   ComponentProps<typeof RadixRadioGroup.Root> & {
     options?: RadioOption[];
+    /** Marks the group as invalid. */
+    error?: boolean;
     'data-testid'?: string;
   }
 >;
@@ -27,6 +29,7 @@ export const RadioGroup = ({
   className,
   'data-testid': dataTestId,
   options,
+  error,
   ref,
   ...props
 }: RadioGroupProps) => {
@@ -35,6 +38,7 @@ export const RadioGroup = ({
   return (
     <RadixRadioGroup.Root
       {...props}
+      aria-invalid={error || undefined}
       className={combinedClassName}
       data-testid={dataTestId}
       ref={ref}

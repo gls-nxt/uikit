@@ -175,14 +175,51 @@
     }
   }
 
-  .iconButton--ghost {
-    color: var(--unity-color-icon-subtle);
+  .iconButton--success {
+    color: var(--unity-color-icon-on-action);
+    background-color: var(--unity-color-surface-success-strong);
+
+    &:hover:not(:disabled) {
+      background-color: var(--unity-color-surface-success-strong-hover);
+    }
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-success-strong-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
+      color: var(--unity-color-icon-disabled);
+      background-color: var(--unity-color-surface-success-strong-disabled);
+    }
+  }
+
+  .iconButton--primary-light {
+    color: var(--unity-color-icon-action);
+    background-color: var(--unity-color-surface-brand-subtle);
+
+    &:hover:not(:disabled) {
+      background-color: var(--unity-color-surface-brand-subtle-hover);
+    }
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-brand-subtle-pressed);
+    }
+    /* Loading keeps the idle colours */
+    &:disabled:not(.iconButton--loading) {
+      color: var(--unity-color-icon-disabled);
+      background-color: var(--unity-color-surface-brand-subtle-disabled);
+    }
+  }
+
+  .iconButton--text {
+    color: var(--unity-color-icon-default);
     background-color: transparent;
 
     &:hover:not(:disabled) {
       background-color: var(--unity-color-surface-tertiary-hover);
     }
-    &:disabled {
+    &:active:not(:disabled) {
+      background-color: var(--unity-color-surface-tertiary-pressed);
+    }
+    &:disabled:not(.iconButton--loading) {
       color: var(--unity-color-icon-disabled);
     }
   }

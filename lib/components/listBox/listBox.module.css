@@ -23,6 +23,7 @@
   .item {
     box-sizing: border-box;
     display: flex;
+    gap: var(--unity-spacing-3);
     align-items: center;
     width: 100%;
     min-height: 2.875rem; /* 46px */
@@ -51,5 +52,15 @@
     &:hover {
       background-color: var(--unity-color-surface-tertiary-hover);
     }
+
+    &[aria-selected="true"] {
+      background-color: var(--unity-color-surface-secondary-hover);
+    }
+  }
+
+  .check {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--unity-color-icon-default);
   }
 }
