@@ -15,6 +15,7 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  staticDirs: [{ from: './brand', to: '/brand' }],
   stories: ['../lib/**/*.mdx', '../lib/**/*.stories.@(js|jsx|ts|tsx)', '../docs/*.mdx'],
   // Vite's dep scan misses imports in docs/*.mdx, so it would discover this on first page load,
   // re-optimise and reload mid-request, which hangs the preview with "Server timed out".
