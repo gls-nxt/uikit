@@ -1,7 +1,7 @@
 import { addons } from 'storybook/manager-api';
 
-import glsTheme from './theme';
+import { systemTheme } from './theme';
 
 addons.setConfig({
-  theme: glsTheme,
+  theme: systemTheme,
 });
