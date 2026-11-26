@@ -3,197 +3,364 @@ import { ColorPalette } from './components/ColorPalette';
 
 <Meta title="Design System/Colors" />
 
-# Color Palette
+# Colors
 
-Our Color Palette is the base of our design system. It is used to create a consistent look and feel across our products. For more in-depth documentation, you can check out the [Unity Design System](https://www.figma.com/design/rUvwRrvXRta7egY4ju7JQm/Unity-Design-System?m=auto&node-id=708-14768&t=MAVfvE0QDak2RIh8-1).
+The colours come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package. For more in-depth documentation, see the [Unity Design System](https://www.figma.com/design/rUvwRrvXRta7egY4ju7JQm/Unity-Design-System?m=auto&node-id=708-14768&t=MAVfvE0QDak2RIh8-1) in Figma.
 
-## Brand Colors
+Components use the semantic colours only. The base colours are the raw values the semantic colours point to.
+
+## Base colours
+
+### Brand and base
 
 <ColorPalette variant="semantic" groups={[
   [
-    '--gls-color-brand-blue',
-    '--gls-color-brand-blue-light',
-    '--gls-color-brand-green',
-    '--gls-color-brand-green-light',
-    '--gls-color-brand-yellow',
-  ],
+    '--unity-color-gls-blue',
+    '--unity-color-gls-yellow',
+    '--unity-color-base-black',
+    '--unity-color-base-white',
+  ]
 ]} />
 
-## Color Palette
+### Ramps
 
-Each color swatch shows which colors from its group pass [WCAG 2.1 AA](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) contrast requirements (≥ 4.5:1 for normal text). The number next to each name is the contrast ratio.
+Each light ramp sits next to its dark ramp. Each swatch lists the colours from its pair that pass [WCAG 2.2 AA](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) contrast (≥ 4.5:1 for normal text). The number is the contrast ratio.
 
-In this palette we use a numeric value to represent the shade. For more in-depth documentation, you can check out the Primitive Color section in [Figma](https://www.figma.com/design/rUvwRrvXRta7egY4ju7JQm/Unity-Design-System?m=auto&node-id=708-14776&t=MAVfvE0QDak2RIh8-1).
-
+#### Blue
 
 <ColorPalette groups={[
   [
-    '--gls-color-neutrals-25',
-    '--gls-color-neutrals-50',
-    '--gls-color-neutrals-100',
-    '--gls-color-neutrals-200',
-    '--gls-color-neutrals-300',
-    '--gls-color-neutrals-400',
-    '--gls-color-neutrals-500',
-    '--gls-color-neutrals-600',
-    '--gls-color-neutrals-700',
-    '--gls-color-neutrals-800',
-    '--gls-color-neutrals-900',
-    '--gls-color-neutrals-1000',
+    '--unity-color-blue-100',
+    '--unity-color-blue-200',
+    '--unity-color-blue-300',
+    '--unity-color-blue-400',
+    '--unity-color-blue-500',
+    '--unity-color-blue-600',
+    '--unity-color-blue-700',
+    '--unity-color-blue-800',
+    '--unity-color-blue-900',
+    '--unity-color-blue-1000',
+    '--unity-color-blue-1100',
+    '--unity-color-blue-1200',
   ],
   [
-    '--gls-color-red-100',
-    '--gls-color-red-200',
-    '--gls-color-red-300',
-    '--gls-color-red-400',
-    '--gls-color-red-500',
-    '--gls-color-red-600',
-    '--gls-color-red-700',
-    '--gls-color-red-800',
-    '--gls-color-red-900',
-  ],
-  [
-    '--gls-color-yellow-100',
-    '--gls-color-yellow-200',
-    '--gls-color-yellow-300',
-    '--gls-color-yellow-400',
-    '--gls-color-yellow-500',
-    '--gls-color-yellow-600',
-    '--gls-color-yellow-700',
-    '--gls-color-yellow-800',
-    '--gls-color-yellow-900',
-  ],
-  [
-    '--gls-color-green-100',
-    '--gls-color-green-200',
-    '--gls-color-green-300',
-    '--gls-color-green-400',
-    '--gls-color-green-500',
-    '--gls-color-green-600',
-    '--gls-color-green-700',
-    '--gls-color-green-800',
-    '--gls-color-green-900',
-  ],
-  [
-    '--gls-color-cyan-100',
-    '--gls-color-cyan-200',
-    '--gls-color-cyan-300',
-    '--gls-color-cyan-400',
-    '--gls-color-cyan-500',
-    '--gls-color-cyan-600',
-    '--gls-color-cyan-700',
-    '--gls-color-cyan-800',
-    '--gls-color-cyan-900',
-  ],
-  [
-    '--gls-color-blue-100',
-    '--gls-color-blue-200',
-    '--gls-color-blue-300',
-    '--gls-color-blue-400',
-    '--gls-color-blue-500',
-    '--gls-color-blue-600',
-    '--gls-color-blue-700',
-    '--gls-color-blue-800',
-    '--gls-color-blue-900',
-  ],
+    '--unity-color-blue-dark-100',
+    '--unity-color-blue-dark-200',
+    '--unity-color-blue-dark-300',
+    '--unity-color-blue-dark-400',
+    '--unity-color-blue-dark-500',
+    '--unity-color-blue-dark-600',
+    '--unity-color-blue-dark-700',
+    '--unity-color-blue-dark-800',
+    '--unity-color-blue-dark-900',
+    '--unity-color-blue-dark-1000',
+    '--unity-color-blue-dark-1100',
+    '--unity-color-blue-dark-1200',
+  ]
 ]} />
 
+#### Yellow
+
+<ColorPalette groups={[
+  [
+    '--unity-color-yellow-100',
+    '--unity-color-yellow-200',
+    '--unity-color-yellow-300',
+    '--unity-color-yellow-400',
+    '--unity-color-yellow-500',
+    '--unity-color-yellow-600',
+    '--unity-color-yellow-700',
+    '--unity-color-yellow-800',
+    '--unity-color-yellow-900',
+    '--unity-color-yellow-1000',
+    '--unity-color-yellow-1100',
+    '--unity-color-yellow-1200',
+  ],
+  [
+    '--unity-color-yellow-dark-100',
+    '--unity-color-yellow-dark-200',
+    '--unity-color-yellow-dark-300',
+    '--unity-color-yellow-dark-400',
+    '--unity-color-yellow-dark-500',
+    '--unity-color-yellow-dark-600',
+    '--unity-color-yellow-dark-700',
+    '--unity-color-yellow-dark-800',
+    '--unity-color-yellow-dark-900',
+    '--unity-color-yellow-dark-1000',
+    '--unity-color-yellow-dark-1100',
+    '--unity-color-yellow-dark-1200',
+  ]
+]} />
+
+#### Gray
+
+<ColorPalette groups={[
+  [
+    '--unity-color-gray-100',
+    '--unity-color-gray-200',
+    '--unity-color-gray-300',
+    '--unity-color-gray-400',
+    '--unity-color-gray-500',
+    '--unity-color-gray-550',
+    '--unity-color-gray-600',
+    '--unity-color-gray-700',
+    '--unity-color-gray-800',
+    '--unity-color-gray-900',
+    '--unity-color-gray-1000',
+    '--unity-color-gray-1100',
+    '--unity-color-gray-1200',
+  ],
+  [
+    '--unity-color-gray-dark-100',
+    '--unity-color-gray-dark-200',
+    '--unity-color-gray-dark-300',
+    '--unity-color-gray-dark-400',
+    '--unity-color-gray-dark-500',
+    '--unity-color-gray-dark-600',
+    '--unity-color-gray-dark-700',
+    '--unity-color-gray-dark-800',
+    '--unity-color-gray-dark-850',
+    '--unity-color-gray-dark-900',
+    '--unity-color-gray-dark-1000',
+    '--unity-color-gray-dark-1100',
+    '--unity-color-gray-dark-1200',
+  ]
+]} />
+
+#### Red
+
+<ColorPalette groups={[
+  [
+    '--unity-color-red-100',
+    '--unity-color-red-200',
+    '--unity-color-red-300',
+    '--unity-color-red-400',
+    '--unity-color-red-500',
+    '--unity-color-red-600',
+    '--unity-color-red-700',
+    '--unity-color-red-800',
+    '--unity-color-red-900',
+    '--unity-color-red-1000',
+    '--unity-color-red-1100',
+    '--unity-color-red-1200',
+  ],
+  [
+    '--unity-color-red-dark-100',
+    '--unity-color-red-dark-200',
+    '--unity-color-red-dark-300',
+    '--unity-color-red-dark-400',
+    '--unity-color-red-dark-500',
+    '--unity-color-red-dark-600',
+    '--unity-color-red-dark-700',
+    '--unity-color-red-dark-800',
+    '--unity-color-red-dark-900',
+    '--unity-color-red-dark-1000',
+    '--unity-color-red-dark-1100',
+    '--unity-color-red-dark-1200',
+  ]
+]} />
+
+#### Orange
+
+<ColorPalette groups={[
+  [
+    '--unity-color-orange-100',
+    '--unity-color-orange-200',
+    '--unity-color-orange-300',
+    '--unity-color-orange-400',
+    '--unity-color-orange-500',
+    '--unity-color-orange-600',
+    '--unity-color-orange-700',
+    '--unity-color-orange-800',
+    '--unity-color-orange-900',
+    '--unity-color-orange-1000',
+    '--unity-color-orange-1100',
+    '--unity-color-orange-1200',
+  ],
+  [
+    '--unity-color-orange-dark-100',
+    '--unity-color-orange-dark-200',
+    '--unity-color-orange-dark-300',
+    '--unity-color-orange-dark-400',
+    '--unity-color-orange-dark-500',
+    '--unity-color-orange-dark-600',
+    '--unity-color-orange-dark-700',
+    '--unity-color-orange-dark-800',
+    '--unity-color-orange-dark-900',
+    '--unity-color-orange-dark-1000',
+    '--unity-color-orange-dark-1100',
+    '--unity-color-orange-dark-1200',
+  ]
+]} />
+
+#### Green
+
+<ColorPalette groups={[
+  [
+    '--unity-color-green-100',
+    '--unity-color-green-200',
+    '--unity-color-green-300',
+    '--unity-color-green-400',
+    '--unity-color-green-500',
+    '--unity-color-green-600',
+    '--unity-color-green-700',
+    '--unity-color-green-800',
+    '--unity-color-green-900',
+    '--unity-color-green-1000',
+    '--unity-color-green-1100',
+    '--unity-color-green-1200',
+  ],
+  [
+    '--unity-color-green-dark-100',
+    '--unity-color-green-dark-200',
+    '--unity-color-green-dark-300',
+    '--unity-color-green-dark-400',
+    '--unity-color-green-dark-500',
+    '--unity-color-green-dark-600',
+    '--unity-color-green-dark-700',
+    '--unity-color-green-dark-800',
+    '--unity-color-green-dark-900',
+    '--unity-color-green-dark-1000',
+    '--unity-color-green-dark-1100',
+    '--unity-color-green-dark-1200',
+  ]
+]} />
+
+### Black alpha
 
 <ColorPalette variant="semantic" groups={[
   [
-    '--gls-color-shades-black',
-    '--gls-color-shades-white',
-  ],
+    '--unity-color-black-alpha-1',
+    '--unity-color-black-alpha-2',
+    '--unity-color-black-alpha-3',
+    '--unity-color-black-alpha-4',
+    '--unity-color-black-alpha-5',
+    '--unity-color-black-alpha-8',
+    '--unity-color-black-alpha-12',
+    '--unity-color-black-alpha-16',
+    '--unity-color-black-alpha-24',
+    '--unity-color-black-alpha-32',
+  ]
 ]} />
 
-To use the colors in specific contexts, we have created different tokens, which consume the primitive colors.
+## Semantic colours
 
-## Text Colors
+The semantic colours change with the colour mode. They follow the operating system setting, or `data-theme="light"` / `data-theme="dark"` on `<html>`. The swatches show the active mode.
 
-Text colors are used to display text in different contexts.
+### Surface
 
 <ColorPalette variant="semantic" groups={[
   [
-    '--gls-color-text-foreground',
-    '--gls-color-text-inverted',
-    '--gls-color-text-muted',
-    '--gls-color-text-light',
-    '--gls-color-text-label',
-    '--gls-color-text-primary',
-    '--gls-color-text-primary-hover',
-    '--gls-color-text-primary-muted',
-    '--gls-color-text-success',
-    '--gls-color-text-success-light',
-    '--gls-color-text-error',
-    '--gls-color-text-error-muted',
-    '--gls-color-text-warning',
-  ],
+    '--unity-color-surface-base-1',
+    '--unity-color-surface-base-2',
+    '--unity-color-surface-base-3',
+    '--unity-color-surface-base-4',
+    '--unity-color-surface-secondary',
+    '--unity-color-surface-secondary-hover',
+    '--unity-color-surface-secondary-pressed',
+    '--unity-color-surface-secondary-disabled',
+    '--unity-color-surface-tertiary',
+    '--unity-color-surface-tertiary-hover',
+    '--unity-color-surface-tertiary-pressed',
+    '--unity-color-surface-tertiary-disabled',
+    '--unity-color-surface-on-action',
+    '--unity-color-surface-selection',
+    '--unity-color-surface-selection-hover',
+    '--unity-color-surface-selection-disabled',
+    '--unity-color-surface-brand-strong',
+    '--unity-color-surface-brand-strong-hover',
+    '--unity-color-surface-brand-strong-pressed',
+    '--unity-color-surface-brand-strong-disabled',
+    '--unity-color-surface-brand-subtle',
+    '--unity-color-surface-brand-subtle-hover',
+    '--unity-color-surface-brand-subtle-pressed',
+    '--unity-color-surface-brand-subtle-disabled',
+    '--unity-color-surface-error-subtle',
+    '--unity-color-surface-error-subtle-hover',
+    '--unity-color-surface-error-subtle-pressed',
+    '--unity-color-surface-error-subtle-disabled',
+    '--unity-color-surface-error-strong',
+    '--unity-color-surface-success-strong',
+    '--unity-color-surface-success-strong-hover',
+    '--unity-color-surface-success-strong-pressed',
+    '--unity-color-surface-success-strong-disabled',
+    '--unity-color-surface-success-subtle',
+    '--unity-color-surface-warning-subtle',
+    '--unity-color-surface-warning-strong',
+    '--unity-color-surface-overlay',
+    '--unity-color-surface-inverse',
+    '--unity-color-surface-track',
+    '--unity-color-surface-track-hover',
+    '--unity-color-surface-track-pressed',
+    '--unity-color-surface-track-selected',
+    '--unity-color-surface-track-selected-hover',
+    '--unity-color-surface-track-selected-pressed',
+  ]
 ]} />
 
-## Surface Colors
-
-Surface Colors are used to display surfaces and backgrounds in different context e.g Cards, Backgrounds, Dialogs etc. We also use them to provide feedback to the user if an element is interactive, disabled or in error state.
+### Text
 
 <ColorPalette variant="semantic" groups={[
   [
-    '--gls-color-background-overlay',
-    '--gls-color-background-default',
-  ],
-  [
-    '--gls-color-surface-default',
-    '--gls-color-surface-default-hover',
-    '--gls-color-surface-card',
-    '--gls-color-surface-card-hover',
-    '--gls-color-surface-inverted',
-    '--gls-color-surface-inverted-hover',
-    '--gls-color-surface-input',
-    '--gls-color-surface-input-hover',
-    '--gls-color-surface-primary',
-    '--gls-color-surface-primary-hover',
-    '--gls-color-surface-primary-muted',
-    '--gls-color-surface-primary-pressed',
-    '--gls-color-surface-primary-light',
-    '--gls-color-surface-secondary',
-    '--gls-color-surface-secondary-hover',
-    '--gls-color-surface-secondary-muted',
-    '--gls-color-surface-secondary-pressed',
-    '--gls-color-surface-muted',
-    '--gls-color-surface-muted-hover',
-    '--gls-color-surface-success',
-    '--gls-color-surface-success-hover',
-    '--gls-color-surface-warning',
-    '--gls-color-surface-warning-hover',
-    '--gls-color-surface-error',
-    '--gls-color-surface-error-hover',
-    '--gls-color-surface-error-muted',
-    '--gls-color-surface-error-pressed',
-    '--gls-color-surface-tooltip',
-    '--gls-color-surface-indicator',
-    '--gls-color-surface-skeleton',
-    '--gls-color-surface-blurred',
-    '--gls-color-surface-blurred-hover',
-  ],
+    '--unity-color-text-default',
+    '--unity-color-text-subtle',
+    '--unity-color-text-disabled',
+    '--unity-color-text-inverse',
+    '--unity-color-text-on-action',
+    '--unity-color-text-on-white',
+    '--unity-color-text-link',
+    '--unity-color-text-link-hover',
+    '--unity-color-text-link-pressed',
+    '--unity-color-text-link-disabled',
+    '--unity-color-text-error',
+    '--unity-color-text-success',
+    '--unity-color-text-warning',
+    '--unity-color-text-info',
+  ]
 ]} />
 
-## Icon Colors
-
-Icon Colors are used to display icons in different contexts.
+### Icon
 
 <ColorPalette variant="semantic" groups={[
   [
-    '--gls-color-icon-foreground',
-    '--gls-color-icon-foreground-hover',
-    '--gls-color-icon-inverted',
-    '--gls-color-icon-inverted-hover',
-    '--gls-color-icon-light',
-    '--gls-color-icon-muted',
-    '--gls-color-icon-primary',
-    '--gls-color-icon-primary-hover',
-    '--gls-color-icon-primary-muted',
-    '--gls-color-icon-primary-pressed',
-    '--gls-color-icon-success',
-    '--gls-color-icon-warning',
-    '--gls-color-icon-error',
-    '--gls-color-icon-error-muted',
-  ],
+    '--unity-color-icon-default',
+    '--unity-color-icon-subtle',
+    '--unity-color-icon-disabled',
+    '--unity-color-icon-on-action',
+    '--unity-color-icon-action',
+    '--unity-color-icon-error',
+    '--unity-color-icon-success',
+    '--unity-color-icon-warning',
+    '--unity-color-icon-info',
+    '--unity-color-icon-inverse',
+  ]
+]} />
+
+### Border
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--unity-color-border-default',
+    '--unity-color-border-subtle',
+    '--unity-color-border-action',
+    '--unity-color-border-focus',
+    '--unity-color-border-disabled',
+    '--unity-color-border-error',
+    '--unity-color-border-success',
+    '--unity-color-border-warning',
+    '--unity-color-border-info',
+    '--unity-color-border-selection',
+  ]
+]} />
+
+### Shadow
+
+<ColorPalette variant="semantic" groups={[
+  [
+    '--unity-color-effects-shadow-1',
+    '--unity-color-effects-shadow-2',
+    '--unity-color-effects-shadow-3',
+    '--unity-color-effects-shadow-4',
+    '--unity-color-effects-shadow-5',
+  ]
 ]} />

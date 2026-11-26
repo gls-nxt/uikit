@@ -1,8 +1,63 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/FontSize" />
 
-## FontSize
+# FontSize
 
-<DesignTokenDocBlock categoryName="FontSize" maxHeight={600} />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+## Text styles
+
+Components use the text styles. Each style has a `-font-size`, `-line-height` and, for headings and body, `-letter-spacing` token. The values change with `data-viewport="mobile"` or `data-viewport="locker"` on `<html>`; the default is desktop.
+
+### Heading
+
+<TokenTable preview="text-style" tokens={[
+  '--unity-heading-1',
+  '--unity-heading-2',
+  '--unity-heading-3',
+  '--unity-heading-4',
+  '--unity-heading-5',
+  '--unity-heading-6',
+]} />
+
+### Body
+
+<TokenTable preview="text-style" tokens={[
+  '--unity-body-1',
+  '--unity-body-2',
+  '--unity-body-3',
+  '--unity-body-4',
+  '--unity-body-5',
+]} />
+
+### Label
+
+<TokenTable preview="text-style" tokens={[
+  '--unity-label-1',
+  '--unity-label-2',
+  '--unity-label-3',
+  '--unity-label-4',
+  '--unity-label-5',
+  '--unity-label-6',
+]} />
+
+## Font sizes
+
+<TokenTable preview="font-size" tokens={[
+  '--unity-font-size-10',
+  '--unity-font-size-12',
+  '--unity-font-size-14',
+  '--unity-font-size-16',
+  '--unity-font-size-18',
+  '--unity-font-size-20',
+  '--unity-font-size-22',
+  '--unity-font-size-24',
+  '--unity-font-size-26',
+  '--unity-font-size-28',
+  '--unity-font-size-32',
+  '--unity-font-size-34',
+  '--unity-font-size-42',
+  '--unity-font-size-48',
+]} />

@@ -1,8 +1,18 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/BorderRadius" />
 
-## BorderRadius
+# BorderRadius
 
-<DesignTokenDocBlock categoryName="BorderRadius" maxHeight={600} height={400} viewType="card" />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+<TokenTable preview="radius" tokens={[
+  '--unity-radius-0',
+  '--unity-radius-sm',
+  '--unity-radius-md',
+  '--unity-radius-lg',
+  '--unity-radius-xl',
+  '--unity-radius-2xl',
+  '--unity-radius-full',
+]} />

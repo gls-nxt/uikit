@@ -1,8 +1,16 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/Border" />
 
-## Border
+# Border
 
-<DesignTokenDocBlock categoryName="Border" maxHeight={600} viewType="card" />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+Border colours are on the [Colors](?path=/docs/design-system-colors--docs) page.
+
+<TokenTable preview="border-width" tokens={[
+  '--unity-border-width-0',
+  '--unity-border-width-sm',
+  '--unity-border-width-md',
+]} />
