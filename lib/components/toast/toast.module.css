@@ -1,23 +1,27 @@
 @layer uikit {
   .root {
-    --padding: var(--gls-spacing-3);
+    --padding: var(--unity-spacing-3);
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    min-height: var(--gls-spacing-7);
+    min-height: var(--unity-spacing-7);
     padding: var(--padding);
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-5);
-    color: var(--gls-color-text-inverted);
-    letter-spacing: var(--gls-letter-spacing-3);
+    font-size: var(--unity-body-4-font-size);
+    line-height: var(--unity-body-4-line-height);
+    color: var(--unity-color-text-inverse);
+    letter-spacing: var(--unity-body-4-letter-spacing);
     overflow-wrap: anywhere;
     touch-action: none;
     outline: none;
-    background-color: var(--gls-color-surface-inverted);
-    border-radius: var(--gls-border-radius-lg);
-    box-shadow: var(--gls-shadow-lg);
+    background-color: var(--unity-color-surface-inverse);
+    border-radius: var(--unity-radius-lg);
+    box-shadow:
+      0 6px 13px var(--unity-color-effects-shadow-4),
+      0 20px 25px var(--unity-color-effects-shadow-4),
+      0 56px 34px var(--unity-color-effects-shadow-2),
+      0 80px 40px var(--unity-color-effects-shadow-1);
     transition:
       transform 400ms,
       opacity 400ms,
@@ -25,12 +29,12 @@
       outline 200ms;
 
     @media (--medium) {
-      --padding: var(--gls-spacing-4);
+      --padding: var(--unity-spacing-4);
     }
   }
 
   .root:focus-visible {
-    outline: 1.5px solid var(--gls-color-blue-200);
+    outline: 1.5px solid var(--unity-color-border-focus);
     outline-offset: 1.5px;
   }
 
@@ -78,7 +82,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 1.5px;
-    margin-right: var(--gls-spacing-2);
+    margin-right: var(--unity-spacing-2);
+    color: var(--unity-color-icon-inverse);
   }
 
   .content {
@@ -102,12 +107,12 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    color: var(--gls-color-text-inverted);
+    color: var(--unity-color-icon-inverse);
     background-color: transparent;
-    border-radius: var(--gls-border-radius-full);
+    border-radius: var(--unity-radius-full);
 
     &:hover > svg {
-      color: var(--gls-color-text-inverted);
+      color: var(--unity-color-icon-inverse);
       opacity: 0.5;
     }
 
@@ -121,7 +126,7 @@
     flex-grow: 1;
     flex-shrink: 0;
     flex-direction: row;
-    gap: var(--gls-spacing-2);
+    gap: var(--unity-spacing-2);
     align-items: start;
   }
 
@@ -200,8 +205,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--gls-spacing-6);
-    height: var(--gls-spacing-6);
+    width: var(--unity-spacing-6);
+    height: var(--unity-spacing-6);
     animation: spin 0.8s linear infinite;
 
     /* Slow down rather than stop, so the toast still shows it is busy. */
@@ -237,8 +242,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: var(--gls-icon-size-8);
-    height: var(--gls-icon-size-8);
+    width: var(--unity-icon-size-24);
+    height: var(--unity-icon-size-24);
     animation: scaleIn 250ms ease forwards;
 
     @media (prefers-reduced-motion: reduce) {

@@ -11,7 +11,7 @@
 
   .item {
     display: flex;
-    gap: var(--gls-spacing-3);
+    gap: var(--unity-spacing-3);
     align-items: center;
     width: 100%;
   }

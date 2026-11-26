@@ -1,38 +1,38 @@
 @layer uikit {
   .menuItem {
     display: flex;
-    gap: var(--gls-spacing-2);
+    gap: var(--unity-spacing-2);
     align-items: center;
     height: 1.625rem;
     font-weight: 400;
-    color: var(--gls-color-text-foreground);
-    letter-spacing: var(--gls-letter-spacing-3);
+    color: var(--unity-color-text-default);
+    letter-spacing: var(--unity-font-letter-spacing-3);
     cursor: pointer;
     outline: none;
-    background-color: var(--gls-color-surface-default);
+    background-color: var(--unity-color-surface-base-4);
     transition: background-color 0.2s ease;
   }
   .menuItem--sm {
-    padding: calc(1.5 * var(--gls-spacing-1)) var(--gls-spacing-3);
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-3);
+    padding: calc(1.5 * var(--unity-spacing-1)) var(--unity-spacing-3);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
   }
   .menuItem--lg {
-    padding: var(--gls-spacing-2) var(--gls-spacing-4);
-    font-size: var(--gls-font-size-4);
-    line-height: var(--gls-line-height-4);
+    padding: var(--unity-spacing-2) var(--unity-spacing-4);
+    font-size: var(--unity-label-3-font-size);
+    line-height: var(--unity-label-3-line-height);
   }
   .menuItem:hover {
-    background-color: var(--gls-color-surface-default-hover);
+    background-color: var(--unity-color-surface-tertiary-hover);
   }
   .menuItem:not(:hover):focus-visible {
-    outline: 2px solid var(--gls-color-ring-focus);
+    outline: 2px solid var(--unity-color-border-focus);
     outline-offset: -2px;
   }
   .menuItem[data-disabled] {
-    color: var(--gls-color-text-muted);
+    color: var(--unity-color-text-disabled);
     cursor: not-allowed;
-    background-color: var(--gls-color-surface-default);
+    background-color: var(--unity-color-surface-base-4);
   }
   .menuItemAdornment {
     display: inline-flex;

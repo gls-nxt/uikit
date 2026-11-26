@@ -1,8 +1,26 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/Spacing" />
 
-## Spacing
+# Spacing
 
-<DesignTokenDocBlock categoryName="Spacing" maxHeight={600} height={400} viewType="card" />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+<TokenTable preview="spacing" tokens={[
+  '--unity-spacing-0',
+  '--unity-spacing-0-5',
+  '--unity-spacing-1',
+  '--unity-spacing-1-5',
+  '--unity-spacing-2',
+  '--unity-spacing-3',
+  '--unity-spacing-4',
+  '--unity-spacing-5',
+  '--unity-spacing-6',
+  '--unity-spacing-7',
+  '--unity-spacing-8',
+  '--unity-spacing-9',
+  '--unity-spacing-10',
+  '--unity-spacing-12',
+  '--unity-spacing-16',
+]} />

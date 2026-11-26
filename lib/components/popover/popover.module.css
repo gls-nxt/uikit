@@ -4,18 +4,18 @@
 
     display: flex;
     flex-direction: column;
-    gap: var(--gls-spacing-1);
+    gap: var(--unity-spacing-1);
     align-items: center;
     justify-content: center;
-    padding: var(--gls-spacing-2) var(--gls-spacing-3);
-    font-size: var(--gls-font-size-2);
-    line-height: var(--gls-line-height-2);
-    color: var(--gls-color-text-inverted);
+    padding: var(--unity-spacing-2) var(--unity-spacing-3);
+    font-size: var(--unity-label-5-font-size);
+    line-height: var(--unity-label-5-line-height);
+    color: var(--unity-color-text-inverse);
     text-align: center;
-    letter-spacing: var(--gls-letter-spacing-2);
+    letter-spacing: var(--unity-font-letter-spacing-2);
     user-select: none;
-    background-color: var(--gls-color-shades-black);
-    border-radius: var(--gls-border-radius-md);
+    background-color: var(--unity-color-surface-inverse);
+    border-radius: var(--unity-radius-md);
 
     transform-origin: var(--radix-popover-content-transform-origin);
     animation-duration: 0.4s;
@@ -37,11 +37,11 @@
 
   .popover-heading {
     width: 100%;
-    font-size: var(--gls-font-size-2);
+    font-size: var(--unity-label-5-font-size);
     font-weight: 500;
-    line-height: var(--gls-line-height-2);
+    line-height: var(--unity-label-5-line-height);
     text-align: left;
-    letter-spacing: var(--gls-letter-spacing-2);
+    letter-spacing: var(--unity-font-letter-spacing-2);
   }
 
   /* Animation states */
@@ -65,7 +65,7 @@
     --arrow-padding: 8px;
     --arrow-offset: -10px;
     position: absolute;
-    color: var(--gls-color-surface-inverted);
+    color: var(--unity-color-surface-inverse);
   }
 
   /* Arrow positioning */

@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { TokenTable } from './components/TokenTable';
+
+<Meta title="Design System/Sizes" />
+
+# Sizes
+
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+## Icon size
+
+<TokenTable preview="size" tokens={[
+  '--unity-icon-size-10',
+  '--unity-icon-size-12',
+  '--unity-icon-size-14',
+  '--unity-icon-size-16',
+  '--unity-icon-size-18',
+  '--unity-icon-size-20',
+  '--unity-icon-size-22',
+  '--unity-icon-size-24',
+  '--unity-icon-size-34',
+  '--unity-icon-size-38',
+]} />
+
+## Component height
+
+<TokenTable preview="none" tokens={[
+  '--unity-component-height-xs',
+  '--unity-component-height-sm',
+  '--unity-component-height-md',
+  '--unity-component-height-lg',
+  '--unity-control-height',
+]} />
+
+## Touch target
+
+<TokenTable preview="size" tokens={[
+  '--unity-touch-target-min',
+]} />
+
+## Grid
+
+<TokenTable preview="none" tokens={[
+  '--unity-grid-columns-mobile',
+  '--unity-grid-columns-tablet',
+  '--unity-grid-columns-desktop',
+]} />

@@ -1,8 +1,15 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/FontWeight" />
 
-## FontWeight
+# FontWeight
 
-<DesignTokenDocBlock categoryName="FontWeight" maxHeight={600} />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+<TokenTable preview="font-weight" tokens={[
+  '--unity-font-weight-regular',
+  '--unity-font-weight-medium',
+  '--unity-font-weight-semibold',
+  '--unity-font-weight-bold',
+]} />

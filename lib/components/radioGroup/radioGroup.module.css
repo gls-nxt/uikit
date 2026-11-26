@@ -2,11 +2,11 @@
   .radioGroup {
     display: flex;
     flex-direction: column;
-    gap: var(--gls-spacing-4);
+    gap: var(--unity-spacing-4);
 
     &[data-orientation="horizontal"] {
       flex-direction: row;
-      gap: var(--gls-spacing-6);
+      gap: var(--unity-spacing-6);
     }
   }
 }

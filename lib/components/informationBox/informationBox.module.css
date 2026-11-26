@@ -5,20 +5,22 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    gap: var(--gls-spacing-2);
+    gap: var(--unity-spacing-2);
     align-items: var(--align-items);
     width: fit-content;
     min-width: var(--min-width);
     height: fit-content;
-    padding: var(--gls-spacing-3);
+    padding: var(--unity-spacing-3);
     margin: 0;
-    border-radius: var(--gls-border-radius-lg);
+    border-radius: var(--unity-radius-lg);
     transition: box-shadow 100ms ease;
   }
 
   .informationBox:focus-visible {
     outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   .informationBox--fullWidth {
@@ -26,66 +28,66 @@
   }
 
   .informationBox--primary {
-    color: var(--gls-color-text-primary);
-    background-color: var(--gls-color-surface-primary-light);
+    color: var(--unity-color-text-info);
+    background-color: var(--unity-color-surface-brand-subtle);
   }
 
   .informationBox--secondary {
-    color: var(--gls-color-text-light);
-    background-color: var(--gls-color-surface-secondary);
+    color: var(--unity-color-text-subtle);
+    background-color: var(--unity-color-surface-secondary);
   }
 
   .informationBox--tertiary {
-    color: var(--gls-color-text-light);
-    background-color: var(--gls-color-surface-default);
+    color: var(--unity-color-text-subtle);
+    background-color: var(--unity-color-surface-base-2);
   }
 
   .informationBox--destructive {
-    color: var(--gls-color-text-error);
-    background-color: var(--gls-color-surface-error);
+    color: var(--unity-color-text-error);
+    background-color: var(--unity-color-surface-error-subtle);
   }
 
   .informationBox--warning {
-    color: var(--gls-color-text-warning);
-    background-color: var(--gls-color-surface-warning);
+    color: var(--unity-color-text-warning);
+    background-color: var(--unity-color-surface-warning-subtle);
   }
 
   .informationBox--success {
-    color: var(--gls-color-text-success);
-    background-color: var(--gls-color-surface-success);
+    color: var(--unity-color-text-success);
+    background-color: var(--unity-color-surface-success-subtle);
   }
 
   .informationBoxTitle {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: var(--gls-font-size-4);
+    font-size: var(--unity-body-3-font-size);
     font-weight: 500;
-    line-height: var(--gls-line-height-6);
-    letter-spacing: var(--gls-letter-spacing-4);
+    line-height: var(--unity-body-3-line-height);
+    letter-spacing: var(--unity-body-3-letter-spacing);
   }
 
   .informationBoxDescription {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: var(--gls-font-size-3);
+    font-size: var(--unity-body-4-font-size);
     font-style: normal;
     font-weight: 400;
-    line-height: var(--gls-line-height-5);
-    color: var(--gls-color-text-foreground);
-    letter-spacing: var(--gls-letter-spacing-3);
+    line-height: var(--unity-body-4-line-height);
+    color: var(--unity-color-text-default);
+    letter-spacing: var(--unity-body-4-letter-spacing);
   }
 
   .informationBoxContent {
     display: flex;
     flex-direction: column;
     width: 100%;
-    font-size: var(--gls-font-size-3);
+    font-size: var(--unity-body-4-font-size);
     font-style: normal;
     font-weight: 400;
-    line-height: var(--gls-line-height-5);
-    letter-spacing: var(--gls-letter-spacing-3);
+    line-height: var(--unity-body-4-line-height);
+    letter-spacing: var(--unity-body-4-letter-spacing);
   }
 
   .informationBoxClose {
@@ -97,7 +99,7 @@
     margin: 0;
     color: inherit;
     outline: none;
-    border-radius: var(--gls-border-radius-full);
+    border-radius: var(--unity-radius-full);
     transition: opacity 50ms ease;
   }
 
@@ -113,7 +115,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: var(--gls-spacing-1) 0;
+    margin: var(--unity-spacing-1) 0;
   }
 
   @keyframes fadeOut {

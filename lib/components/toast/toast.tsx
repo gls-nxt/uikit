@@ -78,7 +78,7 @@ export const Toast = ({
 
             {isPending && !prefix ? (
               <span className={styles.loader}>
-                <Spinner color="inverted" size="sm" />
+                <Spinner color="inherit" size="sm" />
               </span>
             ) : null}
             {isSuccess && !prefix ? (

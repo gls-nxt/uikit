@@ -2,6 +2,7 @@ import getContrastRatio from 'get-contrast-ratio';
 import type React from 'react';
 import { useEffect, useMemo, useState } from 'react';
 import styles from './ColorPalette.module.css';
+import { useTokenRefresh } from './useTokenRefresh';
 
 type ColorToken = {
   name: string;
@@ -19,7 +20,7 @@ type ColorPaletteProps = {
   tokenPrefix?: string;
 };
 
-const DEFAULT_TOKEN_PREFIX = '--gls-color-';
+const DEFAULT_TOKEN_PREFIX = '--unity-color-';
 
 function deriveLabel(tokens: string[], prefix: string): string {
   const first = tokens[0] ?? '';
@@ -117,7 +118,9 @@ function mapsEqual(a: ResolvedMap, b: ResolvedMap): boolean {
 
 function useResolvedColors(groups: ColorGroup[]): ResolvedMap {
   const [resolved, setResolved] = useState<ResolvedMap>(new Map());
+  const refresh = useTokenRefresh();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: refresh re-reads the CSS values after a theme or viewport change
   useEffect(() => {
     const map = new Map<string, string>();
     for (const group of groups) {
@@ -129,7 +132,7 @@ function useResolvedColors(groups: ColorGroup[]): ResolvedMap {
       }
     }
     setResolved((prev) => (mapsEqual(prev, map) ? prev : map));
-  }, [groups]);
+  }, [groups, refresh]);
 
   return resolved;
 }
@@ -142,15 +145,15 @@ function getPassingColors(
   resolvedMap: ResolvedMap,
 ): ContrastPair[] {
   const candidates: { name: string; hex: string }[] = [
-    { hex: '#ffffff', name: 'white' },
-    { hex: '#191919', name: 'black' },
+    { hex: resolveToHex('var(--unity-color-base-white)') ?? '', name: 'white' },
+    { hex: resolveToHex('var(--unity-color-base-black)') ?? '', name: 'black' },
     ...groupColors
       .filter((c) => {
         const h = resolvedMap.get(c.value);
         return h && h !== bgHex;
       })
       .map((c) => ({ hex: resolvedMap.get(c.value) as string, name: c.name })),
-  ];
+  ].filter((c) => c.hex);
 
   return candidates
     .map((c) => ({ ...c, ratio: getContrastRatio(c.hex, bgHex) }))

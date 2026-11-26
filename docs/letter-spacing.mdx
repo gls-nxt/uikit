@@ -1,8 +1,23 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/LetterSpacing" />
 
-## LetterSpacing
+# LetterSpacing
 
-<DesignTokenDocBlock categoryName="LetterSpacing" maxHeight={600} />
+The tokens come from the [`@gls-nxt/design-tokens`](https://github.com/gls-nxt/design-tokens) package.
+
+<TokenTable preview="letter-spacing" tokens={[
+  '--unity-font-letter-spacing-1',
+  '--unity-font-letter-spacing-2',
+  '--unity-font-letter-spacing-3',
+  '--unity-font-letter-spacing-4',
+  '--unity-font-letter-spacing-5',
+  '--unity-font-letter-spacing-6',
+  '--unity-font-letter-spacing-7',
+  '--unity-font-letter-spacing-8',
+  '--unity-font-letter-spacing-9',
+  '--unity-font-letter-spacing-10',
+  '--unity-font-letter-spacing-11',
+  '--unity-font-letter-spacing-12',
+]} />

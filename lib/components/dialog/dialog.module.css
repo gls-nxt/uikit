@@ -10,14 +10,18 @@
     flex-direction: column;
     width: 100vw;
     max-width: 100vw;
-    max-height: calc(100dvh - var(--gls-spacing-8));
+    max-height: calc(100dvh - var(--unity-spacing-8));
     padding: 0;
     margin: 0;
     overflow: visible;
-    background-color: var(--gls-color-surface-default);
-    border: 1px solid var(--gls-color-border-default);
-    border-radius: var(--gls-border-radius-xl) var(--gls-border-radius-xl) 0 0;
-    box-shadow: var(--gls-shadow-md);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-base-2);
+    border: 1px solid var(--unity-color-border-subtle);
+    border-radius: var(--unity-radius-xl) var(--unity-radius-xl) 0 0;
+    box-shadow:
+      0 4px 9px var(--unity-color-effects-shadow-4),
+      0 16px 16px var(--unity-color-effects-shadow-2),
+      0 35px 21px var(--unity-color-effects-shadow-2);
     /* Closed state that the exit transition runs to. Entry uses the keyframes on [open]. */
     opacity: 0;
     transform: none;
@@ -54,7 +58,7 @@
   }
 
   .dialog::backdrop {
-    background-color: var(--gls-color-background-overlay);
+    background-color: color-mix(in srgb, var(--unity-color-surface-overlay) 50%, transparent);
     opacity: 0;
 
     @supports (overlay: auto) {
@@ -86,7 +90,7 @@
       height: fit-content;
       max-height: 85dvh;
       margin: auto;
-      border-radius: var(--gls-border-radius-xl);
+      border-radius: var(--unity-radius-xl);
 
       @media (prefers-reduced-motion: no-preference) {
         translate: 0 -20%;
@@ -120,40 +124,40 @@
 
   .dialogClose {
     position: absolute;
-    top: var(--gls-spacing-5);
-    right: var(--gls-spacing-5);
+    top: var(--unity-spacing-5);
+    right: var(--unity-spacing-5);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1.5rem;
     height: 1.5rem;
     padding: 0;
-    color: var(--gls-color-text-foreground);
+    color: var(--unity-color-text-default);
     cursor: pointer;
-    background: var(--gls-color-surface-secondary);
+    background: var(--unity-color-surface-secondary);
     border: none;
-    border-radius: var(--gls-border-radius-full);
+    border-radius: var(--unity-radius-full);
   }
 
   .dialogClose:hover {
-    background: var(--gls-color-surface-secondary-hover);
+    background: var(--unity-color-surface-secondary-hover);
   }
 
   .dialogHeader {
-    padding: var(--gls-spacing-6);
+    padding: var(--unity-spacing-6);
     padding-bottom: 0;
   }
 
   .dialogTitle {
     margin: 0;
-    font-size: var(--gls-font-size-8);
+    font-size: var(--unity-font-size-24);
     font-weight: 600;
     line-height: calc(4 / 3);
     letter-spacing: 0;
   }
 
   .dialogDescription {
-    margin: var(--gls-spacing-2) 0 0;
+    margin: var(--unity-spacing-2) 0 0;
   }
 
   .dialogContent {
@@ -171,7 +175,7 @@
   .dialogBody {
     flex: 1 1 auto;
     min-height: 0;
-    padding: var(--gls-spacing-6);
+    padding: var(--unity-spacing-6);
     overflow-y: auto;
     overscroll-behavior: contain;
   }
@@ -179,9 +183,9 @@
   .dialogFooter {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--gls-spacing-3);
+    gap: var(--unity-spacing-3);
     justify-content: flex-end;
-    padding: 0 var(--gls-spacing-6) var(--gls-spacing-6);
+    padding: 0 var(--unity-spacing-6) var(--unity-spacing-6);
   }
 
   .visuallyHidden {
