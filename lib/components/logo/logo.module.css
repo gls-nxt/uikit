@@ -4,25 +4,25 @@
   }
 
   .logo .dot {
-    fill: var(--gls-color-brand-yellow);
+    fill: var(--unity-color-gls-yellow);
   }
 
   /* Color variants */
   .logo--theme-light .letters {
-    fill: var(--gls-color-text-inverted);
+    fill: var(--unity-color-base-white);
   }
 
   .logo--theme-dark .letters {
-    fill: var(--gls-color-brand-blue);
+    fill: var(--unity-color-gls-blue);
   }
 
   @media (prefers-color-scheme: dark) {
     .logo--allow-dark-mode.logo--theme-light .letters {
-      fill: var(--gls-color-brand-blue);
+      fill: var(--unity-color-gls-blue);
     }
 
     .logo--allow-dark-mode.logo--theme-dark .letters {
-      fill: var(--gls-color-text-inverted);
+      fill: var(--unity-color-base-white);
     }
   }
 }
