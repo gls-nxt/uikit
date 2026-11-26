@@ -22,17 +22,19 @@
        stay invisible normally but are drawn there, keeping both shapes visible. */
     outline: 1px solid transparent;
     outline-offset: -1px;
-    background-color: var(--gls-color-surface-secondary);
-    border-radius: var(--gls-border-radius-full);
+    background-color: var(--unity-color-surface-secondary);
+    border-radius: var(--unity-radius-full);
 
     &:focus-visible {
       outline-width: 2px;
       outline-offset: 2px;
-      box-shadow: var(--gls-ring-focus);
+      box-shadow:
+        0 0 0 1.5px var(--unity-color-border-subtle),
+        0 0 0 3.5px var(--unity-color-border-focus);
     }
 
     &[data-state="checked"] {
-      background-color: var(--gls-color-surface-primary);
+      background-color: var(--unity-color-surface-selection);
 
       @media (forced-colors: active) {
         background-color: Highlight;
@@ -48,12 +50,11 @@
     margin-inline: calc(100cqh / 14);
     outline: 1px solid transparent;
     outline-offset: -1px;
-    background-color: var(--gls-color-surface-default);
-    border-radius: var(--gls-border-radius-full);
-    /* TODO: clarify if this shadow can be replaced by token */
+    background-color: var(--unity-color-surface-on-action);
+    border-radius: var(--unity-radius-full);
     box-shadow:
-      0px 2.65px 0.88px 0px #0000000f,
-      0px 2.65px 7.06px 0px #00000026;
+      0px 2.65px 0.88px 0px var(--unity-color-effects-shadow-5),
+      0px 2.65px 7.06px 0px var(--unity-color-black-alpha-16);
     transform: translateX(0);
     transition: transform 100ms;
 
@@ -63,27 +64,27 @@
   }
 
   .switchLabel {
-    padding-left: var(--gls-spacing-3);
-    font-size: var(--gls-font-size-4);
+    padding-left: var(--unity-spacing-3);
+    font-size: var(--unity-label-3-font-size);
     font-weight: 400;
-    line-height: var(--gls-line-height-4);
-    color: var(--gls-color-text-foreground);
+    line-height: var(--unity-label-3-line-height);
+    color: var(--unity-color-text-default);
     cursor: pointer;
   }
 
   .switchRoot[data-disabled] {
     cursor: not-allowed;
-    background-color: var(--gls-color-surface-muted);
+    background-color: var(--unity-color-surface-secondary-disabled);
     &[data-state="checked"] {
-      background-color: var(--gls-color-surface-muted);
+      background-color: var(--unity-color-surface-selection-disabled);
       & .switchThumb {
-        background-color: var(--gls-color-surface-muted);
+        background-color: var(--unity-color-surface-tertiary-disabled);
       }
     }
 
     & + .switchLabel,
     & + input + .switchLabel {
-      color: var(--gls-color-text-muted);
+      color: var(--unity-color-text-disabled);
       cursor: not-allowed;
     }
   }
