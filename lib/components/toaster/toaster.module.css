@@ -1,6 +1,6 @@
 @layer uikit {
   .toaster {
-    --mobile-offset: var(--gls-spacing-4);
+    --mobile-offset: var(--unity-spacing-4);
     position: fixed;
 
     right: var(--mobile-offset);
@@ -9,7 +9,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: var(--gls-spacing-2);
+    gap: var(--unity-spacing-2);
     width: calc(100vw - var(--mobile-offset) * 2);
     height: fit-content;
     padding: 0;
@@ -23,7 +23,7 @@
 
   @media (--medium) {
     .toaster {
-      --offset: var(--gls-spacing-4);
+      --offset: var(--unity-spacing-4);
 
       right: var(--offset);
       bottom: var(--offset);

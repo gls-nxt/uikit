@@ -19,29 +19,29 @@ const SampleIcon = () => (
         <path
           clipRule="evenodd"
           d="M10 2.50004C5.8579 2.50004 2.50004 5.8579 2.50004 10C2.50004 14.1422 5.8579 17.5 10 17.5C14.1422 17.5 17.5 14.1422 17.5 10C17.5 5.8579 14.1422 2.50004 10 2.50004ZM0.833374 10C0.833374 4.93743 4.93743 0.833374 10 0.833374C15.0626 0.833374 19.1667 4.93743 19.1667 10C19.1667 15.0626 15.0626 19.1667 10 19.1667C4.93743 19.1667 0.833374 15.0626 0.833374 10Z"
-          fill="white"
+          fill="currentColor"
           fillRule="evenodd"
         />
         <path
           clipRule="evenodd"
           d="M9.99996 9.16663C10.4602 9.16663 10.8333 9.53972 10.8333 9.99996V13.3333C10.8333 13.7935 10.4602 14.1666 9.99996 14.1666C9.53972 14.1666 9.16663 13.7935 9.16663 13.3333V9.99996C9.16663 9.53972 9.53972 9.16663 9.99996 9.16663Z"
-          fill="white"
+          fill="currentColor"
           fillRule="evenodd"
         />
         <path
           clipRule="evenodd"
           d="M9.16663 6.66671C9.16663 6.20647 9.53972 5.83337 9.99996 5.83337H10.0083C10.4685 5.83337 10.8416 6.20647 10.8416 6.66671C10.8416 7.12694 10.4685 7.50004 10.0083 7.50004H9.99996C9.53972 7.50004 9.16663 7.12694 9.16663 6.66671Z"
-          fill="white"
+          fill="currentColor"
           fillRule="evenodd"
         />
       </g>
     </g>
     <defs>
       <clipPath id="clip0_5681_3554">
-        <rect fill="white" height="20" width="20" />
+        <rect fill="currentColor" height="20" width="20" />
       </clipPath>
       <clipPath id="clip1_5681_3554">
-        <rect fill="white" height="20" width="20" />
+        <rect fill="currentColor" height="20" width="20" />
       </clipPath>
     </defs>
   </svg>

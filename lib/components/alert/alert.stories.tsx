@@ -172,7 +172,7 @@ export const WithAction: Story = {
     action: (
       <button
         onClick={action('action-click')}
-        style={{ color: 'var(--gls-color-text-error)' }}
+        style={{ color: 'var(--unity-color-text-error)' }}
         type="button"
       >
         Retry
