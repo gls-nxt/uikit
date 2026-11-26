@@ -25,6 +25,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           registry-url: 'https://npm.pkg.github.com/'
+          scope: '@gls-nxt'
           cache: 'pnpm'
 
       - name: Check if version is already published
@@ -41,6 +42,8 @@ jobs:
           fi
 
       - name: Install dependencies
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_READ_TOKEN }}
         run: pnpm install --frozen-lockfile
 
       - name: Build and Test

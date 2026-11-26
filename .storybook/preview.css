@@ -1,0 +1,5 @@
+/* Theme the story canvas so components render on the matching surface in light and dark mode. */
+body {
+  color: var(--unity-color-text-default);
+  background-color: var(--unity-color-surface-base-2);
+}

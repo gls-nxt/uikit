@@ -6,6 +6,7 @@ import { definePreview } from '@storybook/react-vite';
 import '../lib/fonts/index.css';
 import '../lib/tokens/index.css';
 import '../lib/tokens/primitiveColorNew.css';
+import './preview.css';
 
 export default definePreview({
   addons: [addonDocs(), addonA11y(), addonDesigns(), addonChromatic()],
