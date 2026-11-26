@@ -3,19 +3,22 @@
     box-sizing: border-box;
     align-items: stretch;
     justify-content: flex-start;
-    width: min(20rem, calc(100vw - var(--gls-spacing-8)));
-    max-height: min(28rem, calc(100dvh - var(--gls-spacing-8)));
-    padding: var(--gls-spacing-3);
+    width: min(20rem, calc(100vw - var(--unity-spacing-8)));
+    max-height: min(28rem, calc(100dvh - var(--unity-spacing-8)));
+    padding: var(--unity-spacing-3);
     overflow: hidden;
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-3);
-    color: var(--gls-color-text-foreground);
-    letter-spacing: var(--gls-letter-spacing-3);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
+    color: var(--unity-color-text-default);
+    letter-spacing: var(--unity-font-letter-spacing-3);
     user-select: auto;
-    background-color: var(--gls-color-surface-card);
-    border: 1px solid var(--gls-color-border-default);
-    border-radius: var(--gls-border-radius-lg);
-    box-shadow: var(--gls-shadow-md);
+    background-color: var(--unity-color-surface-base-4);
+    border: 1px solid var(--unity-color-border-subtle);
+    border-radius: var(--unity-radius-lg);
+    box-shadow:
+      0 4px 9px var(--unity-color-effects-shadow-4),
+      0 16px 16px var(--unity-color-effects-shadow-2),
+      0 35px 21px var(--unity-color-effects-shadow-2);
   }
 
   .arrow {
@@ -23,10 +26,10 @@
   }
 
   .heading {
-    padding: var(--gls-spacing-2) var(--gls-spacing-1) var(--gls-spacing-3);
-    font-size: var(--gls-font-size-4);
-    font-weight: var(--gls-font-weight-medium);
-    line-height: var(--gls-line-height-4);
+    padding: var(--unity-spacing-2) var(--unity-spacing-1) var(--unity-spacing-3);
+    font-size: var(--unity-label-3-font-size);
+    font-weight: var(--unity-font-weight-medium);
+    line-height: var(--unity-label-3-line-height);
   }
 
   .body {
@@ -35,25 +38,25 @@
   }
 
   .item {
-    gap: var(--gls-spacing-1);
-    padding: var(--gls-spacing-1) 0;
+    gap: var(--unity-spacing-1);
+    padding: var(--unity-spacing-1) 0;
   }
 
   .footer {
-    padding-top: var(--gls-spacing-2);
-    margin-top: var(--gls-spacing-2);
-    border-top: 1px solid var(--gls-color-divider-default);
+    padding-top: var(--unity-spacing-2);
+    margin-top: var(--unity-spacing-2);
+    border-top: 1px solid var(--unity-color-border-subtle);
   }
 
   .resetButton {
     justify-content: flex-start;
-    padding: var(--gls-spacing-2) var(--gls-spacing-1);
+    padding: var(--unity-spacing-2) var(--unity-spacing-1);
     text-align: left;
     background-color: transparent;
     border: none;
   }
 
   .resetButton:hover {
-    background-color: var(--gls-color-surface-card-hover);
+    background-color: var(--unity-color-surface-tertiary-hover);
   }
 }
