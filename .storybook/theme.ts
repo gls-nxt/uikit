@@ -25,7 +25,6 @@ export const dark = create({
   base: 'dark',
 });
 
-// ponytail: read once at load, so a system theme change shows after a reload.
-export const systemTheme = globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches
-  ? dark
-  : light;
+// Reads the current OS colour scheme on each call.
+export const systemTheme = () =>
+  globalThis.matchMedia?.('(prefers-color-scheme: dark)').matches ? dark : light;

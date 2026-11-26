@@ -18,7 +18,7 @@ function applyTheme(theme: unknown) {
   } else {
     delete root.dataset.theme;
   }
-  return { dark, light }[theme as string] ?? systemTheme;
+  return { dark, light }[theme as string] ?? systemTheme();
 }
 
 type DocsStore = { store: { userGlobals: { get(): { theme?: string } } } };
