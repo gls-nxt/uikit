@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/addon-docs/blocks';
-import { DesignTokenDocBlock } from 'storybook-design-token';
+import { TokenTable } from './components/TokenTable';
 
 <Meta title="Design System/FontFamily" />
 
@@ -20,7 +20,7 @@ Import it once near your application root. That makes the packaged `@font-face` 
 
 ```css
 body {
-  font-family: 'Newson', sans-serif;
+  font-family: var(--unity-font-body);
 }
 ```
 
@@ -52,3 +52,14 @@ Use both pieces together:
 import { PreloadFonts } from '@gls-nxt/uikit';
 import '@gls-nxt/uikit/fonts';
 ```
+
+## Tokens
+
+Headings use `--unity-font-heading`. All other text uses `--unity-font-body`.
+
+<TokenTable preview="font-family" tokens={[
+  '--unity-font-heading',
+  '--unity-font-body',
+  '--unity-font-family-newson',
+  '--unity-font-family-inter',
+]} />

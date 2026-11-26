@@ -17,9 +17,6 @@ export default definePreview({
         date: /Date$/i,
       },
     },
-    designToken: {
-      defaultTab: 'Colors',
-    },
   },
 
   tags: ['autodocs'],
