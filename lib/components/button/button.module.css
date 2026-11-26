@@ -1,7 +1,7 @@
 @layer uikit {
   .button {
     display: inline-flex;
-    gap: var(--gls-spacing-2);
+    gap: var(--unity-spacing-2);
     align-items: center;
     justify-content: center;
     font-weight: 500;
@@ -13,7 +13,7 @@
     transition-property: color, background-color, outline;
   }
   .button:focus-visible {
-    outline: 1.5px solid var(--gls-color-blue-200);
+    outline: 1.5px solid var(--unity-color-border-focus);
     outline-offset: 1.5px;
   }
   .button--loading,
@@ -22,103 +22,103 @@
   }
 
   .button--primary {
-    color: var(--gls-color-text-inverted);
-    background-color: var(--gls-color-surface-primary);
+    color: var(--unity-color-text-on-action);
+    background-color: var(--unity-color-surface-brand-strong);
   }
   .button--primary:hover {
-    background-color: var(--gls-color-surface-primary-hover);
+    background-color: var(--unity-color-surface-brand-strong-hover);
   }
   .button--primary.button--loading,
   .button--primary:disabled {
-    color: var(--gls-color-text-muted);
-    background-color: var(--gls-color-surface-muted);
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-brand-strong-disabled);
   }
 
   .button--secondary {
-    color: var(--gls-color-text-foreground);
-    background-color: var(--gls-color-surface-secondary);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-secondary);
   }
   .button--secondary:hover {
-    background-color: var(--gls-color-surface-secondary-hover);
+    background-color: var(--unity-color-surface-secondary-hover);
   }
   .button--secondary.button--loading,
   .button--secondary:disabled {
-    color: var(--gls-color-text-muted);
-    background-color: var(--gls-color-surface-secondary);
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-secondary-disabled);
   }
 
   .button--tertiary {
-    color: var(--gls-color-text-foreground);
-    background-color: var(--gls-color-surface-default);
-    border: 1px solid var(--gls-color-border-default);
+    color: var(--unity-color-text-default);
+    background-color: var(--unity-color-surface-tertiary);
+    border: 1px solid var(--unity-color-border-default);
   }
   .button--tertiary:hover {
-    background-color: var(--gls-color-surface-default-hover);
+    background-color: var(--unity-color-surface-tertiary-hover);
   }
   .button--tertiary.button--loading,
   .button--tertiary:disabled {
-    color: var(--gls-color-text-muted);
-    background-color: var(--gls-color-surface-muted);
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-tertiary-disabled);
   }
 
   .button--destructive {
-    color: var(--gls-color-text-error);
-    background-color: var(--gls-color-surface-error);
+    color: var(--unity-color-text-error);
+    background-color: var(--unity-color-surface-error-subtle);
   }
   .button--destructive:hover {
-    background-color: var(--gls-color-surface-error-hover);
+    background-color: var(--unity-color-surface-error-subtle-hover);
   }
   .button--destructive.button--loading,
   .button--destructive:disabled {
-    color: var(--gls-color-text-error-muted);
-    background-color: var(--gls-color-surface-error);
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-error-subtle-disabled);
   }
 
   .button--blurred {
-    color: var(--gls-color-text-inverted);
-    background-color: var(--gls-color-surface-blurred);
-    backdrop-filter: blur(var(--gls-blur-md));
+    color: var(--unity-color-text-on-action);
+    background-color: color-mix(in srgb, var(--unity-color-surface-on-action) 15%, transparent);
+    backdrop-filter: blur(8px);
   }
   .button--blurred:hover:not(:disabled) {
-    background-color: var(--gls-color-surface-blurred-hover);
+    background-color: color-mix(in srgb, var(--unity-color-surface-on-action) 30%, transparent);
   }
   .button--blurred.button--loading,
   .button--blurred:disabled {
-    color: var(--gls-color-shades-white-light);
+    color: color-mix(in srgb, var(--unity-color-text-on-action) 70%, transparent);
   }
 
   .button--lg {
     max-height: 3.375rem;
-    padding: calc((var(--gls-spacing-4) * 3 + var(--gls-spacing-5)) / 4) var(--gls-spacing-8);
-    font-size: var(--gls-font-size-5);
+    padding: calc((var(--unity-spacing-4) * 3 + var(--unity-spacing-5)) / 4) var(--unity-spacing-8);
+    font-size: var(--unity-font-size-18);
     line-height: 1.25rem;
-    letter-spacing: var(--gls-letter-spacing-5);
-    border-radius: var(--gls-border-radius-lg);
+    letter-spacing: var(--unity-font-letter-spacing-5);
+    border-radius: var(--unity-radius-lg);
   }
   .button--md {
     max-height: 3rem;
-    padding: calc(var(--gls-spacing-7) / 2) var(--gls-spacing-8);
-    font-size: var(--gls-font-size-4);
+    padding: calc(var(--unity-spacing-7) / 2) var(--unity-spacing-8);
+    font-size: var(--unity-font-size-16);
     line-height: 1.25rem;
-    letter-spacing: var(--gls-letter-spacing-4);
-    border-radius: var(--gls-border-radius-lg);
+    letter-spacing: var(--unity-font-letter-spacing-4);
+    border-radius: var(--unity-radius-lg);
   }
   .button--sm {
-    gap: calc(var(--gls-spacing-1) * 1.5);
+    gap: calc(var(--unity-spacing-1) * 1.5);
     max-height: 2.375rem;
-    padding: calc(var(--gls-spacing-11) / 4) var(--gls-spacing-5);
-    font-size: var(--gls-font-size-3);
+    padding: calc(var(--unity-spacing-10) / 4) var(--unity-spacing-5);
+    font-size: var(--unity-font-size-14);
     line-height: 1rem;
-    letter-spacing: var(--gls-letter-spacing-3);
-    border-radius: var(--gls-border-radius-md);
+    letter-spacing: var(--unity-font-letter-spacing-3);
+    border-radius: var(--unity-radius-md);
   }
   .button--xs {
     max-height: 1.875rem;
-    padding: var(--gls-spacing-2) var(--gls-spacing-4);
-    font-size: var(--gls-font-size-2);
+    padding: var(--unity-spacing-2) var(--unity-spacing-4);
+    font-size: var(--unity-font-size-12);
     line-height: 0.875rem;
-    letter-spacing: var(--gls-letter-spacing-2);
-    border-radius: var(--gls-border-radius-sm);
+    letter-spacing: var(--unity-font-letter-spacing-2);
+    border-radius: var(--unity-radius-sm);
   }
 
   .button--fullWidth {
