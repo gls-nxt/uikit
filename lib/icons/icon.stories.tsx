@@ -73,7 +73,7 @@ export const Gallery: Story = {
             key={name}
             style={{
               alignItems: 'center',
-              border: '1px solid var(--gls-color-neutrals-200)',
+              border: '1px solid var(--unity-color-border-subtle)',
               borderRadius: '8px',
               display: 'flex',
               flexDirection: 'column',

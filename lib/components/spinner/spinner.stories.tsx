@@ -74,7 +74,7 @@ export const Colors: Story = {
             key={color}
             style={{
               backgroundColor:
-                color === 'inverted' ? 'var(--gls-color-surface-primary)' : 'transparent',
+                color === 'inverted' ? 'var(--unity-color-surface-brand-strong)' : 'transparent',
               padding: '10px',
             }}
           >
