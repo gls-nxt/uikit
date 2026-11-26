@@ -21,6 +21,7 @@
  */
 @layer reset, uikit, web, highest;
 
+@import "@gls-nxt/design-tokens/tokens.css";
 @import "./blur.module.css";
 @import "./border.module.css";
 @import "./borderRadius.module.css";

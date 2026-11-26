@@ -11,7 +11,7 @@ Contributions from outside GLS IT Services GmbH can only be accepted under a sig
 Pull requests are welcome for bug fixes, accessibility improvements, tests and documentation. For a new component or a visual change, open an issue first so the design team can confirm it matches the design system.
 
 1. Fork the repository and create a branch.
-2. Use the Node version in `.nvmrc` and install with `pnpm install --frozen-lockfile`.
+2. Use the Node version in `.nvmrc` and install with `pnpm install --frozen-lockfile`. The design tokens come from GitHub Packages, so log in to `npm.pkg.github.com` first, as in [Step 2 of the README](README.md#step-2-configure-npm-login).
 3. Run `pnpm lint`, `pnpm typecheck`, `pnpm test` and `pnpm build`. A pre-commit hook formats staged files.
 4. Add or update stories and tests for the component you touched.
 5. Open a pull request and fill in the template. CI runs the same checks on every pull request.
