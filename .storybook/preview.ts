@@ -5,7 +5,6 @@ import addonDocs from '@storybook/addon-docs';
 import { definePreview } from '@storybook/react-vite';
 import '../lib/fonts/index.css';
 import '../lib/tokens/index.css';
-import '../lib/tokens/primitiveColorNew.css';
 import './preview.css';
 
 export default definePreview({
