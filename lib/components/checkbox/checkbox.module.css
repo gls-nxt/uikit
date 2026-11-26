@@ -4,7 +4,7 @@
     user-select: none;
 
     &:has(input:disabled) {
-      color: var(--gls-color-text-muted);
+      color: var(--unity-color-text-disabled);
       cursor: not-allowed;
 
       * {
@@ -25,10 +25,10 @@
     display: flex;
     gap: 0.5em;
     align-items: center;
-    font-size: var(--gls-font-size-4);
+    font-size: var(--unity-label-3-font-size);
     font-weight: 400;
-    line-height: var(--gls-line-height-4);
-    color: var(--gls-color-text-foreground);
+    line-height: var(--unity-label-3-line-height);
+    color: var(--unity-color-text-default);
   }
 
   .checkboxInput {
@@ -36,11 +36,11 @@
     flex-shrink: 0;
     width: 1.25rem;
     height: 1.25rem;
-    margin: calc(var(--gls-spacing-1) / 2);
+    margin: calc(var(--unity-spacing-1) / 2);
     cursor: pointer;
-    background-color: var(--gls-color-surface-default);
-    border: 0.075rem solid var(--gls-color-border-default);
-    border-radius: var(--gls-border-radius-xs);
+    background-color: var(--unity-color-surface-tertiary);
+    border: 0.075rem solid var(--unity-color-border-default);
+    border-radius: var(--unity-radius-sm);
     transition-timing-function: ease-out;
     transition-duration: 0.1s;
     transition-property: background-color, border-color, box-shadow;
@@ -57,59 +57,63 @@
   .checkboxWrapper:has(input:focus-visible) .checkboxInput {
     outline: 2px solid transparent; /* shows in forced colors mode, which drops box-shadow */
     outline-offset: 2px;
-    box-shadow: var(--gls-ring-focus);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-focus);
   }
 
   .checkboxInput--error,
   .checkboxWrapper:has(input:focus-visible) .checkboxInput--error {
-    box-shadow: var(--gls-ring-error);
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-error);
   }
 
   .checkboxInput > .checkboxIndicator {
     position: relative;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: var(--gls-color-icon-inverted);
+    color: var(--unity-color-icon-on-action);
   }
 
   /* Style the custom checkbox when checked */
   .checkboxWrapper input:checked + .checkboxInput {
-    background-color: var(--gls-color-surface-primary);
-    border-color: var(--gls-color-border-inverted);
+    background-color: var(--unity-color-surface-selection);
+    border-color: var(--unity-color-border-selection);
 
     svg {
       display: block;
-      color: var(--gls-color-border-inverted);
+      color: var(--unity-color-icon-on-action);
     }
   }
 
   .checkboxWrapper input:checked:disabled + .checkboxInput {
-    background-color: var(--gls-color-surface-muted);
-    border-color: var(--gls-color-border-default);
+    background-color: var(--unity-color-surface-selection-disabled);
+    border-color: var(--unity-color-border-disabled);
 
     .checkboxIndicator {
-      color: var(--gls-color-icon-muted);
+      color: var(--unity-color-icon-disabled);
     }
   }
 
   .checkboxWrapper:hover {
     input:not([disabled]) + .checkboxInput {
-      background-color: var(--gls-color-surface-default-hover);
+      background-color: var(--unity-color-surface-tertiary-hover);
     }
     input:checked:not([disabled]) + .checkboxInput {
-      background-color: var(--gls-color-surface-primary-hover);
+      background-color: var(--unity-color-surface-selection-hover);
     }
   }
 
   .errorMessage {
-    margin: var(--gls-spacing-1) 0 0 0;
-    font-size: var(--gls-font-size-3);
-    line-height: var(--gls-line-height-5);
-    color: var(--gls-color-text-error);
-    letter-spacing: var(--gls-letter-spacing-3);
+    margin: var(--unity-spacing-1) 0 0 0;
+    font-size: var(--unity-body-4-font-size);
+    line-height: var(--unity-body-4-line-height);
+    color: var(--unity-color-text-error);
+    letter-spacing: var(--unity-body-4-letter-spacing);
   }
 
   .errorMessage:empty {
