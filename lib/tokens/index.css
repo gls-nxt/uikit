@@ -22,19 +22,4 @@
 @layer reset, uikit, web, highest;
 
 @import "@gls-nxt/design-tokens/tokens.css";
-@import "./blur.module.css";
-@import "./border.module.css";
-@import "./borderRadius.module.css";
-@import "./fontFamily.module.css";
-@import "./fontSize.module.css";
-@import "./fontWeight.module.css";
-@import "./letterSpacing.module.css";
-@import "./lineHeight.module.css";
-@import "./iconColor.module.css";
-@import "./iconSize.module.css";
-@import "./primitiveColor.module.css";
-@import "./shadow.module.css";
 @import "./sizes.module.css";
-@import "./spacing.module.css";
-@import "./surfaceColor.module.css";
-@import "./textColor.module.css";
