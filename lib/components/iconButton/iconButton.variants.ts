@@ -13,10 +13,14 @@ export const buttonVariants = cva(styles.iconButton, {
     color: {
       blurred: styles['iconButton--blurred'],
       destructive: styles['iconButton--destructive'],
-      ghost: styles['iconButton--ghost'],
+      /** @deprecated Use `text`. */
+      ghost: styles['iconButton--text'],
       primary: styles['iconButton--primary'],
+      'primary-light': styles['iconButton--primary-light'],
       secondary: styles['iconButton--secondary'],
+      success: styles['iconButton--success'],
       tertiary: styles['iconButton--tertiary'],
+      text: styles['iconButton--text'],
     },
     loading: {
       false: null,

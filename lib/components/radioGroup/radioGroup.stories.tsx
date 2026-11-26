@@ -39,6 +39,14 @@ const meta = {
         type: { summary: 'boolean' },
       },
     },
+    error: {
+      control: 'boolean',
+      description: 'Marks the group as invalid. Pair it with a visible error message.',
+      table: {
+        defaultValue: { summary: 'false' },
+        type: { summary: 'boolean' },
+      },
+    },
     name: {
       control: 'text',
       description:
@@ -115,5 +123,13 @@ export const Composition: StoryObj<typeof meta> = {
         <RadioItem value="3">Item 3</RadioItem>
       </>
     ),
+  },
+};
+
+export const WithError: StoryObj<typeof meta> = {
+  ...Template,
+  args: {
+    error: true,
+    options: ['Item 1', 'Item 2', 'Item 3'],
   },
 };

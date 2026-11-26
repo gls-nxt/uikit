@@ -69,3 +69,11 @@ export const Default: Story = {
     })),
   },
 };
+
+export const Selected: Story = {
+  args: {
+    ...Default.args,
+    id: 'list-box-selected',
+    selected: 'Finland',
+  },
+};

@@ -14,8 +14,11 @@ export const buttonVariants = cva(styles.button, {
       blurred: styles['button--blurred'],
       destructive: styles['button--destructive'],
       primary: styles['button--primary'],
+      'primary-light': styles['button--primary-light'],
       secondary: styles['button--secondary'],
+      success: styles['button--success'],
       tertiary: styles['button--tertiary'],
+      text: styles['button--text'],
     },
     fullWidth: {
       false: null,

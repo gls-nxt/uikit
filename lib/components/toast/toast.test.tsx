@@ -47,7 +47,7 @@ describe('Toast', () => {
 
     const { getByLabelText } = setup({ close: true, onOpenChange });
 
-    getByLabelText('toast-close-button').click();
+    getByLabelText('Close').click();
     expect(onOpenChange).toHaveBeenNthCalledWith(1, false);
   });
 

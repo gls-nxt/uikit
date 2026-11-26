@@ -88,6 +88,54 @@
     background-color: var(--unity-color-surface-error-subtle-disabled);
   }
 
+  .button--success {
+    color: var(--unity-color-text-on-action);
+    background-color: var(--unity-color-surface-success-strong);
+  }
+  .button--success:hover:not(:disabled) {
+    background-color: var(--unity-color-surface-success-strong-hover);
+  }
+  .button--success:active:not(:disabled) {
+    background-color: var(--unity-color-surface-success-strong-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--success:disabled:not(.button--loading) {
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-success-strong-disabled);
+  }
+
+  .button--primary-light {
+    color: var(--unity-color-text-link);
+    background-color: var(--unity-color-surface-brand-subtle);
+  }
+  .button--primary-light:hover:not(:disabled) {
+    background-color: var(--unity-color-surface-brand-subtle-hover);
+  }
+  .button--primary-light:active:not(:disabled) {
+    background-color: var(--unity-color-surface-brand-subtle-pressed);
+  }
+  /* Loading keeps the idle colours */
+  .button--primary-light:disabled:not(.button--loading) {
+    color: var(--unity-color-text-disabled);
+    background-color: var(--unity-color-surface-brand-subtle-disabled);
+  }
+
+  .button--text {
+    color: var(--unity-color-text-link);
+    background-color: transparent;
+  }
+  .button--text:hover:not(:disabled) {
+    color: var(--unity-color-text-link-hover);
+    background-color: var(--unity-color-surface-tertiary-hover);
+  }
+  .button--text:active:not(:disabled) {
+    color: var(--unity-color-text-link-pressed);
+    background-color: var(--unity-color-surface-tertiary-pressed);
+  }
+  .button--text:disabled:not(.button--loading) {
+    color: var(--unity-color-text-disabled);
+  }
+
   .button--blurred {
     color: var(--unity-color-text-on-action);
     background-color: color-mix(in srgb, var(--unity-color-surface-on-action) 15%, transparent);

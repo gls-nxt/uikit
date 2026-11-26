@@ -30,6 +30,12 @@
     }
   }
 
+  [role="radiogroup"][aria-invalid="true"] .radioItemButton:not(:focus-visible) {
+    box-shadow:
+      0 0 0 1.5px var(--unity-color-border-subtle),
+      0 0 0 3.5px var(--unity-color-border-error);
+  }
+
   .radioItemIndicator {
     position: relative;
     display: flex;

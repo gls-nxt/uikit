@@ -1,7 +1,7 @@
 @layer uikit {
   .list {
     width: var(--radix-popover-trigger-width);
-    max-height: 232px;
+    max-height: 322px; /* 7 rows */
   }
 
   .listAutoWidth {

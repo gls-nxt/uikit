@@ -4,7 +4,7 @@ import styles from './alert.module.css';
 
 export const alertVariants = cva(styles.alert, {
   defaultVariants: {
-    shadow: true,
+    shadow: false,
     variant: 'info',
   },
   variants: {

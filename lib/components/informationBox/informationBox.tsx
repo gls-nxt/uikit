@@ -18,6 +18,8 @@ export type InformationBoxProps = Prettify<
       prefix?: React.ReactElement | string;
       onClose?: () => void;
       closeButton?: boolean;
+      /** Accessible name of the close button. */
+      closeLabel?: string;
       minWidth?: number;
       visible?: boolean;
       'aria-label'?: string;
@@ -33,6 +35,7 @@ export const InformationBox = ({
   visible = true,
   prefix,
   closeButton,
+  closeLabel = 'Close information box',
   onClose,
   fullWidth,
   color,
@@ -126,7 +129,7 @@ export const InformationBox = ({
           className={styles.informationBoxClose}
           color="blurred"
           icon={<XIcon aria-hidden="true" size="lg" />}
-          label="Close information box"
+          label={closeLabel}
           onClick={handleClose}
           size="xs"
           type="button"
