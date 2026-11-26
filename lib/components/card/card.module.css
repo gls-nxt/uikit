@@ -1,28 +1,31 @@
 @layer uikit {
   .card {
-    padding: var(--gls-spacing-4); /* Default padding */
+    padding: var(--unity-spacing-4); /* Default padding */
     overflow: hidden;
-    background-color: var(--gls-color-surface-card);
-    border: 1px solid var(--gls-color-border-default);
+    background-color: var(--unity-color-surface-base-3);
+    border: 1px solid var(--unity-color-border-subtle);
     transition: box-shadow 0.2s ease;
   }
 
   /* Raised variant (with shadow) */
   .card--raised {
-    box-shadow: var(--gls-shadow-sm);
+    box-shadow:
+      0 9px 9px var(--unity-color-effects-shadow-3),
+      0 2px 5px var(--unity-color-effects-shadow-2),
+      0 20px 12px var(--unity-color-effects-shadow-1);
   }
 
   /* Size variants for border-radius */
   .card--sm {
-    border-radius: var(--gls-border-radius-md);
+    border-radius: var(--unity-radius-md);
   }
   .card--md {
-    border-radius: var(--gls-border-radius-lg);
+    border-radius: var(--unity-radius-lg);
   }
   .card--lg {
-    border-radius: var(--gls-border-radius-xl);
+    border-radius: var(--unity-radius-xl);
   }
   .card--xl {
-    border-radius: var(--gls-border-radius-3xl);
+    border-radius: var(--unity-radius-2xl);
   }
 }
