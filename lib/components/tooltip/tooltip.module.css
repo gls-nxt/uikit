@@ -32,6 +32,12 @@
 
   .tooltip-content--sm {
     max-width: 100px;
+    border-radius: var(--unity-radius-sm);
+  }
+
+  .tooltip-content--md,
+  .tooltip-content--lg {
+    line-height: var(--unity-body-5-line-height);
   }
 
   .tooltip-content--md {
@@ -44,11 +50,11 @@
 
   .tooltip-heading {
     width: 100%;
-    font-size: var(--unity-label-5-font-size);
+    font-size: var(--unity-label-4-font-size);
     font-weight: 500;
-    line-height: var(--unity-label-5-line-height);
+    line-height: var(--unity-label-4-line-height);
     text-align: left;
-    letter-spacing: var(--unity-font-letter-spacing-2);
+    letter-spacing: var(--unity-font-letter-spacing-3);
   }
 
   .tooltip-content[data-side="top"] {

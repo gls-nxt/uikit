@@ -15,13 +15,14 @@
     margin: 0;
     overflow: visible;
     color: var(--unity-color-text-default);
-    background-color: var(--unity-color-surface-base-2);
+    background-color: var(--unity-color-surface-base-4);
     border: 1px solid var(--unity-color-border-subtle);
     border-radius: var(--unity-radius-xl) var(--unity-radius-xl) 0 0;
     box-shadow:
-      0 4px 9px var(--unity-color-effects-shadow-4),
-      0 16px 16px var(--unity-color-effects-shadow-2),
-      0 35px 21px var(--unity-color-effects-shadow-2);
+      0 6px 13px var(--unity-color-effects-shadow-4),
+      0 20px 25px var(--unity-color-effects-shadow-4),
+      0 56px 34px var(--unity-color-effects-shadow-2),
+      0 80px 40px var(--unity-color-effects-shadow-1);
     /* Closed state that the exit transition runs to. Entry uses the keyframes on [open]. */
     opacity: 0;
     transform: none;
@@ -150,10 +151,11 @@
 
   .dialogTitle {
     margin: 0;
-    font-size: var(--unity-font-size-24);
-    font-weight: 600;
-    line-height: calc(4 / 3);
-    letter-spacing: 0;
+    font-family: var(--unity-font-heading);
+    font-size: var(--unity-heading-3-font-size);
+    font-weight: var(--unity-font-weight-medium);
+    line-height: var(--unity-heading-3-line-height);
+    letter-spacing: var(--unity-heading-3-letter-spacing);
   }
 
   .dialogDescription {
@@ -186,6 +188,15 @@
     gap: var(--unity-spacing-3);
     justify-content: flex-end;
     padding: 0 var(--unity-spacing-6) var(--unity-spacing-6);
+  }
+
+  /* Footer buttons share the width. A single button takes the right half. */
+  .dialogFooter > * {
+    flex: 1 1 0;
+  }
+
+  .dialogFooter > :only-child {
+    flex: 0 1 calc(50% - var(--unity-spacing-3) / 2);
   }
 
   .visuallyHidden {

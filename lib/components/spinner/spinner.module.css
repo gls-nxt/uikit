@@ -58,7 +58,7 @@
     color: var(--unity-color-icon-warning);
   }
   .spinner--muted {
-    color: var(--unity-color-icon-subtle);
+    color: var(--unity-color-icon-disabled);
   }
   .spinner--light {
     color: var(--unity-color-icon-subtle);
@@ -68,8 +68,8 @@
   }
 
   .spinner--xl {
-    width: calc(var(--unity-icon-size-10) + var(--unity-icon-size-22));
-    height: calc(var(--unity-icon-size-10) + var(--unity-icon-size-22));
+    width: var(--unity-icon-size-34);
+    height: var(--unity-icon-size-34);
   }
   .spinner--lg {
     width: var(--unity-icon-size-24);

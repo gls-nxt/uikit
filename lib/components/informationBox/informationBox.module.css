@@ -10,7 +10,7 @@
     width: fit-content;
     min-width: var(--min-width);
     height: fit-content;
-    padding: var(--unity-spacing-3);
+    padding: var(--unity-spacing-3) var(--unity-spacing-4);
     margin: 0;
     border-radius: var(--unity-radius-lg);
     transition: box-shadow 100ms ease;
@@ -61,10 +61,10 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-size: var(--unity-body-3-font-size);
+    font-size: var(--unity-label-3-font-size);
     font-weight: 500;
-    line-height: var(--unity-body-3-line-height);
-    letter-spacing: var(--unity-body-3-letter-spacing);
+    line-height: var(--unity-label-3-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-4);
   }
 
   .informationBoxDescription {

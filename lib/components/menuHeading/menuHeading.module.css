@@ -12,8 +12,8 @@
   }
   .menuHeading--sm {
     padding: calc(var(--unity-spacing-5) / 2) var(--unity-spacing-3);
-    font-size: var(--unity-font-size-14);
-    line-height: var(--unity-font-line-height-16);
+    font-size: var(--unity-label-4-font-size);
+    line-height: var(--unity-label-4-line-height);
   }
   .menuHeading--lg {
     padding: calc(var(--unity-spacing-5) / 2) var(--unity-spacing-4);

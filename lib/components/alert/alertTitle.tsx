@@ -8,9 +8,10 @@ export const AlertTitle = ({
   children,
   fontWeight = 'medium',
   size = 3,
+  variant = 'label',
   ...props
 }: AlertTitleProps) => (
-  <Typography fontWeight={fontWeight} size={size} {...props}>
+  <Typography fontWeight={fontWeight} size={size} variant={variant} {...props}>
     {children}
   </Typography>
 );

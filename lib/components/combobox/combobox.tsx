@@ -209,7 +209,7 @@ export const Combobox = <T extends Option = Option>({
       <Popover.Portal {...portalProps} container={portalContainer}>
         <Popover.Content
           avoidCollisions={false}
-          sideOffset={6}
+          sideOffset={4}
           {...contentProps}
           className={cx(
             styles.popoverContent,

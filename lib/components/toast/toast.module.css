@@ -6,8 +6,9 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    min-height: var(--unity-spacing-7);
-    padding: var(--padding);
+    min-height: 3.375rem; /* 54px */
+    padding: var(--unity-spacing-2) var(--unity-spacing-3) var(--unity-spacing-2)
+      var(--unity-spacing-4);
     font-size: var(--unity-body-4-font-size);
     line-height: var(--unity-body-4-line-height);
     color: var(--unity-color-text-inverse);
@@ -81,8 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1.5px;
-    margin-right: var(--unity-spacing-2);
+    margin-right: var(--unity-spacing-3);
     color: var(--unity-color-icon-inverse);
   }
 
@@ -180,7 +180,10 @@
   }
 
   .heading {
+    font-size: var(--unity-label-3-font-size);
     font-weight: 500;
+    line-height: var(--unity-label-3-line-height);
+    letter-spacing: var(--unity-font-letter-spacing-4);
   }
 
   .description {

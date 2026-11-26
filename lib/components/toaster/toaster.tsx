@@ -36,7 +36,7 @@ export const Toaster = ({
       <ToastViewport asChild {...viewportProps}>
         <div
           aria-atomic="true"
-          aria-live="assertive"
+          aria-live="polite"
           className={cx(styles.toaster, viewportProps?.className)}
           role="status"
         />
