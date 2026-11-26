@@ -185,7 +185,9 @@ export const ListFooter: Story = {
         {...args}
         inputProps={{ ...args.inputProps, fullWidth: true, label: 'Country' }}
         listFooter={
-          <div style={{ borderTop: '1px solid #eee', padding: '8px 16px' }}>
+          <div
+            style={{ borderTop: '1px solid var(--unity-color-border-subtle)', padding: '8px 16px' }}
+          >
             Custom footer content
           </div>
         }
