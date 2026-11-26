@@ -91,7 +91,7 @@ export const Contained: Story = {
     return (
       <div
         style={{
-          border: '1px solid #ccc',
+          border: '1px solid var(--unity-color-border-subtle)',
           minHeight: '200px',
           padding: '1rem',
         }}
